@@ -1,0 +1,24 @@
+Exercise 2 
+
+This will give a more business like format for the used for a message box. You will be using both the global message box and the application message box. The application will place a message box that appears prior to the startup of the application and then will prompt the user when he/she terminates the application.
+
+The steps involved are listed below.
+
+1) Create a Window class derived from CFrameWnd 
+2) Create an Application class derived from CWnd 
+3) Setup the message map for the WM_CHAR message  
+4) You will also have to set up the message handler for the above message. 
+
+
+Notice that the first two steps are the same. This time we will only be using the WM_CHAR message.
+
+5) Prior to the window appearing , you will prompt the user to determine whether the user has   chosen to start this application in error or not. Use the OK/Cancel buttons and the warning icon. 
+6) if the user choses Cancel terminate the application. 
+7) If the user choses Ok then start the application. 
+8) Once the window has been opened, the user should be prompted with the message displayed on the window to press any key. This will be done using the TextOut( ) function from the last chapter. 
+9) The user presses a key and a message box appears informing the user that the application is about to close. Do you want to save the data , should be the prompt , with a question mark and the Yes/No buttons. 
+10) If the user chooses Yes terminate the application. 
+11) If the user chooses NO, the application should close the message box and re-display the messaage prompt at the same location as the orginal message prompt when the application started and should prompt the user to hit another key.  
+
+
+

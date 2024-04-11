@@ -1,0 +1,46 @@
+Questions Chapter Seven
+
+1) The Static text box by default will display text in what format ?
+
+a. Left Aligned
+b. Right Aligned
+c. Centered
+d. None , you must code it how to display.
+ 
+ 
+
+2) The purpose of a Group Box is ?
+
+a. To group logical items together when displayed.
+b. To separate the some controls from other controls.
+c. To Label a set of controls.
+d. All of the above.
+ 
+
+3) Which displayed control is square with a white box 
+
+a. Static text box
+b. CheckBox
+c. Radio Button
+d. Group Box
+ 
+
+4) Which displayed control is round with a white circle
+
+a. Static text box
+b. CheckBox
+c. Radio Button
+d. Group Box
+ 
+
+5) If one check box is checked already , and the user tries to check another check box. The first check box will automatically become unchecked. If using an autocheckbox.
+
+a. True
+b. False
+ 
+
+6) Creating Dialog Boxes and their layout is far more difficult in the Microsoft Visual Studio Environment, but this is where the layout is normally done.
+
+a. True
+b. False
+ 

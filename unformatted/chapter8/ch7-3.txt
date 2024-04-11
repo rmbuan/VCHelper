@@ -1,0 +1,24 @@
+Program Layout 
+
+Download Code: http://liad.gbrownc.on.ca/computer/Code%20examples/morecontrols1b.zip
+
+
+Purpose of the program : This program will allow the user to simulate a simple sale. The user will use the check boxes to select the items to be sold and the radio buttons will be used to simulate what discount is available to that customer. It is true a normal window here will also have a receipt number and the customer number. That is going a little far for what this module is suppose to demonstrate.
+
+The calculate button will calculate the total price and then display the price in the text box displayed at the bottom of the screen. This program will not calculate taxes. 
+
+In order to determine what the user has selected you will have to check the status of all the buttons and then do the math. This application will start with default settings of a 10 % discount and all the products will be checked.
+
+Pricing
+
+Computer $1200.00
+Monitor $ 300.00
+Mouse $ 30.00
+Keyboard $ 20.00
+Total $1550.00
+
+ 
+
+Create a new project, download the files and add them to the project. Execute the application and then look at the code. 
+
+  

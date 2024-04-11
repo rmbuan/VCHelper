@@ -1,0 +1,31 @@
+OnPaint Explained
+
+
+OnPaintWindow.h
+
+This is where you would add the message handler afx_msg void OnPaint( ) . This is the only change here.
+
+OnPaintWindow.cpp
+
+Here you add the definition of the message handler, OnPaint( ) . Here you will see that it is using a different method to get a device context. It is using the CPaintDC class. You just create a variable of that class. As I mentioned before the normal variable name for a device context is dc. It is time to explain why use the CPaintDC class here compared to the CClientDC. 
+
+This is done this way, because you have to use CPaintDC when using the OnPaint message handler. Here is the constructor prototype for CPaintDC:: CPaintDC(CWND * Window). As you notice the prototype looks similar to the CClientDC. It takes a pointer to the window object CWND. As in CClientDC, device context use the pointer this.
+
+If a device context can not be successful, it will report an CResourceException. The most important portion of CPaintDC is the variable of the structure PAINTSTRUCT
+
+You will also notice that I have given the character array str a value this time at a different location. Also you will notice that when you press a key this time , instead of displaying the key pressed I have decided to display the whole string stored in str. 
+
+OnPaintApplication.h
+
+There is no change in this file from the previous MessageApplication.
+
+OnPaintApplication.cpp
+
+There is no change in this file from the previous MessageApplication
+
+Mainfile.cpp
+
+This adds the message macro On_WM_PAINT( ) in the message map.
+
+Execute the program you will notice the contains of the string are displayed on the screen. This is caused, by the new On_Paint message handler. Then press any key you will notice that the string is displayed again in a different location. Then minimize the application and then restore it. You will notice that the screen has been redrawn and the original text inside the window but the second string is not. Try to think about how to do display the second string. Try it on your own and later in the course it will be explained how to keep track of exactly what is in your window.
+

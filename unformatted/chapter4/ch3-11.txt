@@ -1,0 +1,23 @@
+Generate an OnPaint Message
+
+
+There are times when you wish to have your application redrawn because the window is invalid. This means that it is not displaying what is required. Either because the window for your application was covered up by another window and is now uncovered, or your application now needs to show another part of your application.
+
+To accomplish this , use the InvalidateRect( ) function. It is important to mention here that this function, will not update the window immediately. Redrawing the window is a time consuming task, for the CPU, therefore InvalidateRect will tell Windows that the window needs to be redrawn, it is Windows (OS) that will decide when the window will actually be redrawn. 
+
+InvalidateRect( ) is a function defined inside of the class CWnd. The prototype of this function is void CWnd::InvalidateRect(LPCRECT lpRegion, BOOL Erase = TRUE). First you will notice that LPCRECT data type is a long pointer to the variable lpRegion. Which is an area of the screen that must be redrawn. As mentioned before, redrawing the window is a time consuming task so only the portion that needs to be redrawn should redrawn. This saves time and makes your application perform better. lpRegion is an object of the class CRect. CRect as you might have guessed by now, contains a structure of the type Rect. Just to refresh your memory, Rect is a structure that has four variables. Top, Left, Bottom, Right. These co-ordinates have the area of the window that needs to be redrawn. If you wish you can have the entire window redrawn by specifying this value to be NULL. Notice that the second parameter is defaulted to True. This parameter has to do with whether or not the background will also be redrawn. So in effect InvalidateRect will generate an WM_PAINT message or call the message handler OnPaint, however you would like to think about it.
+
+Now back to the LButtonDown and RButtonDown messages.
+
+Here are the things that have to happen to process messages from the mouse buttons.
+
+Create a window to hold your application. 
+Create an application message. 
+Declare the message map. 
+Write the message handler. The message handle must explain, what to do when the left or right button is pressed. This will be to display a message of which button is pressed at the location of where the mouse was at the time. 
+
+Each time the mouse button is pressed, if the programmer does not clear the screen ( or generate a WM_PAINT message) the window will just keep displaying the message of which button was pressed and the next time the mouse button is pressed the old message will still be displayed on the screen. 
+
+What you want to accomplish, with this exercise, is to create a single message to be displayed on the screen at any given time.
+
+ 

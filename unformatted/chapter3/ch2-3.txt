@@ -1,0 +1,32 @@
+Environment Settings
+
+
+This portion assumes that you have installed Microsoft Visual C++.
+
+Make sure that you have created a folder called MFC COURSE. This is the place where you are going to keep all the files that are going to be used in this course. You should create a new folder inside of the MFC COURSE folder for every chapter and keep the chapter related material there. 
+
+ Creating a Project
+
+1) Start the program from the start menu
+
+2) First you have to create a project.
+
+3) Choose new from the menu. The project tab will be highlighted.
+
+4) Choose Win32 Application
+
+5) In the Project Name call it Bwindow ( for a basic window).
+
+6) Click on the button beside Location and find the folder that you wish to save you project into. 
+
+(This should be saved in the Chap2 folder in the MFC COURSE. You will have to create this folder.The folder Bwindow will be created by Visual C++  inside the MFC Course called Bwindow.)
+ 
+ 
+
+7) Then click the OK button.
+
+This will create the project for you. A project is the place where all the files are going to be added to. When building a project in reality, it will take more than a single file. When you create the project, the compiler will automatically create a folder for you project to be saved to. This will have the same name as the project. In other words if you did what was explain up above you will have a folder Bwindow where you told the compiler to save it. 
+
+This will create some system files. The only system file that you will be concerned with at this time would be the Bwindow.dsw. This is the project file. This file will keep track of everything in your project. That means when you double click on this file it will automatically open up Visual C++ and add all the files to your project. It is important to keep track of which files belong to which project so Microsoft Visual C++ does this for you and stores the information in the *.dsw file. It is referred to as the workspace file.
+
+You are now ready to add files to your project which is the next topic in this chapter. 

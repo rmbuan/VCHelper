@@ -1,0 +1,41 @@
+Project 
+
+Step One
+
+This is the start of the project. There will additional activities to add to this project in the future chapters of this course. The project will be a address book. It will allow you to keep track of your friends , family members and corporate contacts all in one place.
+
+http://liad.gbrownc.on.ca/computer/animation/AddressBook.exe This is the Step One finished product.
+
+In this chapter you will create the main window, with a menu and toolbar. Follow the steps below to create Step one of the project.
+
+1. Create a window , with no document view support and a toolbar. The project name should be AddressBook.
+
+2. Create the menu, as is available in the Animate button. ( not required to put any code in the menu options yet. This was done for documentation purposes only)
+
+File     
+    New IDM_NEW New Contact\nNew 
+   Open IDM_OPEN Open Contact Information 
+     Exit ID_APP_EXIT Terminate application 
+      
+
+3. Edit     
+     Change IDM_CHANGE Change Contact Information 
+
+4. View     
+        ToolBar ID_VIEW_TOOLBAR Hide ToolBar 
+        Status Bar ID_VIEW_STATUS_BAR Show Status Bar 
+         Records     
+                         Next IDM_NEXT View Next Record 
+                         Previous IDM_PREVIOUS View Previous Record 
+                         ALL IDM_ALL View All Records 
+
+5. Help     
+           About ID_APP_ABOUT About Application 
+
+6. Create the additional toolbar options with the proper tooltips and status bars.
+To create the tool bar, Use the menu graphics editor and type the letters in. You should change this prior to the application being completed later in the course.
+
+7. Save the project in the MFC Course folder.
+
+Hints : Use the toolbar that is presently in the default toolbar and paint the background gray. Add text using the Ariel font , regular and size 8.  If you drag the blank toolbar button to the left it will  be placed in the proper sequence.
+

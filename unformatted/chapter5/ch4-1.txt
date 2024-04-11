@@ -1,0 +1,13 @@
+Introduction to Message Boxes
+
+
+This module deals with the beginning of the user interface. The easiest user interface in windows programming is the message box. A message box is used for your application to tell the user that either something needs to be done before the next portion of the application can be completed or  something in your application has occurred and it wants to let you know that it has occurred. There are two types of message boxes that are going to be explained here. The application message box and the global message box. The main difference between the two is that one belongs to your application and one does not. The global message box acts independent of your program. First we will look at the application message box ( not standard naming convention).
+
+The applications message box’s prototype is the following :
+
+int MessageBox(LPCSTR lpszTEXT, LPCSTR Title = NULL, UINT MB_TYPE = MB_OK) 
+
+The first parameter is the text that you wish to display to the user (LPCSTR lpszTEXT). The second parameter is the title of the message box. The third parameter determines which buttons you wish to have displayed on the message box. Notice that the last two parameters are defaulted. So this means you only have to supply the text that you wish to display to the user.
+
+I know the  previous chapter just went through device contexts and the WM_PAINT message. When using the message box function these are not required. When using MFC’s many of the basic code is taken care of for you. This is one example of MFC doing work for you. Since the message box is used so often in programming it was natural for the MFC library to handle these for us. Why re-write code over and over. 
+

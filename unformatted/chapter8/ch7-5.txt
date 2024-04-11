@@ -1,0 +1,16 @@
+Dynamic Data Exchange
+
+
+The method we have used up to now is great for controlling the data in command line mode. The purpose of this sample is to show you how we can dynamically bind the data entered into the controls to the dialog box themselves. This is extremely important to understand when using the MFC GUI interface.
+
+Each control will have a data member located inside the dialog box so that the programmer can come closer to object oriented programming, that is taking so much precedence in the programming world today. 
+
+One of the greatest accomplishments of object oriented programming is it encapsulation of data. In other words no part of the program can get to the data except member functions of the class itself. This protection of data is of high priority for object oriented programmers.
+
+The keyword private gives access to only member functions of that class. No function or class can have access to anything declared in the private portion of the class. Up to now, every time that a new class was created we used the keyword public. This is because the default state of the class is private. The public keyword over rides the private and gives access to the functions and classes outside this class to direct access to the members. The data members are usually private.
+
+A gentle reminder of what the labels public, private and protected means is required here. The keyword public gives access to all of the application. So anything declared under the label public can be thought of as public access. Therefore if the programmer can see a need to change a private data member , the programmer must provide a public function in order to have access to the private data member.
+
+The keyword protected is the best of both worlds. It provides protection from outside class and functions, whereby they can not get to private portion of the class. The inherited or derived class have direct access to these protected members. This is like we trust our families , all other we do not. 
+
+  

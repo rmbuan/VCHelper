@@ -1,0 +1,13 @@
+Dialog Boxes
+
+
+Most business applications are dialog based. There is a main window , a menu and from the menu the user will select a series of dialog boxes. 
+
+With the above statement being true, it is assumed that dialog boxes and the controls that are placed on them, are the second most important element of windows programming, when it comes to user interface objects. 
+
+Dialog boxes and their controls are a large topic and require a lot of work to understand how to use them together. The modern thinking ( which has been argued) is that user interface takes the majority of time when designing an application. The interface can take approximately 80% of the programmers time. This does not involve the analysis portion of application design ( which by far takes the majority of the over all time when developing an application).
+
+Dialog boxes and their controls are usually designed in dialog editor, which is a graphic environment that allows the user a more pictorial view of what is being designed. This is because each dialog box and control must be placed in a logical order, that not only makes sense for the application, but also for the user to be pleased with the interface of your application. Remember if the users don’t like the way your application works they will not use it. The way your application looks is even more important. This course will get to the graphical portion of the designing of dialog boxes later in this chapter. 
+
+Dialog Boxes are resources similar to menus. Since they have so much in common with menus, it stands to reason that dialog resources are files, that have the extension .rc and are compiled with a resource compiler. When designing a dialog box and the controls to be placed on them in this portion of the course, we will be using a text editor. 
+

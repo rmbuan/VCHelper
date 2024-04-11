@@ -1,0 +1,89 @@
+Questions Chapter Four
+
+1. There are two message box functions. Which message box is not really part of your application, even though you write it in your application ?
+
+a MessageBox( )
+b. AfxMessageBox ( )
+
+2. By default what buttons appear on a message box ?
+
+a. OK
+b. OK and Cancel
+c. Yes
+d. Yes and No
+
+3. When using MFCs and you wish to display to a screen , you have to obtain a device context. When using the message box this is not required.
+
+a. True
+b. False
+
+4. What is the third parameter used for in the non-global message box function.
+
+a. To determine the style of the message box.
+b. To give a title to the message box.
+c. To determine what buttons that will appear on the message box.
+d. To determine the text to display to the screen.
+
+5. What data type is returned from a message box and what is the purpose of this returned value ? Think of what your program can do based on the returned value. ( Short answer )
+
+6. When you close a message box, the window will need to be refreshed, This means you have to call the OnPaint function in your code to repaint the screen.
+
+a. True
+b. False
+
+7. What is the purpose of the third parameter of the MessageBox( ) function ?
+
+a. Title to appear
+b. Buttons to appear
+c. Text to appear
+d. Icon to show
+ 
+ 
+
+8. What is the purpose of the fourth parameter of the MessageBox funciton ?
+
+a. Title to appear
+b. Buttons to appear
+c. Text to appear
+d. Icon to show
+ 
+
+9. Which of the following are icons that can be used on a MessageBox ?
+
+a. MB_RETRY
+b. MB_OK
+c. MB_YESNO
+d. MB_NO
+ 
+
+10. It is not normal for a programmer to use the same icon for the same type of error when using message boxes.
+
+a. True
+b. False
+ 
+
+11. The message box return value data type is ?
+
+a. char
+b. int
+c. pointer
+d. string
+ 
+
+12. When using message boxes, the returned value would be IDOK when what happens.
+
+a. When the OK button is pressed from a message box
+b. When the user selects the close button X on the window
+c. When ever a message box is dismissed
+d. When the user selects the OK button only if the OK and the Cancel button are on the message box.
+ 
+
+13. A decision can be made, in your program based on the value returned from a message box.
+
+a. True
+b. False
+ 
+
+14. Explain the purpose of the global message box funtion. (Short Answer )
+
+15. List 3 Icons that can be used with the MessageBox function.

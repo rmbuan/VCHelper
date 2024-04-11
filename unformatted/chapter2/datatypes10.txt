@@ -1,0 +1,26 @@
+Data Types
+
+
+As you will soon see if you have not already, the usually data types of char, int , float are not used as often in Visual C++.
+
+There are new data types. The new data types are used to get information from Windows. In some cases the data types are structures or classes, not just a simple data type. Below are a list of some common simple data types and what they are used for.
+
+Data Types
+
+HWND .. this usually refers to a handle to a window , which means to say that it is a method for programmers to get to the window
+
+BYTE is an unsigned character 
+
+WORD is a 16 bit unsigned character
+
+DWORD is an unsigned long integer
+
+BOOL is an integer used to indicate true or false.
+
+LPSTR is a pointer to a string
+
+LPCSTR is a pointer to a constant string.
+
+As you can see, most of these data types, a traditional C++ programmer would not be used to .
+
+As new data types are introduced , they will be explained.

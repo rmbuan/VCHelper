@@ -1,0 +1,100 @@
+Toolbars Further 
+
+Download Code: http://liad.gbrownc.on.ca/computer/Code%20examples/toolbar1a.zip
+
+There are two classes that can be used to describe a toolbar. CToolBar and CToolBarCtrl. The CToolBar is an older style of toolbar and is not used as often in today's programming. So this section will focus on CToolBarCtrl. The create prototype is listed below :
+
+CToolBarCtrl MyToolBar; // declare an object first then call create using this object.
+BOOL CToolBarCtrl::Create(DWORD dwStyle, const RECT &SizePos, CWnd Window, UINT ControlID);
+
+The following is a set of styles that can be included. The WS_CHILD is mandatory, the rest are optional depending on how you would like the toolbar to appear and behave. Below is a list of standard window styles.
+
+WS_BORDER Has border 
+WS_VISIBLE Is visible when created 
+WS_CHILD Is a child of the main window 
+WS_DISABLED Is disabled 
+WS_POPUP Can not be used with WS_CHILD 
+WS_TABSTOP Can be tabbed to , not used here 
+
+ 
+
+Below is a set of common control sytles.
+
+CCS_BOTTOM Appears at the bottom of Parent window 
+CCS_TOP Appears at the top of Parent window 
+CCS_NORESIZE Can not be resized 
+CCS_ADJUSTABLE User can change the size 
+
+The size of the toolbar is ignored in most cases unless the style CCS_NOSIZE is used. Then a standard RECT structure is used to size the toolbar. The toolbar is normally set to appear at the top of the parent window and will adjust it's size to fit. This is the default and in most cases will work quite well.
+
+Window of course is the window that the toolbar will belong to.
+
+This would be great , if all you had to do was create the toolbar. This is not the case. Remember that a toolbar must act like a visual menu. Therefore you will have to add each button that you wish to load in the toolbar. Identify what each button will do ( which menu option) and then load a picture of what the toolbar will look like.
+
+It is true that each button on a toolbar looks like an independent picture but only one bitmap can be used for a toolbar. Since only one bitmap can be used for a toolbar, every picture that represents a different menu option must be included on the single bitmap. This may seem a little confusing , so take some time to view the standard.bmp below.
+
+http://liad.gbrownc.on.ca/computer/images/standard.jpg
+
+You will notice that this picture is seen in many different applications. What this really is?  It is a set of bitmaps that are all 16 pixels wide by 15 pixels high. Each picture had to be created by itself and then added to this bitmap. This can be done in any graphics editing tool, including Microsoft Visual Studio. Since this is not a graphics course it is not expected of you to do this. But if you were going to create your own toolbar from scratch you can do it. You will notice that there are 9 separate pictures loaded onto this one bitmap. Therefore 9 menu options can be done using the graphical representation of this toolbar.
+
+To add the buttons, to make each picture seem like its own button, your program must declare an array of TBBUTTON. This is an array of structures. Each element of the array will describe what each picture will do. This can be thought of as breaking the picture up into its individual pictures ( by using the 16 pixel wide formula) and then assigning menu options and style options to each button. The structure is defined below.
+
+Typedef struct _TBBUTTON
+{
+int iBitmap; //This is the index of the button array or what picture
+int idCommand; // this is the ID of the menu option
+BYTE fsState; // this is the initial state of the button either chosen or not. Check help for more
+BYTE fsStyle; // this is the style, it can also include a dropdown list to appear , Check help for more.
+DWORD dwData; // contains user defined information. Usually set to zero.
+int iString; // is the ID of the string of a label if used. Usually set to zero
+} TBBUTTON;
+
+For help on fsState and fsStyle :
+
+1)    Go to help 
+2)    Choose Search 
+3)    Type in TBBUTON 
+4)    In the active subset make sure that the Entire Collection is choosen 
+5)    Press list topics. When it is done searching 
+6)    Choose Creating a toolbar. 
+7)    Scroll down until you find the Window and Control Styles.( in blue) 
+8)   Click Window and Control Style.
+9)   Click the Control Style
+10)  Scroll to near the bottom. Find the TBSXXXXXX
+
+This will demonstrate all the different control styles. It is important for you to understand the help that comes with Visual Studio. I can not stress this enough.   It is impossible for anyone person to have all the answers , but if you know where to look for help , that is all you really need.
+
+Once you have created the toolbar, defined the bitmap and defined what each button will do, you then will have to add the buttons to the toolbar. The function that is used to accomplish this, is  AddButtons( ). Prototype below :
+
+BOOL CToolBarCtrl::AddButtons(int NumberOfButtons,LPTBUTTON lpButtons);
+
+The first parameter is how many buttons to add to the toolbar and the second parameter is a pointer to the array of TBBUTTONS that will be used with this toolbar.
+
+The buttons are added to the application and if no toolbar bitmap is used you will see a group of square boxes with no identification what so ever. They will work , just  the user does not have a graphical representation of what the buttons mean. So add the bitmap over the buttons so that the user knows which button does which action. This is done by using the AddBitmap( ) function . Prototyped below.
+
+int CToolBarCtrl::AddBitmap(int NumberOfButtons,UINT Bitmapid);
+
+The first parameter is the number of buttons in the array of TBBUTTONS and the second is the ID of the bitmap. The ID of the bitmap is usually done in the resource file using the format :
+
+ID_XXXXX BITMAP yourfilename.bmp 
+
+Then define the ID_XXXXX as an integer number     // #define ID_XXXXX 100
+
+Review
+
+Steps required to create a toolbar.
+
+1) Declare a variable of type CToolBarCtrl; 
+Use the Create( ) function to determine how the toolbar will behave. 
+Decide how many buttons will appear on the toolbar ( What menu options will be represented on the toolbar. 
+Create individual bitmaps for each button each being 16 X 15 pixels. 
+Create a new bitmap and place all the individual bitmaps on to this bitmap. ( In other words if you have 9 buttons :  Create a bitmap that is ( 9 X 16 ) pixels long and 15 pixels high. Then place all the indivdual bitmaps onto this bitmap. ) 
+Define the bitmap as a resource in the resource file.  Give it an integer value. 
+Declare an array of TBUTTONS, define what menu options each button represents. 
+Use the AddButton function to all the buttons. 
+Use the AddBitmap function to cover the buttons with the graphical representation of of the bitmap defined in the resource file. 
+To see how this is done , look at the code in the downloaded files. 
+
+Create a new project, download the files and add the files to the project. Execute the program and you will notice that the menu options are given a graphical representation with the toolbar.
+
+ 

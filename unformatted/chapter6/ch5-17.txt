@@ -1,0 +1,188 @@
+Question Chapter Five
+
+1. Menus are really not necessary just because it is a windows program ?
+
+a. True
+b. False
+
+2. Menus do not belong to your application but are compiled into your application ?
+
+a. True 
+b. False
+
+3. Resource Files are not required to use Menus, it is just preferable ?
+
+a. True
+b. False
+
+4. It is possible to have many different menus in your application and each menu will have its own resource file ?
+
+a. True
+b. False
+
+5. Menus are easier to create in Visual C++ than most other GUI languages ?
+
+a. True
+b. False
+
+6. To include a menu with your application you have to use the following method ?
+
+a. Use the windows Create ( ) function
+b. Use the CMenu ::AddMenu ( )
+c. Use a separate resource compiler
+d. The menu is automatically linked to your program when compiled.
+
+7. Microsoft Visual Studio has a built in editor to create bitmap graphics and this is the only method that can be used, when creating toolbars that you wish to include in your Visual C++ application ?
+
+a. True
+b. False
+
+8. The resource file has to be compiled and then it has to be compiled again to be included into your project. So in reality resource files go through more than one compilation process ?
+
+a. True
+b. False
+
+9. The extension of a resource file before it gets compiled is :
+
+a. .exe
+b. .txt
+c .rc
+d. .res 
+
+10. The extension of a resource file after is has been compiled is :
+
+a. .exe
+b. .txt
+c .rc
+d. .res 
+
+11. The rules that govern a menu design are based on which of the following :
+
+a. logical order
+b. Dos Standards
+c. Windows Standards
+d. By the type of application that you are building.
+
+12. How to you define a menu resource in your application.
+
+a. MENU MenuName 
+b. MenuName, MENU ,Window it belongs to
+c. MenuName, MENU , IDMENU
+d. #include MENU
+
+13. The indicate that the menu option has a short cut key ( the user can use the ALT key and a letter combination to call the menu option) is indicated by what character ?
+
+a. * character
+b ^ character
+c. _ character
+d & character
+
+14. Explain what accelerator keys are and how to include them in your project. Include how to use the F1 through F12 keys as well as any standards that are used for accelerator keys. (Short Answer)
+
+15. To add code to a menu option you have to include a message handler in which class
+
+a. The Menu class
+b. The Window class
+c. The Application class
+d. Any derived class that is included in your application
+
+16. When creating a menu in a resource file, the keyword MENUITEM is used for ?
+
+a. To determine what will be the dropped down menu item displayed
+b. To determine what will be the header for the drop down menu choices
+c. To give your menu a name
+d. To declare a menu
+
+17. When creating a menu in a resource file, the keyword POPUP is used for ?
+
+a. To determine what will be the dropped down menu item displayed
+b. To determine what will be the header for the drop down menu choices
+c. To give your menu a name
+d. To declare a menu
+
+18. What is the height of a toolbar in pixels
+
+a. 12
+b. 15
+c. 16
+d. any size
+
+19. How many bitmaps can be use for a toolbar in your application ?
+
+a. One
+b. As many bitmaps as there are buttons
+c. None the system generates them for you
+d. All of the above are correct
+
+20. To use a resource file what header file must be included ?
+
+a. Windows.h
+b. Afxwin.h
+c. Afxres.h
+d. Must include all of the above
+
+21. Toolbars are an example of 
+
+a. controls
+b. design effects
+c. common controls
+d. User controls
+
+22. To include toolbars in your application you must include which header file ?
+
+a. Afxcmn.h
+b. Afxwin.h
+c. Afxres.h
+d. Must include all of the above
+
+23. The file COMCTL32.LIB is automatically supplied with Internet Explorer 4.01 or higher and Windows 98 operating system, so your program does not have to check to ensure that the user has the proper file version on their machine. That was only in order programming styles ?
+
+a. True
+b. False
+
+24.The INITCOMMONCONTROLSEX structure has two data members. The data member dwICC will check to see what ?
+
+a. To see if there is enough memory to run the application
+b. To see if there is enough memory to load an object
+c. To see if any controls are available
+d. To see if a particular set of controls is available.
+
+25. TButtons is a structure. This structure array must be declared to be the size of the number of buttons that you wish to place on a toolbar. Which of the data members of this structure is used to determine what action will occur when the user clicks the toolbutton.
+
+a. iBitmap
+b. idCommand
+c. fStyle
+d. dwData
+
+26. If you forget to add the bitmap using the function AddBitmap( ) what will be the end result in your application.
+
+a. It will not compile
+b.It will compile but not execute
+c. The toolbar will not show up at all
+d. The toolbar will show up , as square boxes only
+
+27. The system will automatically change the size of a toolbar when a window is resized.
+
+a. True
+b. False
+
+28. How would you check to see if a toolbar button is pressed.
+
+a. IsPressed
+b. CheckStatus
+c. PressButton
+d. Check Button
+
+29 Tooltips are the same as Toolbar labels
+
+a. True
+b. False
+
+30. When a window changes sixe a message of WM_SIZE is sent. What would be the message handler ?
+
+a. ON_NOTIFY
+b. ON_COMMAND
+c. OnSize
+d. OnResize
+
+ 

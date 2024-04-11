@@ -1,0 +1,101 @@
+Code for Message Map Program
+
+
+Now that we know about messages, message macros, message handlers, and device context, it is time to see how they all works together. 
+First you have to create a new project and call it Messages. Then remember to set the options in the compiler to allow for code generation to be Debug Multithreaded, from the project settings on the menu. Enter the following code. 
+
+MessageWindow.h
+
+#ifndef MessageWindow_h
+#define MessageWindow_h
+
+#include <afxwin.h>
+
+class CFirstWindow : public CFrameWnd
+{
+public:
+CFirstWindow();
+afx_msg void OnChar(UINT ch, UINT count, UINT flags); DECLARE_MESSAGE_MAP ();
+};
+
+#endif
+
+MessageWindow.cpp
+
+#include "MessageWindow.h"
+
+char str[80]; // global array
+
+CFirstWindow :: CFirstWindow()
+{
+RECT NewPlace;
+NewPlace.left = 150;
+NewPlace.top = 100;
+
+NewPlace.right = 800;
+NewPlace.bottom = 600;
+
+Create(NULL, "Message Processing",WS_OVERLAPPEDWINDOW,NewPlace,
+NULL,NULL,WS_EX_WINDOWEDGE ,NULL);
+}
+
+afx_msg void CFirstWindow :: OnChar(UINT ch, UINT count, UINT flags)
+{
+CClientDC FirstDeviceContext(this);
+FirstDeviceContext.TextOut(1,1, " ", 3);
+wsprintf(str, "%c" , ch);
+FirstDeviceContext.TextOut(1,1,str,strlen(str));
+
+}
+
+MessageApplication.h
+
+#ifndef MessageApplication_h
+# define MessageApplication_h
+
+#include <afxwin.h>
+
+class CFirstApplication : public CWinApp
+{
+public:
+CFirstApplication();
+
+BOOL InitInstance();
+};
+
+#endif
+
+MessageApplication.cpp
+
+#include "MessageApplication.h"
+#include "MessageWindow.h"
+
+CFirstApplication:: CFirstApplication( )
+{
+;
+}
+
+BOOL CFirstApplication :: InitInstance( )
+{
+m_pMainWnd = new CFirstWindow;
+m_pMainWnd->ShowWindow(m_nCmdShow);
+m_pMainWnd->UpdateWindow( );
+return TRUE;
+}
+
+Mainfile.cpp
+
+#include <afxwin.h>
+
+#include "MessageWindow.h"
+
+#include "MessageApplication.h"
+
+BEGIN_MESSAGE_MAP(CFirstWindow, CFrameWnd)
+ON_WM_CHAR( )
+END_MESSAGE_MAP( )
+
+CFirstApplication App;
+
+Compile the program and run the application. Don't forget to change the compile options in the Project, settings . Remember C++ code generation has to be Debug Multithreaded.
+

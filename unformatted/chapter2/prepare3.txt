@@ -1,0 +1,12 @@
+Be Prepared
+
+
+ Before MFC’s were used on a large scale, window programmers had to write code from scatch. Which was a time consuming and problem induced type of programming. It would take a minimum of 75 lines of code, just to open a single window. Not to mention all the error trapping code that would be required to ensure that there was enough memory, proper video card,  the proper operating system was installed, and so on and so on… 
+
+It is not required for the programmer to have completed this type of programming before he/she can write Windows programs using MFC. It is however important that you understand C++ programming and programming concepts in general. Loops, decision making, and object oriented design methods should be well understood. To be able to be efficient at programming using MFC’s, the programmer must understand the concepts of classes, functions, virtual functions, constructors, destructors, function overloading and inheritance. Windows programming relies heavily on these concepts. Make sure you understand them well before you get too carried away with MFC’s.
+
+To be prepared to write Windows programs you will require the following knowledge : This course is assuming that you have Windows 95, Windows 98, or Windows NT 4.0 or the newer OS Windows NT 5.0. We will also be using the Microsoft Visual Studio 6.0 with service pak 3 installed. All the code in this course has been tested using these types of environments.
+
+A knowledge of, how to use ActiveX and what ActiveX controls are, is assumed. You should know how to add an ActiveX control to your project. An ActiveX control is nothing more than an add on to commercial programs usually created by a third party company.
+
+  

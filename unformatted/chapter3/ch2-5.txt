@@ -1,0 +1,32 @@
+Compiling Your First Windows Program
+
+Once you have all the files in the project you must then compile the project. This will create an executable program that will have the extension .exe. If you have tried to compile the program already you probably ran into problems. If the problems did not come from making mistakes in the code portion of the program they would definitely come in the Linking portion of the compiling. There are a few changes that must be made to the Microsoft environment to compile windows programs. 
+
+Each project type will require different compiling options . Compiling options are changed under the Project menu item in the Visual C++ environment. Follow the steps below to change the compiling options.
+
+ Environment Settings
+
+Project Settings
+
+1) Make sure the project Bwindow is open
+2) From the menu choose Project
+3) Choose Settings
+4) Choose the C++ tab
+5) In the Category list box choose Code Generation
+6) Under the Use run-time Library , Choose Debug Multithreaded
+7) Click OK
+
+The above will change the project settings and now you can compile your project. Follow the steps below to compile the Bwindow project.
+
+Building Project
+
+ Compiling your Project
+
+Make sure the project Bwindow is open. 
+Choose from the menu Build. 
+Choose Build All. 
+This will combine all the files into a single executable file. You could save some time and use F7 to compile.
+
+If there are any problems you will see the problems in the lower window. You can scroll through the errors and then double click on the error and it will take you right to where the problem with the code exists. Every time you correct a problem you will have to compile again. Once you have compiled the project and see that lower window reports no errors ( we will ignore the warnings for now ). You can now run the project by using the Execute Bwindow from the Build menu.
+
+ 

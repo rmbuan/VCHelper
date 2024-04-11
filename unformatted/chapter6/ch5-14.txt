@@ -1,0 +1,12 @@
+ToolTips Explained
+
+The only code that really needs to be explained is located in the CMenuWin.cpp file and the MainFile.cpp.  The code in CMenuWin.cpp will be explained first and the the ON_NOTIFY will be explained from the MainFile.cpp
+
+CMenuWiin.cpp
+
+Take a look at the code in ToolTipHnd function. The prototype for ToolTipHnd is below :
+
+BOOL  ToolTipHnd(UINT ID, NMHDR *pTTTStruct, LRESULT lpResult) 
+
+The first parameter is a structure of NMHDR. It is this parameter that is the most useful. The problem is, this structure belongs to another structure of the type NMTTDISPINFO as explained earlier. So in order to get to the NMHDR structure you have to first get through NMTTDISPINFO structure. That explains the ((NMTTDISPINFO *)pTTTStruct)-> . What it is accomplishing here is, to convert the pTTTStruct to a pointer of type NMTTDISPINFO, so we can get to the other structure inside this structure. Once we have a pointer to the NMHDR structure we can use the arrow operator to get to the lpszText variable which is the part that actually contains the value of what to display when the user hold the mouse pointer over a toolbar button.
+

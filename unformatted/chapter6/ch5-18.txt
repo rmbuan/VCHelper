@@ -1,0 +1,59 @@
+Creating your First Window
+Using the Graphical Interface
+
+Now, we will experiment with the Graphical Interface of Microsoft Visual Studio , Visual C++ Version 6.0. This is the type of programming that you will be doing in the real world, the development time is shorter. We will be using the wizards. The wizards will generate a lot of code for you. By now you are probably tired of creating the Window and Application classes. The wizard will create these for you.
+
+Let's get to it.
+
+http://liad.gbrownc.on.ca/computer/animation/FirstGui.exe This is what the example should look like.
+
+ show how to create project not done yet.
+
+To generate your first Wizard Generated application, check the animation out first along with the step by step version listed below.
+
+1) Create a folder on the "C:\ " called "MFC Course".
+2) Create an additional folder inside of "MFC Course ", called "Chap 5". 
+3) Then start the Visual C++ application
+4) Create a new project by selecting File -> New.
+5) Select "MFC AppWizard.exe" as the project type.
+6) Name your project "FirstGui"
+7) Save your project in "C:\MFC Course\Chap 5"
+8) Click OK.
+9) Step 1 is click "Single Document".
+10) Uncheck the "Document View Architecture Support"
+11) Click Next.
+12) Step 2 Leave as default. Click Next
+13) Step 3 Leave as default Click Next
+14) Step 4 Uncheck all the check boxes and leave the radio button on "Normal" Click Next
+15) Step 5 Leave as default Click Next
+16) Step 6 Click Finished
+
+Your project is now created. The window class and the application class has been created for you. It has also created the CChildview class. This class is ignore during this course.
+
+It has created the following classes :
+
+CFirstGuiApp Your application class
+CMainFrame Your window class
+CChildView Your view class ( how to display class )
+
+Build the application and you will see that it will run. Then select the File- > Exit program. The application will terminate. Click on the About box and you will be displayed an Description of the FirstGui application. You will notice that all the other menu items are gray out. You can not click on them.
+
+Now to the environment
+
+The environment will open up and display the class view. The + sign beside the FirstGui classes can be clicked on and all the classes will be exposed. The classes are : CAboutDlg CFirstGuiApp, CMainFrame and CChildView. Each one of these classes will have the + sign to the left of them. This indicates that there are more files inside. These files, are really functions. 
+
+The most common icons that you see, in class view are described below.
+
+http://liad.gbrownc.on.ca/computer/MFC/Chap5/class.gif  Class
+
+http://liad.gbrownc.on.ca/computer/MFC/Chap5/ProtectedMemberfunction.gif  Protected Member function
+
+http://liad.gbrownc.on.ca/computer/MFC/Chap5/Protectmembervarialbe.gif  Protected Member Variable
+
+http://liad.gbrownc.on.ca/computer/MFC/Chap5/publicmemeberfunction.gif Public Member Function
+
+http://liad.gbrownc.on.ca/computer/MFC/Chap5/publicmemebervariable.gif Public Member Variable
+
+ 
+
+Click the bottom tabs in the Workspace to display the File View. This will display all the files that you are used to working with. They are arranged slightly different than what we have been working on, up till now. The attempt now is to explain these files. 

@@ -1,0 +1,20 @@
+Menu Program Code Added
+
+
+MenuWin.h
+
+This is where the main window is defined and you will notice that the message handlers are also included here. They must use the keyword afx_msg and each function can only return void. The programmer must write a separate function for every menu option. They only write code for the MENUITEMS and do not write anything for the POPUP items.
+
+MenuWin.cpp
+
+Here is where the window is actually created and the menu is associated to the window. All the functions to handle the messages are defined here. These functions really, at this level will  just display a MessageBox informing the user of which menu option was chosen.
+
+MainFile.cpp
+
+This is where the message map is declared. There is a message macro included for each menu option. This also declares an object of the application.
+
+Future Version
+
+The third menu program will be adding code to the Exit button to terminate a program. This uses the function DestroyWindow. The prototype is virtual BOOL DestroyWindow( ); . It is from the base class CWnd. It will destroy the window and clean up any memory your window used. It will also include the Accelerator Table. This allows for quick access to menu functions , without actually using the mouse to click the menu item. This is used to allow users to keep operating the application without having to remove their hands from the keyboard. This just gives the user another option to how to get to commonly accessed menu options. The following program shows how to do this.
+
+ 

@@ -1,0 +1,30 @@
+Exercise 1
+
+This will demonstrate how to use menus.  First you will create a new project and build the Window class and the Application class.
+
+When the main window appears the user should see a menu that emulates what a user should see in any windows application. Go to a Microsoft Office product ( Word , Access , Excel ) and take a look at what  is standard on the window menu.
+
+Your task here is to duplicate that menu. Including the drop down menuitems.
+
+Once you have created the complete menu, you will then use message boxes to indicate what each menu item should do. An example would be   File - > Open , the message box will display the title File - > Open and the message that is displayed in the message box would be " This menu option will be used to open a new document. ".
+
+The main purpose for this exercise, is to reinforce the windows standards and to ensure that you clearly understand what each menu item should be used for. This will give the user of your application the sense that he/she already knows your application. 
+
+The menu items are listed below , just to standardize what appears in every window applicaiton.
+
+File
+    New , Open, Close , Save , Save As, Print and Exit
+Edit
+   Cut , Copy , Paste
+View
+    ToolBars , Options
+Insert
+    Image , OLE , Shape
+Window
+    Horizontal , Vertical , 
+Help
+   Contents , Search , About
+
+It is extremely important to understand the purpose of why menues should be standardized and that they appear in your applicaiton.   Explain how you would include different menu options, that would not be found in other Windows programs because they are specific to your application only. An example of what is being referred to here is :  Your application deals with the car industry and you wish to include in the menu , a method to get to available cars for sale.  Where on the menu would you put this.  
+
+

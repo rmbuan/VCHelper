@@ -1,0 +1,26 @@
+Guidelines for Creating Windows
+
+
+Windows Classes (Style or type)
+
+What is meant here is a throw back to old terminology. In reality what this is referring to is, how will the window appear and what attributes will the window have.
+
+The attributes could be anything from size of the window to what icon the window will use or which cursor the window will use.
+
+Then the window has to be registered. Luckily once again MFC takes care of this for the programmer. This is just routine programming and really wasted programmer’s time.
+
+Guidelines for creating windows:  This is referring to the interface or the way your window looks and believe it or not, how it feels. The goal behind these guidelines are to allow minimal training of new users. If a user starts your application, the user should feel that they are already familiar with the program. 
+
+How this is accomplished, By attempting to duplicate the interface on already established programs, such a Word, Excel and the like. You will notice in each one of these applications that the File, Edit, View, Window and Help are all located in the same place on the menu bar.
+
+Under File is always New and Exit
+
+Under Edit is always Cut and Paste
+
+Under View is Toolbars
+
+Under Windows is a method to switch between windows that are required in your program
+
+Under help is Contents and About 
+
+If at all possible when ever your application needs any of these options they should always be in the same place as other Window applications. This gives the user a comfortable feeling with your program. Remember if you write a program that users do not want to use, then what is the purpose.

@@ -1,0 +1,13 @@
+mdlRunFirst = 110, 110, 643, 558, C
+frmMain = 66, 66, 599, 514, , 22, 22, 729, 601, C
+frmSplash = 0, 0, 0, 0, C, 96, 96, 621, 540, C
+frmLogin = 0, 0, 0, 0, C, 216, 216, 741, 660, C
+frmOptions = 0, 0, 0, 0, C, 154, 154, 687, 602, C
+frmAbout = 0, 0, 0, 0, C, 176, 176, 709, 624, C
+frmBrowser = 0, 0, 0, 0, C, 198, 198, 731, 646, C
+frmchap111 = 44, 44, 732, 335, , 88, 88, 621, 536, C
+frmnotes = 0, 0, 0, 0, C, 0, 0, 533, 448, C
+frmCourseOutline = 0, 0, 0, 0, C, 22, 22, 555, 470, C
+mdlCheckSoundCard = 220, 220, 753, 668, C
+mdlOnTheFlyDisplayChange = 0, 0, 533, 448, C
+frmCrashCourse = 0, 0, 0, 0, C, 44, 44, 577, 492, C

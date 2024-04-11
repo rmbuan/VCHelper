@@ -1,0 +1,6 @@
+DOS Versus Windows
+ 
+
+In DOS programming, it is your program that calls the operating system . In Windows programming it works almost the opposite. Your program waits for a message from Windows before it does anything. Then when your program receives the message it does the appropriate action and then informs Windows that it has completed the action and waits for the next message from Windows. This will all be explained in greater detail when you understand Windows messaging better. Patience.
+
+In the old DOS programming, using either Pascal, Cobol, Fortran, C or C++ the languages were primarily sequential in nature. Which means the program started executing code at the designated start, each line of code was then executed until the last statement was executed with very little deviation. This type of programming gave the programmer control over how the program was executed. With windows programming , this is not the case.   Windows deals with messages ( user or system responses ), which include a mouse click, mouse move, a key press, or closing of a window that belongs to your program. There is no way a programmer can control what the user is going to do next (in other words what messages are going to be received next) so it is now referred to as event driven programming.

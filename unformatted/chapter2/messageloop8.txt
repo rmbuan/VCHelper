@@ -1,0 +1,15 @@
+Message Loop
+
+
+This is sometimes confusing. I will do my best to explain it here.
+
+Your program must establish what is called a message loop. This is a place where messages are received by your program. A user has clicked the mouse button. This message is stored in your application message loop and this message is then passed to Windows.
+
+Windows will then use the windows procedure function and send the message back to your program with the message as a parameter or argument. Your application will then complete what ever action is required.
+
+Since your program already has the message, why send it to Windows so Windows can send it right back ? This is a logical question. The reason things are done this way and why it is Windows, that must call your application, is because Windows acts as Master Control. Windows must control the complete computer which means it is responsible for controlling what process or thread gets access to the CPU. So windows will decide when your application will get processed.  
+
+The complicated method also allows for control to be returned to Windows when your application has completed it’s task, so that maybe another application can get focus now. Remember part of the strength of Windows is the fact that it can appear to be running two applications at the same time.
+
+The good news is, once again MFC will take care of the application message loop. It is the programmer's job to deal with just the messages passed to it from Windows. Again the message map will be explained, in greater depth in Chapter 3.
+

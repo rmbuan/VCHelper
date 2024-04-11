@@ -1,0 +1,27 @@
+ToolBars
+
+
+This portion of the course will demonstrate the toolbar control. Toolbars are visual representations of the menu items. The standard open, copy, paste, print and so on menu items are usually displayed as toolbar options in all windows applications. Toolbars are considered to be Common Controls. What is meant by common controls is, these controls are found in most windows applications and they were included in the MFC library after the original controls were included.
+
+To be able to use common controls in an application you will have to include the AFXCMN.H header file. Up till now you have been using the AFXWIN.H and the AFXRES.H header files. Each set of MFC controls or functions are described in different header files , so it is important that you recognize that the header files have to be included. The theory behind including header files into your files is : If you require a function or variable that is not defined in that file then include the header file that it is declared or defined in. The usually error that you will get if you do not have the proper header file is : can not find variable or function name. If you get this error , check that the proper header file is included first, then check for spelling.
+
+Common controls are considered to be windows by themselves. This is important to remember. These controls are usually found in the windows file COMCTL32.LIB. Make sure that you have the proper copy of this file in your computer. It is loaded in when you install Windows 98 or if you have installed IE 4.0 or higher. In other words if you are running Windows 98 or IE 4.0 or higher , chances are the proper updated COMCTRL32.LIB is already on your computer. If you do not have these installed , it is strongly suggested that you do so now.
+
+It is common to check the system that your application is going to run on to ensure the proper COMCTRL32.LIB is installed on the computer and this is done by calling InitCommonControlsEx. This will ensure that your application will run correctly and that the common control .DLL is setup correctly. The follow code must be included in your application prior to calling any common control.
+
+INITCOMMONCONTROLSEX initCtrls;
+initCtrls.dwSize = sizeof(initCtrls);
+initCtrls.dwICC = ICC_BAR_CLASSES;
+InitCommonControlsEx(&initCtrls);
+
+Explained : INITCOMMONCONTROLSEX is a stucture that has two members, dwSize will keep track of the size of the structure and make sure that memory is available and dwICC will check to see if the type of control you wish to use is available. There are many different controls that could be used , therefore ICC_XXXXXXX, will change with every set of controls that you wish to use. Below are examples of the different type of common control you will have to check for.
+
+ICC_ANIMATE_CLASS Animation control 
+ICC_BAR_CLASS Status bar, toolbar, trackbar controls 
+ICC_DATE_CLASSES Date controls 
+ICC_WIN95_CLASSES Controls supported by Win95 
+ICC_LISTVIEW_CLASSES List controls 
+
+There are several more. You will have to check the help files of Visual Studio to find out what others are available.
+
+ 

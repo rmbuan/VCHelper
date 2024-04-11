@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{1DE105B9-EA76-42E0-92F5-C892AA880F36} = s 'AddChapter'
+		'AddChapter.EXE'
+		{
+			val AppID = s {1DE105B9-EA76-42E0-92F5-C892AA880F36}
+		}
+	}
+}

@@ -1,0 +1,113 @@
+Generate OnPaint Code
+
+
+MouseMessage.h
+
+#ifndef MouseMessage_h
+#define MouseMessage_h
+
+class CMouseMessage : public CFrameWnd
+{
+public:
+CMouseMessage( );
+afx_msg void OnPaint( );
+afx_msg void OnLButtonDown(UINT Flags, CPoint loc);
+afx_msg void OnRButtonDown(UINT Flags, CPoint loc);
+
+DECLARE_MESSAGE_MAP( )
+};
+
+#endif
+
+MouseMessage.cpp
+
+#include <afxwin.h>
+#include <string.h>
+#include "MouseMessage.h"
+
+char str[80] = {"This is what will be displayed when the window starts"};
+int X = 1, Y = 1;
+
+CMouseMessage:: CMouseMessage( )
+{
+Create(NULL , "Mouse Messages") ;
+}
+
+afx_msg void CMouseMessage:: OnPaint( )
+{
+CPaintDC dc(this);
+wsprintf(str,str);
+dc.TextOut(X,Y,str,strlen(str));
+}
+
+afx_msg void CMouseMessage::OnLButtonDown(UINT Flags, CPoint loc)
+{
+CClientDC dc(this);
+X = loc.x;
+Y = loc.y;
+wsprintf(str,"The left mouse button was pressed down");
+InvalidateRect(NULL);
+}
+
+afx_msg void CMouseMessage ::OnRButtonDown(UINT Flags, CPoint loc)
+{
+CClientDC dc(this);
+X = loc.x ;
+Y = loc.y;
+wsprintf(str,"The Right mouse button was pressed down");
+InvalidateRect(NULL);
+}
+
+MouseApp.h
+
+#ifndef MouseApp_h
+#define MouseApp_h
+
+class CMouseApp : public CWinApp
+{
+public:
+CMouseApp( );
+BOOL InitInstance( );
+};
+
+#endif
+
+MouseApp.cpp
+
+#include <afxwin.h>
+#include "MouseApp.h"
+#include "MouseMessage.h"
+
+CMouseApp :: CMouseApp( )
+{
+;
+}
+
+ 
+
+BOOL CMouseApp :: InitInstance( )
+{
+m_pMainWnd = new CMouseMessage;
+m_pMainWnd->ShowWindow(m_nCmdShow);
+m_pMainWnd->UpdateWindow( );
+return TRUE;
+}
+
+Mainfile.cpp
+
+#include <afxwin.h>
+#include "MouseApp.h"
+#include "MouseMessage.h"
+
+ 
+
+BEGIN_MESSAGE_MAP(CMouseMessage,CFrameWnd)
+
+ON_WM_PAINT( )
+ON_WM_LBUTTONDOWN( )
+ON_WM_RBUTTONDOWN( )
+
+END_MESSAGE_MAP( )
+
+CMouseApp CApp;
+

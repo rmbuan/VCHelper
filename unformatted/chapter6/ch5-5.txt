@@ -1,0 +1,9 @@
+Adding Code To Menu Options
+
+Download Code: http://liad.gbrownc.on.ca/computer/Code%20examples/menuprog2.zip
+
+Click on the code button and you will download the files for this portion of the module. 
+
+This program will setup the methods for doing whatever action that you see fit. In this case all it does is tell you which menu option that the user clicked on by using a message box. Create the project and execute the program. Try a few menu options and see what happens. Then go to the next page to see the explanation of how it is accomplished.
+
+  

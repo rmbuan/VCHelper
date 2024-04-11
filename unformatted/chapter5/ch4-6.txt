@@ -1,0 +1,140 @@
+Code for Message Box 2
+ 
+
+In this portion of the chapter, the code has been created for you. Up until now the code has been supplied in this format and you would copy and paste the code into a new project. This format will not be available throughout this tutorial. Make sure, after completing this page, you read the IMPORTANT INFO : section. For now follow the steps to create the project. Create a new project called MESSBOX. Then create the new files, headers where needed and source files where needed. A word of caution. Make sure that you create the Win32 Application project. 
+
+What this program will do, is provide a message to the user when a key has been pressed or when the left mouse button is going to be released.
+
+MessBoxWin.h
+
+#ifndef MessBoxWin_h
+#define MessBoxWin_h
+
+class CMessBoxWin : public CFrameWnd
+{
+public :
+CMessBoxWin( );
+afx_msg void OnChar(UINT nChar, UINT nRepCnt, UINT nFlags );
+afx_msg void OnLButtonUp(UINT nFlags, CPoint point );
+
+DECLARE_MESSAGE_MAP( )
+};
+
+#endif
+
+MessBoxWin.cpp
+
+#include <afxwin.h>
+#include "MessBoxWin.h"
+
+int retval = 0;
+char str[80];
+
+CMessBoxWin :: CMessBoxWin( )
+{
+Create(NULL,"Message Box Program");
+}
+
+ 
+
+afx_msg void CMessBoxWin ::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags )
+{
+
+retval = MessageBox("The user has pressed a key", "Default OK Button Only");
+
+}
+
+ 
+
+afx_msg void CMessBoxWin :: OnLButtonUp(UINT nFlags, CPoint point )
+{
+MessageBox("The user has lifted the left mouse Button", "Explicitily specifing the ok button only " , MB_OK);
+}
+
+ 
+
+MessBoxApp.h
+
+#ifndef MessBoxApp_h
+#define MessBoxApp_h
+
+class CMessBoxApp : public CWinApp
+{
+public:
+CMessBoxApp( );
+BOOL InitInstance( );
+};
+
+#endif
+
+ 
+
+MessBoxApp.cpp
+
+#include <afxwin.h>
+#include "MessBoxApp.h"
+#include "MessBoxWin.h"
+
+CMessBoxApp :: CMessBoxApp( )
+{
+;
+}
+
+ 
+
+BOOL CMessBoxApp :: InitInstance( )
+{
+m_pMainWnd = new CMessBoxWin;
+m_pMainWnd->ShowWindow(m_nCmdShow);
+m_pMainWnd->UpdateWindow( );
+return TRUE;
+}
+
+ 
+
+|MainFile.cpp
+
+#include <afxwin.h>
+#include "MessBoxApp.h"
+#include "MessBoxWin.h"
+
+BEGIN_MESSAGE_MAP(CMessBoxWin, CFrameWnd)
+
+ON_WM_CHAR( )
+ON_WM_LBUTTONUP( )
+
+END_MESSAGE_MAP( )
+
+CMessBoxApp CApp;
+
+ 
+
+IMPORTANT INFO 
+
+This section will inform you how to download the files already written for you . Do not rely on these files to learn how to program. These files are being supplied for reference only. If you can not create your own Window, without referring to a reference material other than online help, you should go back and try it again.
+
+But the files are available to you to download on a per program basis. They will be available for the rest of the chapters when ever you see this button. . Just click on this button and you will be prompted to download the files for the module. Save these files into some directory on your local hard drive. These files will be in a zip format, so you will require a unzip program. Then follow the directions below, to be able to add them to your project. This will save you time and help you to learn what you did, compared to what was expected.
+
+ Download code files
+
+Instruction for adding files.
+
+1) Make sure that you downloaded the files.
+2) Unzip the files using your choice of a unzip program.
+3) Then create a new Visual C++ project ( this will create a new folder for you )
+4) Find the files that are referred to in the project in the folder of unzipped files.
+5) Copy these files to the newly created folder by Visual C++. It normally has the same name as the project.
+6) Then go to Visual C++ project.
+7) In the workspace (bottom) , you will notice at the bottom the FileView, click on this tab.
+8) Expand the files for this project. ( click on the + sign )
+9) Notice that 3 folders are used. Header Files, Source Files and Resource Files.
+10) Right click on the Header Files folder.
+11) Chose Add Files to project.
+12) If you have copied the files into this project's folder you will see them here.
+13) Highlight all the header files and then click OK.
+14) Repeat the process to add all the Source Files.
+15) Set the project settings and you should be able to compile your program.
+16) Try this after you have downloaded the program files from our web site. Make sure to create a new project.
+
+
+

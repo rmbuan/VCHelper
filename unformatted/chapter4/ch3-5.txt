@@ -1,0 +1,30 @@
+Device Context
+
+
+A device context must be obtained before your program can write to the screen and when your application is completed the device context must be released. Another good thing about MFC is that it will create the device context for you and when your application is completed, it will release the device context automatically. This is done by declaring an object of CClientDC. This will be explained shortly. But it is still necessary to understand what a device context is. 
+
+A device context is a structure that describes the display environment of a window. What is contained in this structure is the device driver ( hardware specific) for your screen and what font type that is to be used and where the window is, in relation to the screen. All a device context really is:  is a method to get to the screen. Think of it as a stream of data that flows directly to the screen. If your application must print, then you would have to set up a device context for the printer and then you will set up a data stream straight to the printer object.
+
+CClientDC is a class derived from CDC. This is the fastest and simplest way to declare a device context. All that has to be done is to declare an object of this type. The constructor, CCLIENTDC(CWND *Window) , really just takes a pointer to the window, that it is being declared for. Most often the window is just a pointer to the open window "this" . Therefore when the "this" pointer is used it is referring to the parent window. In the example's case, it means, the only window.
+
+If a device context can not be achieved, it will throw a CResourceException. We will deal with exceptions later.
+
+Since CClientDC is derived from the CDC class the programmer now has access to the member functions in the CDC class. One of the functions that we will be using in the next example is TextOut. This function is used to write out to the screen. The prototype for this function is virtual BOOL TextOut(int X, int Y , LPCSTR lpszStr, int Length). Where the X and Y are co-ordinates of the window (it is important to remember this is different from the screen.). LPCSTR lpszStr is a constant pointer to what is to be displayed to the screen in this case and Length is how long is the string that is going to be displayed. Remember the data type LPCSTR. It is a constant pointer to string.
+
+An important note here is that there are two functions called TextOut( ). The second function deals with CString and since most windows actions are done through dialog boxes it will not be explained here. CString is another type of string. It encompasses more than a simple string but we will get to that during the Dialog Box chapter.
+
+wsprintf( ) is a function that basically just formats the output to the screen. The prototype is 
+int wsprintf(LPSTR lpOut, LPCSTR lpFmt …)  It is important to realize here, what the  ....  means. It is a method to write a function when you do not know how many variables are going to be sent to the function. In this case many variables could be sent.  Below are someexamples :
+
+assuming the following have been declared.   char str[80]  ,  int ivalue  ,  char  cvalue 
+
+Example 1
+
+wsprintf ( str, " %d ", ivalue);  //  This will take the integer value stored in ivalue and convert it to a string and that string will be str.
+
+Example 2
+
+wsprintf( str "%d %c",ivalue,cvalue) //   This will take the value stored in ivalue and cvalue and store the concatinated string in str.
+
+There are many overloaded wsprintf ( ) functions.  Check the help file and do a search on wsprintf to discover all the different formats for this function.  The %d and %c may seem a little strange to you, if you have not taken C programming before. They are known as conversion specifiers. There is a list of them as well. Check the help file.
+

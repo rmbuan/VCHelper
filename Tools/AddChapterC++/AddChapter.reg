@@ -1,0 +1,13 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+
+HKEY_CLASSES_ROOT\AddChapter.Document = AddCha Document
+HKEY_CLASSES_ROOT\AddChapter.Document\CLSID = {97996BC1-FCA5-414C-9D81-4B7B6E0E1E28}
+
+HKEY_CLASSES_ROOT\CLSID\{97996BC1-FCA5-414C-9D81-4B7B6E0E1E28} = AddCha Document
+HKEY_CLASSES_ROOT\CLSID\{97996BC1-FCA5-414C-9D81-4B7B6E0E1E28}\ProgId = AddChapter.Document
+HKEY_CLASSES_ROOT\CLSID\{97996BC1-FCA5-414C-9D81-4B7B6E0E1E28}\LocalServer32 = ADDCHAPTER.EXE

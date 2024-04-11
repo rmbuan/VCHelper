@@ -1,0 +1,168 @@
+Questions Chapter One
+
+1.   Which of the following are true about the module Introduction to Microsoft Foundation Classes ?
+
+To explain Microsoft Foundation Classes and their structure 
+To explain how to avoid using Microsoft Foundation Classes 
+To explain Graphics programming using Microsoft Foundation Classes 
+It will be a simple procedure to learn Microsoft Foundation Classes 
+2.  True or False Since you have programmed in Dos C++ or other windows development environments. It should
+be easy to understand MFC's and how they work ? 
+
+a: True
+b: False
+
+3. Which of the following are true about MFC's ?
+
+They are a collection of already defined classes , that the programmer just calls upon 
+They are user defined classes, well designed. 
+They are used to produce DOS based applications 
+They make programming Windows applications easier 
+ 
+
+4. What does API Stand for ? 
+
+Approved Programming Interface 
+Application Provided Interface 
+Application Programming Interface 
+All Possible Interaction 
+5.  Re-useable code refers to : ?
+
+Code that you cut and paste into different programs 
+Code that you write once and since it is completed the computer knows of its existence 
+Code that refers to ease of use and portable 
+Code that is tested and packaged in a manner to make it easily portable. 
+6.   What version of MFC comes with the Microsoft Visual Studio 6.0 ?
+
+Version 4.0 
+Version 4.5 
+Version 5.0 
+Version 6.0 
+7.   Microsoft Foundation Classes forces the programmer to be concerned with the Windows environment more than the programming of the application ? 
+
+            a: True
+            b: False
+
+8.   Growth in programming will be faster in the 16 bit programming world compared to the 32 bit programming world. 32 bit programming is for the future ?
+
+            a: True
+            b: False
+
+9.   The shortest code that you could write to create a window in traditional programming was how many lines of code ?
+
+a: 50
+b: 75
+c: 100
+d: over 1000
+
+10.  In order to be able to use MFC in programming, you must have done traditional windows programming first ?
+
+a: True
+b: False
+
+11.  What does the term DLL stand for?
+
+Dynamic Located Loop 
+Destroy Library Loop 
+Dynamic Linked Loop 
+Dynamic Linked Library 
+12.  Explain why DLL's are used ? ( Short Answer )
+
+11.  In 16 bit programming you had to declare pointers as being near or far, but in 32 bit programming this is no longer a concern ?
+
+a: True 
+b: False
+
+ 
+
+12.  What is meant by the term Multitasking, in programming terms ?
+
+Means to have more than one application executing at a time 
+Means to have more than one process executing at a time 
+Means to have more than one thread executing at a time 
+All of the above. 
+13.   Explain what is meant by non- preemptive mutlitasking and preemptive multitasking ? ( Short Answer )
+
+14.   A process is : 
+
+An application 
+A portion of an application 
+Contains at least one or more threads 
+Answers b and c are correct. 
+All are correct. 
+15.    A thread is:
+
+An application 
+A portion of an application 
+Contains at least one or more threads 
+Answers b and c are correct 
+All are correct 
+16.  Preemptive multitasking can cause a mis-behaving thread to crash the system ?
+
+a: True
+b: False
+
+17.  In Windows programming it is your application that sends messages to windows to complete an application operation . Windows is just he shell that your application sits on ? 
+
+a: True
+b: False
+
+18.   The benefit to the end user when it comes to Windows programs are :
+
+Users are given a friendly environment to work in. 
+They can direct how the application runs 
+The application is smaller in size. 
+a and b are correct. 
+All are correct. 
+19. DOS programming starting execution with the function called "main", and this is the only portion of the dos programming world that windows resembles ?
+
+a: True
+b: False
+
+
+20.  Your application does not need to respond to every event that occurs during the execution of your program ?
+
+a: True
+b: False
+
+21. Windows Procedure is created so that your application has an access point in which to pass messages back and forth between your application and Windows ?
+
+a: True
+b: False
+
+22. When using MFC, you as the programmer must create the Windows Procedure ?
+
+a: True
+b: False
+
+23.  Explain the purpose of the Message Loop ? ( Short Answer )
+
+24.  Explain why you must pass your application event to Windows so that Windows can send it back to your application , so that is may be executed ?  ( Short Answer )  
+
+25. There is complete freedom in Windows design of your application's interface ?
+
+a: True
+b: False
+
+26. You should never try to duplicate the appearance of any other program, it would cause confusion to the end user ?
+
+a: True
+b: False
+
+27.  What does HWND refer to ? ( choose the best answers)
+
+refers to a pointer to a window 
+points to a string 
+refers to a handle in old terminology 
+points to a constant string. 
+28. What does LPSTR refer to ?
+
+is an unsigned long integer 
+is a pointer to a constant string 
+is a pointer to a string 
+is an unsigned character 
+29. Standard naming conventions really don't help because you the programmer know what data type each variable  is and you know what the variable is supposed to represent  ?
+
+a: True
+b: False
+

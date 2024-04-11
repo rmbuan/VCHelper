@@ -1,0 +1,20 @@
+Explain Creating Windows 
+
+
+Create ( ) function explained in detail
+
+This is where the function create is explained so that you can customize the first program to be able to look the way you wish it to look. First we must start with the constructor.
+
+BOOL CFrameWnd::Create(LPCSTR ClassName, LPCSTR Title, DWORD Style = ERLAPPEDWINDOW, const RECT &XYsize= rectDefault , CWnd *Parent = NULL, LPCSTR MenuName = NULL, DWORD ExStyle = 0, CCreateContext *Context = NULL);
+
+First notice the return value. It is either a TRUE or FALSE value, either a zero or a nonzero. Nonzero if successful, zero if not. 
+
+Notice that most of the parameters have default values. It is just the first two values that must be specified as in our First Program. These are the only two parameters that are absolutely required. The rest of the parameters are used to further define your window. I will explain the parameters one by one and then we will try some examples on how to change the look of our window. At the end of this chapter you will have to create a window with the characteristics that demonstrate how to customize windows.
+
+LPCSTR ClassName. This is usually set to NULL , which means that you are excepting the default values for the style of the window. This can be changed by registering your own class style. This is done by using the function AfxRegisterWndClass. LPCSTR is a data type that is a long pointer to a constant string.
+
+LPCSTR Title. This is self explanatory. This is the title of the window. What ever is included in here will be displayed in the title bar of the window. It is not normal to leave the title blank, but there could be times when you may not want to see the title bar at all. In this case what ever you display here will not be seen.
+
+DWORD Style = WS_OVERLAPPEDWINDOW. This is a display style of the window. There are the different ways of displaying the window. See exercise 1 to further demonstrate the differences in this parameter.
+
+ 

@@ -1,0 +1,99 @@
+Global Message Box
+
+
+This program will show how to use the global message box. This message box can be included in your program but it really does not belong to your program. The function is global. You write it the same as you would any other program but you must understand that this message box can be called before your application actually gets loaded into memory. The main purpose, in modern programming, for this function is to let the programmer do something before the program actually starts. An example of this would be, to check for a sound card in the system. Or prompt the user if he/she is sure they want to run this program. You can download the code from the previous page.
+
+GlobalMessWin.h
+
+#ifndef GlobMessWin_h
+#define GlobMessWin_h
+
+class CMessBoxWin : public CFrameWnd
+{
+public :
+CMessBoxWin( );
+afx_msg void OnChar(UINT nChar, UINT nRepCnt, UINT nFlags );
+afx_msg void OnLButtonUp(UINT nFlags, CPoint point );
+
+DECLARE_MESSAGE_MAP( )
+};
+
+#endif
+
+ 
+
+GlobalMessWin.cpp
+
+#include <afxwin.h>
+#include "GlobMessWin.h"
+
+int retval = 0;
+
+char str[80];
+
+CMessBoxWin :: CMessBoxWin( )
+{ 
+Create(NULL,"Message Box Program");
+}
+
+ 
+
+afx_msg void CMessBoxWin ::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags )
+{
+retval = MessageBox("The user has pressed a key", "Default OK Button Only");
+}
+
+afx_msg void CMessBoxWin :: OnLButtonUp(UINT nFlags, CPoint point )
+{
+MessageBox("The user has lifted the left mouse Button", "Explicitily specifing the ok button only " , MB_OK);
+}
+
+GlobalMessApp.h
+
+#ifndef GlobMessApp_h
+#define GlobMessApp_h
+
+class CMessBoxApp : public CWinApp
+{
+public: 
+CMessBoxApp( );
+BOOL InitInstance( );
+};
+
+#endif
+
+GlobalMessApp.cpp
+
+#include <afxwin.h>
+#include "GlobMessApp.h"
+#include "GlobMessWin.h"
+
+CMessBoxApp :: CMessBoxApp( )
+{
+;
+}
+
+BOOL CMessBoxApp :: InitInstance( )
+{
+AfxMessageBox("Do you really want to run this program",MB_YESNO|MB_ICONSTOP);
+m_pMainWnd = new CMessBoxWin;
+m_pMainWnd->ShowWindow(m_nCmdShow);
+m_pMainWnd->UpdateWindow( );
+return TRUE;
+}
+
+MainFile.cpp
+
+#include <afxwin.h>
+#include "GlobMessApp.h"
+#include "GlobMessWin.h"
+
+BEGIN_MESSAGE_MAP(CMessBoxWin, CFrameWnd)
+
+ON_WM_CHAR( )
+ON_WM_LBUTTONUP( )
+
+END_MESSAGE_MAP( )
+
+CMessBoxApp CApp;
+

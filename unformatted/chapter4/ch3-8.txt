@@ -1,0 +1,18 @@
+OnPaint
+
+
+To deal with the left and right mouse button, first the On_Paint message handler must be explained. Then I will guide you through creating the program to deal these messages.
+
+On_Paint
+
+Run any of the previous applications. Minimize the window than maximize the window. What is happening is that your window is being redrawn by Windows. But if you had any data enclosed inside the window that data would not be repainted. Why not ?
+
+Well the answer is Windows knows about your window through the default OnPaint( ) message handler, but has no knowledge of what it contains. What is contained in your application window, is your problem to deal with by rewriting the OnPaint message handler. Windows can deal with the size , colour and shape of your window and will redraw it when it is moved, when it is minimized and then restore it by automatically sending the WM_PAINT messge. 
+
+When ever your window needs to be redrawn it sends a message to your application and the OnPaint( ) message handler will take control, so it must have a method to rebuild the data that is to be displayed again. There are many different ways in which to do this. This message can be sent because your application has had, another window covering it and it has become uncovered, or minimized and then restored. Or there are times during execution of your program that the window will have to be redrawn. I will deal with your application calling for the screen to be redrawn shortly.
+
+Then to get the WM_PAINT message handled by your application, all that has to be done is add the message macro ON_WM_PAINT ( ) to the message map in the MainFile.cpp. Then add the message handler OnPaint to the class definition of the FirstWindow class and then write the implementation of the OnPaint.
+
+The MessageApplication has be rewritten to now use the OnChar message handler a little differently and to include the OnPaint message handler. Enter the code on the next page.
+
+ 

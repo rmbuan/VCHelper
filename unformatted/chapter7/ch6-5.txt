@@ -1,0 +1,19 @@
+Code Explained 
+
+Download Code: http://liad.gbrownc.on.ca/computer/Code%20examples/dialog1.zip
+
+
+After you have downloaded the code from the previous page and created a new project. You would copy the files into the same folder as your project. Then add all the files to the project and change the project settings as was mentioned before. If you looked at the code in MainFile.cpp you will notice that there are two message maps now. One for the main window and one for the dialog box. This proves once again that dialog boxes are windows.
+
+You execute the program and you see how it works. Now how does it do it. When you click on the menu item to show the dialog box. It appears. Then when you click on a button it displays a message box telling you what would normally happen at this stage. When you click on Sales, a new dialog box would come up with relevant information for processing a sale. This was not done at this time but will give you the idea of how to do it.
+
+When ever a button is clicked upon, it generates an ON_COMMAND message. If the dialog box is not displayed then the main window's message handlers will deal with the message. This is proven by the displaying of  the Dialog Box from the message handler OnShowDialog of the main windows message map. Then once the dialog box is display its message map takes over and handles the requests. If you were to click the menu again, the main window would handle the message. The last statement will only work if the Dialog Box was a modeless Dialog Box.
+
+You will also notice that OnCancel is not defined here. In this case, there was nothing special that we wanted to accomplish. The default OnCancel message handler just closes the window and that is all that we wanted to do in this program. If there was something else that was supposed to happen, you would have to over write this handler and include it in the proper message map. The Dialog's message map. An example would be if you were processing a sale and then the customer either did not pass the credit check, or had a change of mind and did not want the product. You could cancel the sale and rollback any changes that were made to any database or file that was keeping track of your inventory.
+
+IMPORTANT INFO : If you get an assertion error at this point , it is because you need to install the service pak 3 for Visual Studio. This is a known problem and is fixed by installing this serivice pak. If you do not have the service pak3. Close everything in the Visual Studio and re-open the project it will work.
+
+  
+ 
+   
+ 

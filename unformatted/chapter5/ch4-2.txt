@@ -1,0 +1,6 @@
+Message Boxes Explained Further
+
+
+Now to explain, how to use the third parameter, and the different things that this parameter can do for your application. The main difference is the different style or how many buttons and which buttons will appear. The next example will use the same MessageBox function and will explore other parts of it.
+
+This project will show you how to use the different button layout as well as the decision making process of using these buttons. Once completed this project will show you how to respond depending on which button is clicked on the message box. This is standard for many applications. Remember, it was mentioned earlier, a user should be prompted to save the changes or not. Well this project will show you how to do this without using a file. We have not learned them yet.

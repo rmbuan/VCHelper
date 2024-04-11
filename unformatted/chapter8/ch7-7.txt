@@ -1,0 +1,47 @@
+Data Exchange Explained
+
+
+MoveData.h
+
+This describes the window class and you will notice that OnExit and OnShow are two message handlers that have been declared here. OnExit is the function that will close the application from the menu. OnShow will display the dialog box.
+
+MoveDataWin.h
+
+This is where the window gets created and the menu and accelerator table gets loaded. The OnExit function and the OnShow function are defined here. 
+
+The OnShow function declares a variable of the derived dialog box CControlsDialog. It then proceeds to set the data members of the dialog box to the values that are stored in the global variables that are defined in the GlobVar.h file. The variables are initialized prior to the dialog window being displayed by the DoModal( ) function.
+
+MoveDataApp.h
+
+This file defines the application class of the project and also declares the OnInitInstance( ) function. This is where you would put the code if you wished for anything to occur prior to the window being displayed.
+
+MoveDataApp.cpp
+
+This files just defines the OnInitInstance( ) function. This is the same file that has been used throughout the course.
+
+ControlsDialog.h
+
+This file defines the class for the dialog box. You will notice that not only does this file declare the message handler OnExit, it also declares variables that will be attached to each of the controls on the dialog box. There are no variables declared for any of the static text boxes. This is because it is not usual to change this value, nor are these values likely to change during the execution of the program. The function DoDataExchange ( ) was declared here. 
+
+The variables are of the data type CString. For right now, think of these as character pointers. CString by it's name, indicates that it is a class, which it is. But for now, think of it as string. The reason that CString is used ,is because the DDX_Text function is used later, requires this data type.
+
+It is important here to indicate that the data members are public and should be declared to be protected. This was not done here because that would suggest a long discussion of object oriented programming techniques. The OOP design principles are somewhat unclear at this time. Many people argue as to what extent the OOP design should be carried out. The main concern is the data encapsulation. So for this reason, concern for protecting of data was ignored. Data validation should be of a concern here. But there are many ways to define data validation.
+
+ControlsDialog.cpp
+
+This file uses the function DoDataExchange ( ) to set up the link between the controls and the data members . First the DoDataExchange from the base class CDialog is called. This will handle some of the routine functions for us. Since MFC is being used, why not call the functions from the base class to setup the environment and then do what needs to be done. This is what has been done.
+
+The function prototype for is DoDataExchange(CDataExchange *YourData).
+
+Where CDataExchange is a class and *YourData is a pointer that will hold the data that you wish to maintain on the dialog box. Usually the pointer is pDC, as was used in this program. Now that the program has a pointer to the data, it can use the DDX_?????? functions
+
+The DDX_Check and DDX_Text functions are used here. The DDX_Check is used to set the link between the member variable and the ID of the variable. This should be used for the check box variables and DDX_Radio should be used for the radio button. As you will notice DDX_Text was used with the edit box functions. There is also DDX_Scroll to assign values to the scroll bar.
+
+There are also a set of DDV_XXXXX functions that can be used to validate values in the controls. This will be explained further in the GUI portion of this chapter.
+
+The OnExit function is also defined here. All that it does is when the user clicks on the OK button of the dialog box, the values are copied back into the global functions. This will change the value of the global function and the next time the dialog box is displayed, the new values will be displayed.
+
+MainFile.cpp
+
+This file just sets up the message maps and declares a variable of the application class to create the project.
+

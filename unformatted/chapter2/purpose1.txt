@@ -1,0 +1,13 @@
+Introduction
+
+
+Purpose
+
+The main purpose of this chapter is to explain what Microsoft Foundation Classes are and to help you understand the basic structure of MFC’s. The attempt is to provide a practical, hands on approach, to business programming. 
+
+You must learn how Windows operates and how it interacts with your program.
+
+There are some simple well defined rules for programming in the windows environment that must be given attention.
+
+The concepts of the windows environment and windows programming are large to say the least. It is not possible, for one course to cover them all. What is covered in this course, is the basics that are used in almost all windows based programs. Each concept is covered fully and the intent is to provide you with a firm foundation of the concepts, so that you can explore them further on your own.
+

@@ -1,0 +1,13 @@
+Multitasking
+ 
+
+Windows is a multitasking environment. Which means that more than one application can be executed at one time. This is not true in reality. But because of the speed of the newer CPU’s it appears to be correct. 
+
+An application will contain many processes. Each process will have one or more than one thread. A thread is the smallest part a program can be broken up into. This is done so that multitasking is possible.  A CPU can execute one thread from one application and then another thread for another application can be set to execute. Threads are small pieces of code that usually do a small task, similar to functions. Since a thread is tiny in execution time, threads from different programs appear to be running at the same time.
+
+The newer type of multitasking allows for thread multitasking. Allows for not only two or more programs to run but for two or more functions inside each program to run as well. Allowing the programs to execute quicker because it does not have to wait for one portion of the program to finish executing completely while the CPU remains idle. 
+
+Think of it this way. There are times when the CPU has to wait for data to be retrieved from the hard drive. During this time the CPU is doing nothing. With multitasking, it is possible to have another thread using the CPU's time and therefore processing appears to be quicker.
+
+The older Windows 3.1 was non-preemptive multitasking while Windows 95/98 and NT are pre-emptive multitasking. This does not allow a misbehaving thread from freezing the system.
+

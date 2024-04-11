@@ -1,0 +1,21 @@
+Basic of Menus and Resource Files
+
+
+A menu, in Visual C++ is considered an external resource that must be included into your project. This means that you must use a resource editor or a text editor to create the menu. Then when you add the menu to the project you have to associate it (link it) to a window. This is accomplished using the CFrameWnd:: Create( ) function. A reminder of what the prototype of Create looks like: 
+
+BOOL Create( LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle = WS_OVERLAPPEDWINDOW, const RECT& rect = rectDefault, CWnd* pParentWnd = NULL, LPCTSTR lpszMenuName = NULL, DWORD dwExStyle = 0, CCreateContext* pContext = NULL );
+
+Once the menu is created and associated to the window all you have to do is write what you want to happen when the user chooses that menu option. 
+
+Resources
+
+Since Menus are external resources, resources should be explained a little. Resources are objects your program use, but are not really part of your program. Therefore they are a separate file. Even though they are contained in a separate file, a good development environment will allow you to edit these resource files within the same environment that you edit other files. This course is using the Microsoft Visual Studio , Version 6.0 development environment. We have been editing code in the header files and the source files all in the same environment. 
+
+Resource files can also be edited here as well. All that has to done, is add the file to the project or create a new resource file and then it can be edited from within the environment. In the early part of this course the VS environment  will not be used to create a menu. Instead a text editor will be used to create the menu. Later we will use the built in tools to create a menu. It is a point of interest here, that not only does the environment allow the programmer to create menus graphically, they can also edit icons, and bitmaps. A word of caution though: In many cases it is more convenient to edit graphics in a graphic-editing tool and then, to include them into the project.
+
+Resource files have the extension .rc . A resource compiler is then required to compile the .rc file into your application. Most modern compilers have built in resource compilers, so this is of little concern to the programmer. Once the .rc file is compiled and linked it takes the extension .res . Built in resource compilers assist the programmer by not having to perform additional steps, to compiler the resources and then having to compile the program.
+
+When creating a menu you should try to stay with window's standards. 
+
+Now is the time to see how to create a program that uses a menu. The first program MenuProg just identifies a simple menu. The menu really does not do any work yet. It will be the foundation of how to build a menu. 
+

@@ -1,0 +1,12 @@
+Code download
+
+Download Code: http://liad.gbrownc.on.ca/computer/Code%20examples/globmess.zip
+
+ You will notice that there is another button under the topic heading. This code button will appear when ever there is code that needs to be downloaded. In this case the code for the Global Message Box example is available for download. It might appear that this code button is out of sequence, but this is just a practice page. You should be able to download this file in a zip format. To make this work, you will have to download the file and save it to disk. Create a temporary folder to unzip the files into. Then extract the files into the newly created folder.
+
+Then start the Visual C++ program and create a new project with the name GlobMess. This will create a folder on your hard disk with the name GlobMess. You will find the temporary folder that you extracted the files into and copy all the files into the GlobMess folder. Now you are ready to add the files to this project. No longer will you have to copy code from the web page.
+
+In case you have forgotten how to add files to the project, here is a little reminder.
+
+animation.
+

@@ -1,0 +1,23 @@
+Adding and Deleting Explained
+
+
+In the resource file has been changed to add a couple of push button and an edit box. Notice that there DEFPUSHBUTTON was used to declare the Add push button. This means that the Add button will be the defaulted button and will be active first. You had to click into the Edit box.
+
+The resource file produced three new ids. IDD_FIRSTEDIT, IDD_ADD, and IDD_DELETE. These are obvious what they are attached to. These ids were then added to the IDS.H header file. A word of caution here. If you are adding ids into the header file and assigning integer values to them, make sure that after the last value has been entered that you press the "enter key". If you do not do this you will get "can't find the end of file error " when it is compiled.
+
+The message handlers had to be assigned to the CDialogBox class. And their definitions were completed in the DialogBox.cpp file.
+
+In the OnAdd function a pointer of type CEdit type was declared and just like in the OnChosen function the GetDlgItem function was used to get a pointer to the edit box. This pointer was identified by the IDD_FIRSTEDIT identifier being used to determine which control to get a pointer to. The pointer then had to be cast to the CEdit type. That is the purpose of ( CEdit *).
+
+A temporary string was declared so that GetWindowText has some place to copy the edit box contents into. The sizeof the "tempstring" was used to keep track of the maximum number of characters to copy into the string. The minus 1 was used to save space for the NULL character , which we all know must be the final character in all strings. Right.
+
+The function GetWindowText will return the number of characters that were copied. So this number was used to check to see if something was entered. If nothing was entered into the edit box there would be no characters to copy, therefore the length of the string would be zero.
+
+All that has been accomplished so far is to get the value that was entered into the edit box. This by itself can be useful, but not for this project. 
+
+At this time we obtained a pointer to the list box so that we could add a string to it. The string was obtained using the GetDlgItem ( ) function. This time the ID of the list box was passed. Once we had a pointer to the list box and had the value that was entered into the edit box , it was an easy step to call the AddString ( ) function. This added the value to the listbox.
+
+Once the value was added to the list box you could double click on it and a message box would popup displaying what was chosen. This was from the last project. Then just for fun the SetWindowText ( ) function was used to write to the edit box that the value was added. 
+
+This was accomplished by using the pointer to the edit box and calling the function SetWindowText ( ) with the hard coding of the statement. The pointer was still active because it was not out of scope yet. In other words we were still in the same function as when it was obtained. Once the code leaves this function the pointer is no longer active.
+

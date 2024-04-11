@@ -1,0 +1,9 @@
+Menu Program (Demonstrate Resource Files)
+ 
+Download Files: http://liad.gbrownc.on.ca/computer/Code%20examples/menuprog.zip
+
+A word here about creating this program. The window and application classes are created in the same manner as all the previous programs. But when it comes to creating menu resource files, at this point in the course use a text editor. Save the file with a .rc extension and then add the file to the project. Keep the text editor open with the file. If there are changes required to the file you will have to open the file, edit it and then save the file separately from you program ( Do not close the file). Remember from here you will have to download the code and add the files to the program. 
+
+To create the resource file you would create it in notepad, wordpad or some text editor. Save the file with the extension .rc. If you save the file with a .txt extension , it will compile and then when you execute it, it will give a general fault protection error. If you click on the code button you will have all the files that you require to run this sample application. It only shows the graphical portion of creating a menu. Later we will add the message handlers to deal with what to do when the user chooses a menu selection. Download the files and create a new project called MenuProg. Unzip the files and copy them to the MenuProg folder. Execute the program. You will see that the menu is visible but not active. All the options will be greyed out because they is no code for each of the menu options.
+
+  

@@ -1,0 +1,11 @@
+Explore Further
+
+This will help you get used to where to create windows on the screen. It will also help you become more familiar with the RECT structure and the method of determining the best window placement. 
+
+Your goal here is to create new windows. This can be done using the method shown in Exercise One or creating seperate programs. This is your choice.
+
+Problem Statement :
+
+Create a window that is displayed in the center of the screen.   Then create a window that is half the size of the original and appears in the top left corner of the screen.  It is your duty to explain the difference between the two windows ( remember to try your windows in different resolutions ). Then explain, in what circumstances would each window be used for.
+
+  

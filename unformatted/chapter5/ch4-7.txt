@@ -1,0 +1,25 @@
+Code Explained Message Box 2
+
+
+You will notice that the code in this project is similar to the MessBox code. Therefore the only explaination that is required here is the code that is in MessBoxWin.cpp. 
+
+Here you see that the MessageBox function is using the third parameter. The third parameter will deal with what buttons will be displayed and it will deal with whether an icon will be displayed in the message box. The icon will give the user a visual indication of the nature of the message box. 
+
+If it is a question that you are asking the user ( Do you wish to continue ) then a question mark should appear in the message box. 
+
+If it is a critical error message that you are informing the user of , you should put a stop sign icon in the box. 
+
+An important message that your message box is informing the user of, then you should use the exclamation mark. 
+
+These visual items help the user to become more familiar with your application. 
+
+A word of caution here: 
+
+User interfaces should always be consistent. So when you are using these icons make sure that you use them in the same way. Don’t put a critical message error up once with a stop sign icon and then the next time, do not put it up. This leads to confusion from the user’s perspective. 
+
+Notice that the OnChar function has many different examples of message boxes. This is placed here just to show how to use the third parameter of the MessageBox function. If you wish, you can comment out all the separate MessageBox functions so you can see what each one individually looks like. 
+
+The OnLButtonUp function does a little bit more. It prompts the user to answer YES or NO and depending on the users response a different message box will be displayed. The constant IDYES is being used here. This is returned from the message box when the user chooses the YES button on the message box. The following message boxes then demonstrate how to use the MBICON constants . 
+
+The final message box shows you a method to display not only what type of icon to display but which buttons to display as well. It would be wise for you to go through practicing how to display different buttons with different icons. 
+

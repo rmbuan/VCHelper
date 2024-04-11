@@ -1,0 +1,21 @@
+Exercise 2
+
+In this exercise you  will build a build a Toolbar from scratch. The graphics will be simple, nothing that will take any time at all.
+
+Here are the steps that you will do to complete this exercise.
+
+1) Create a new project
+2) Create the Application and Window Class
+3) Create a simple menu  (  File , with Open, Close and Exit )
+4) Write the message handlers and build the message map for each of the menu options
+5) Create three bitmaps in paint. ( The bitmaps have to be 16 X 15 pixels. This can be done by using the Image - > Attribute menu option in paint. The image should be a square with different colours.  Where Open will be red, Close will be blue and Exit will be black.)
+6) Create a new bitmap which is (16 X 15) X 3 or 48 X 15.
+7) Paste the coloured bitmaps onto the new bitmap just created. This is how all toolbars are created. It is easier in the GUI environment. This exercise will re-enforce what is really happening.
+8) Then define the bitmap in the resource file.
+9) Create the TButton Structure, keeping in mind how many buttons you will be using
+10)  Add the buttons
+11)  Run your program ( only buttons appear , no image.  Test the buttons)
+12) Add the bitmap  
+13) Run the program again and you will see the images.  Test the buttons.
+
+ 

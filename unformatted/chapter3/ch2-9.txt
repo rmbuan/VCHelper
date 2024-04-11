@@ -1,0 +1,44 @@
+Exercise 2
+
+
+This portion of the Create( ) function "const Rect &Xysize = rectDefault" is the size and location of window. The way this works is the RECT is a data structure that has the following variables inside it. 
+
+RECT (structure)
+
+LONG left, 
+LONG top, 
+LONG right 
+LONG bottom. 
+
+So from this you can determine what is used to display the window in the location that you wish. It is important to note that the values stored in these variables are not in inches, it is in pixels. Pixels are sometimes referred to as device units. The combination of left and top is the starting point ( top left point) from where the window will be drawn and the combination of the right and bottom will be the bottom right corner of the window. Which means the value of left is how far from the left you wish the window to start, the top is how far down the screen to start. Then the right is how far from the right of the screen and the bottom, is how far from the bottom does the window go. It is interesting to test this window feature. See Exercise 2.
+
+ 
+
+Exercise 2
+The changes will again take place in the place that defines the window, the FirstWindow.cpp
+
+To be able to test this feature you must first declare a variable of the RECT type. Then you can change the numbers to see what happens. So using your first program we will explore this. Declare a variable called NewPlace to be of type RECT. Then give the top member variable the value of 100, give the left member variable the value of 100. This will determine where the window will start to be displayed. Then give the right member variable the value of 500 and the bottom member variable the value of 400. Once this is done, use the Create function to accept the default window style by using NULL and the Title will be Placing a window. The window style will be the default WS_OVERLAPPEDWINDOW (you have to enter it. You will notice once you start customizing your window you will be doing more work.)and then enter the variable of the type RECT , NewPlace) Compile the program and see what happens to the window. Then try to change the numbers to see what happens when you change these numbers.
+
+Code for Exercise 2
+
+ #include "FirstWindow.h"
+
+CFirstWindow :: CFirstWindow( )
+
+{
+
+RECT NewPlace;
+
+NewPlace.left = 100;
+
+NewPlace.top = 100;
+
+NewPlace.right = 500;
+
+NewPlace.bottom = 400;
+
+Create(NULL,"Placing a Window", WS_OVERLAPPEDWINDOW,NewPlace);
+
+}
+
+  

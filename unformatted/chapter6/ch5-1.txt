@@ -1,0 +1,10 @@
+Introduction to Menus and Resources
+
+
+There are very few windows applications that do not use menus. All Windows applications rely heavily on menus, so it is safe to assume,  MFCs would know how to deal with menus. It is also fair to say that users expect to be able to use menus. Your application better have a menu or users will probably not use your application.
+
+Menus can change throughout your application. If your program has more than one window, you may choose to have many different menus, one for every window. Another method would be to have one menu with portions of the menu being "Grayed Out", or not active for the task that is being accomplished in your program at this time.
+
+Creating menus is easy in almost all windows based development environments. Visual C++ has a little more work than other development environments, but still a basic menu is still rather simple. Once this course moves forward to using the complete window development tools of Visual C++ creating menus will become even simpler.
+
+  

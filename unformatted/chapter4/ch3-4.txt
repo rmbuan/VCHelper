@@ -1,0 +1,26 @@
+Message , Macros , Handlers
+
+
+Below is a clearer understanding of messages, message macros and message handlers.
+
+Message Message Macro Message Handler 
+WM_CHAR ON_WM_CHAR( ) On_Char( ) 
+WM_PAINT ON_WM_PAINT( ) On_Paint( ) 
+WM_MOVE ON_WM_MOVE( ) On_Move ( ) 
+WM_CLOSE ON_WM_CLOSE( ) On_Close ( ) 
+WM_LBUTTONDOWN ON_WM_LBUTTONDOWN( ) OnLButtonDown( ) 
+Wm_RBUTTONDOWN ON_WM_RBUTTONDOWN( ) OnRButtonDown( ) 
+
+Keep in mind these are but a sample of all the messages that your application will be dealing with. Also keep in mind that what occurs in your program, when these messages are generated is up to you, the programmer. You can accept the default or you can write the code that you wish to have happen. Sometimes yet again there will be times where you wish to accept the default code and then add upon it. This is done more often than not.
+
+Below will explain what each message does.
+
+Message Purpose 
+WM_CHAR Will deal with the user pressing a key on the keyboard  
+WM_PAINT Will deal with what happens when the screen needs to be repainted 
+WM_MOVE Is used when the applicaton window is moved. 
+WM_CLOSE This is used when the application window is closed. 
+WM_LBUTTONDOWN Received when the left mouse button is pressed. 
+WM_RBUTTONDOWN Received when the right mouse button is pressed. 
+
+    

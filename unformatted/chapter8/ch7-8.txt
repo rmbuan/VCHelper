@@ -1,0 +1,13 @@
+Exercise 1
+
+This exercise will try to get you to use your imagination a little. There was an example of a sales transaction. This was unrealistic.   The application that you are required to write now will be to have a more realistic example of a sales transaction.
+
+Again you will create a window  and application class. Then you will create a menu that will hold , File, View , Help. 
+
+File will open a Customer Dialog Box and a Sales Window
+View will open Customer with information
+Help will open another Dialog Box that will show your name.
+
+The Customer Dialog Box will have everything related to a Customer. ( It is your job to think of what a company would sotre for customer information. ) The Sales Window will produce one sale of one item. There should be room for an Invoice number , product that was sold, quantity sold, and total price. You are not expected to have a working calculated price.  Just looking for the layout.
+
+  

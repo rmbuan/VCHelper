@@ -1,0 +1,104 @@
+Creating a Dialog Box
+
+In this chapter we will be creating a dialog box using the graphical interface. The dialog box is still the most used graphical interface in application develpment. Follow the steps below to create a dialog based application.
+
+
+1. Create a new folder in the MFC Course folder called Chap6
+
+2. http://liad.gbrownc.on.ca/computer/animation/Dialogbox.exe 
+ Here is the dialog based application that will be created.
+
+3. Create a new MFC AppWizard (exe) 
+
+4. This is going to be a Dialog Box based application, without Document view support.
+
+5. Accept the defaults to the next steps. Click Finish. The classes that are defined are:
+CAboutDlg
+CDialogBoxApp
+CDialogBoxDlg
+
+
+6. Build the Dialogbox application. You will notice that there is no window, only the dialog box. This is not the professional method for creating a Visual C++ business application. There are some instances where this is appropriate but since this course is about Visual C++ we will build the application to C++ standards.
+
+7. Close the appliation and the project. 
+
+8. http://liad.gbrownc.on.ca/computer/animation/DialogApplication.exe Here is the proper dialog based application.
+
+9. Create a new project similar to the one in Chapter 5. Create it to be a single document , without document view support. Name the project DialogApplication. It will create:
+CDialogApplicationApp
+CMainFrame
+CChildView
+
+10. Click on the ResourceView tab in the Workspace. Check the folders. There is dialog folder which contains the AboutDlg. This is the dialog box for the About Box. Build the application and execute it. Verify that it will run. A program tip: At each stage of developing a project, test to make sure that the project works as expected. The rule of thumb still applies : Compile often .
+
+11. To add a dialog box to the appliction, highlight the Dialog folder and Right Click. The menu that appears has the following options:
+Save DialogApplication.rc  [ used to explicitly save the resource file.]
+CheckOut  [ used if the project was being worked on by serveral people, SourceSave]
+Insert  [ allows the programmer to insert resources, including dialog boxes. ]
+Insert Dialog [ used to insert a Dialog Box ]
+Import [ used to import VB forms or wav files , or any already built components]
+Select the Insert Dialog 
+
+12. The IDD_Dialog1 is added to the project and the dialog box is open for editing. This name is not very descriptive. Right click on IDD_DIALOG1 and choose properties. In the ID box change the name of the dialog box to IDD_FIRST.
+
+13. Build and execute your program. Once the build process is completed the following code is inserted into the DialogApplication.rc file.
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE 0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About DialogApplication"
+FONT 8, "MS Sans Serif"
+BEGIN
+ICON IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+LTEXT "DialogApplication Version 1.0",IDC_STATIC,40,10,119,8,
+SS_NOPREFIX
+LTEXT "Copyright (C) 2000",IDC_STATIC,40,25,119,8
+DEFPUSHBUTTON "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_FIRST DIALOG DISCARDABLE 0, 0, 186, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+DEFPUSHBUTTON "OK",IDOK,129,7,50,14
+PUSHBUTTON "Cancel",IDCANCEL,129,24,50,14
+END
+
+The first portion is describing the About box. The coloured area describes the IDD_FIRST dialog box. 
+
+14. The dialog box is created, without any controls, other than the OK and Cancel buttons. The next step would be to have a method to display the dialog box. This is done by a menu option. Therefore create a new menu option under the File menu with the Caption Open, with the ID of IDM_OPEN. The Prompt should be "Open dialog box\nOpen". In the previous chapter, you were instructed to delete the menu item Exit to add the new menu item. This time just grab the blank menu item and drag it above the Exit menu item. Then create the new menu item.
+
+15. From the menu item Open, right click and select the ClassWizard. Create the OnOpen function. Before you can edit the code for this function, a class for the dialog box has to be created.
+
+16. To create the class for the IDD_FIRST Dialog box , select the ClassWizard from the View menu item in the environment. The environment realizes that the dialog box does not have a class defined for it. It prompts you either create a new class or use an existing class. Select New class.
+
+17. Name the class CFirstDlg. The new dialog box will be derived from CDialog box and the ID is IDD_FIRST.  It gives you the oppurtunity to change the name of the .cpp file, don't. Leave it as CFirstDlg.cpp. Click OK.
+
+18. The class CFirstDlg is created. The environment opens showing all the methods that are related to this class. Click the cancel. This will be discussed later.
+
+19. Build and execute the program. Terminate the application.
+
+20. Switch to the ClassView tab in the Workspace. Now the new class CFirstDlg has been added. 
+
+21. Click on the FileView tab and see that the CFirstDlg.h and CFirstDlg.cpp are created. Open these files and see that they look similar to the non-Gui dialog box class files. The message map is set up and the DoDataExchange is also started.
+
+22. Back to the OnOpen function in the CMainFrame class. Now the code can be added to this function.
+
+23. Select the ClassWizard. The project should be DialogApplication, the Class should be CMainFrame. Find the OnOpen function and click on Edit code.
+
+24. Create an object of the CFirstDlg class. (CFirstDlg dg; ). A call to DoModal( ) is required to actually display the dialog box (dg.DoModal). Notice when you create the object dg, in the second line you type dg. ,immediatly a list of all the available functions are presented. Type the first few letters of the function that you wish and the list will progressively get closer to the function that you are typing. Once the function has be highlighted hit enter and it will finish the typing for you. Use the open bracket and the system will respond with the parameter list. This is handy sometimes.
+
+25. Build the application.
+
+26. You have errors. This file does not know about the class CFirstDlg. The reason is that the header that contains the definition of CFirstDlg class in not included in this file. Scroll to the top of the CMainFrame ( the file the OnOpen function is in ) file. Add the following line, under the #include "MainFrm.h",   #include "FirstDlg.h".
+
+27. Build and execute the application. Select the Open from the File menu of the application and you will see that the dialog box appears. Try to click anywhere else on the menu of the application and you will see, nothing will work. This dialog box is a Modal dialog box, which means, until it is closed nothing else in the application is active.
+
+This is a simple dialog box without the controls being placed on it. The next portion of this chapter will explain how to add controls to the dialog box.
+
+ 
+

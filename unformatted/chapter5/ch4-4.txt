@@ -1,0 +1,120 @@
+Code for Message Boxes
+
+
+Remember to create a new project.
+
+MessBoxWin.h
+
+#ifndef MessBoxWin_h
+#define MessBoxWin_h
+
+class CMessBoxWin : public CFrameWnd
+{
+public :
+CMessBoxWin( );
+afx_msg void OnChar(UINT nChar, UINT nRepCnt, UINT nFlags );
+afx_msg void OnLButtonUp(UINT nFlags, CPoint point );
+
+DECLARE_MESSAGE_MAP( )
+};
+
+#endif
+
+ 
+
+MessBoxWin.cpp
+
+#include <afxwin.h>
+#include <string.h>
+#include "MessBoxWin.h"
+
+int retval = 0;
+
+char str[80];
+
+CMessBoxWin :: CMessBoxWin( )
+{
+Create(NULL,"Message Box Program");
+}
+
+ 
+
+afx_msg void CMessBoxWin ::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags )
+{
+retval = MessageBox("The user has pressed a key", "Default OK Button Only");
+retval = MessageBox("The user has pressed a key", "Abort, Retry, Ingore",MB_ABORTRETRYIGNORE);
+retval = MessageBox("The user has pressed a key", "OK or Cancel ",MB_OKCANCEL);
+retval = MessageBox("The user has pressed a key", "Retry or Cancel",MB_RETRYCANCEL);
+retval = MessageBox("The user has pressed a key", "Yes No Cancel",MB_YESNOCANCEL);
+}
+
+afx_msg void CMessBoxWin :: OnLButtonUp(UINT nFlags, CPoint point )
+{
+retval = MessageBox("Do you wish to continue", "Explicitily specifing the Yes  No button " , MB_YESNO);
+if (retval == IDYES)
+{
+retval = MessageBox("You have choosen to continue", "Continue",MB_YESNO);
+if (retval == IDNO)
+retval = MessageBox("You have choosen to quit", "Quit", MB_ICONEXCLAMATION);
+
+else
+retval = MessageBox("You will quit anyways", "Quit", MB_ICONQUESTION);
+
+}
+
+else
+retval = MessageBox("Goodbye");
+}
+
+ 
+
+MessBoxApp.h
+
+#ifndef MessBoxApp_h
+
+#define MessBoxApp_h
+
+class CMessBoxApp : public CWinApp
+{
+public:
+CMessBoxApp( );
+BOOL InitInstance( );
+
+};
+
+#endif
+
+MessBoxApp.cpp
+
+#include <afxwin.h>
+#include "MessBoxApp.h"
+#include "MessBoxWin.h"
+
+CMessBoxApp :: CMessBoxApp( )
+{
+;
+}
+
+BOOL CMessBoxApp :: InitInstance( )
+{
+m_pMainWnd = new CMessBoxWin;
+m_pMainWnd->ShowWindow(m_nCmdShow);
+m_pMainWnd->UpdateWindow( ) ;
+return TRUE;
+}
+
+MainFile.cpp
+
+#include <afxwin.h>
+#include "MessBoxApp.h"
+#include "MessBoxWin.h"
+
+BEGIN_MESSAGE_MAP(CMessBoxWin, CFrameWnd)
+
+ON_WM_CHAR( )
+ON_WM_LBUTTONUP( )
+
+END_MESSAGE_MAP( )
+
+CMessBoxApp CApp;
+

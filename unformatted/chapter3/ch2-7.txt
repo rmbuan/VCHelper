@@ -1,0 +1,30 @@
+Explain Further
+
+
+This will continue explaining the Create( ) function.
+
+CWnd *Parent = NULL. This is used if the window that is being created is a child window. Since this is the main window of our program and we have no other windows that belong to this window the value will default to NULL. This helps with when closing the main window of a program all the child windows close at the same time. 
+
+LPCSTR MenuName = NULL. This is used when the window has a menu associated with this window. This topic will be covered later. So at this point, there is no menu other than the system menu and this parameter has nothing to do with that. Rest assured that windows program usually have a menu associated with them and this will be dealt with, later.
+
+DWORD ExStyle 0 . This determines what extended styles are used to create the window. These can be explorer using the Help in Visual C++. Most of the extended Atrributes are used with the GUI interface of programming. It is interesting to explore , you will see what the window can do.
+
+CCreateContext *Context = NULL. This is very rarely used . It is a structure that deals with how to view documents. We will not be using this in this course.
+
+This fully explains the CframeWnd::Create( ) function. There are lots of things that can be done with this function, but it is important to know that this is not the only way a window can be created and we will explore other ways throughout this course. So far we have explained the Window of the program , but that is just what the user sees. What about the application. Programmers do not write applications that contain just windows. Windows that do nothing are not very useful. So we now will move on to the application.
+
+Explaining CWinApp
+
+This class has many built in data members. They are used to define the application. The variable m_pszAppName is used to give the application it’s name. If this is not done then the executable will be set to the project name. Remember  we can change the name of the application by using this data member. It will be important when creating a real application.
+
+The m_hInstance data member will keep track of which instance of your application currently has focus. A user at some point may have more than one copy of your application running. It is handy to know exactly which copy your are dealing with at any given time.
+
+The m_CmdShow variable has already been explained. It tells how the program will be displayed initially.
+
+The m_pszRegistryKey variable shows the complete registry key so that profiles can be stored. 
+
+They are several operations that can be completed by this class which include LoadCursor and LoadIcon. These are used to load cursors and icons into memory for your application to use.
+
+The basic function of the class is to call InitInstance, which starts your application When your application is terminated it calls ExitInstance which cleans up after your application has run. What is meant by cleaning up after you application has run is to restore memory that your program used back to the operating system so that it can be used for another application. This function is of extreme importance and MFC handles this automatically for the programmer.
+
+ 

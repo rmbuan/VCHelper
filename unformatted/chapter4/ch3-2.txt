@@ -1,0 +1,27 @@
+Basic of Message Maps
+
+
+All built in messages begin with WM_ as a prefix. An example of this would be WM_LBUTTONDOWN, or WM_RBUTTONDOWN. The names tell you what they relate to.
+
+When a message is received it can be accompanied with other information as well, such as cursor co-ordinates, or the value of what key was press on the keyboard.
+
+With each message that your application has to deal with, there must be a corresponding event. An event is something that your application will do when this event happens. These are referred to as message handlers.
+
+Using MFC style programming makes dealing with these messages far easier than the old traditional style windows programming.
+
+How does this work in your application ?
+
+This is what must be done in your application in order to deal with messages. The expected message must have a message macro declared inside the message map. This is located in your first program inside the DECLARE_MESSAGE_MAP.
+
+Then since we are using classes, the function prototype, that is going to deal with this message, must be added to the appropriate class that is going to deal with this message.
+
+Then the function (message handler) must be defined in the definition file of the class, that is going to use it.
+
+There really is nothing that is that much different from the C++ style programming. The only real difference is the adding of the message macro inside the DECLARE_MESSAGE_MAP. There is also a slight difference when adding the prototype to the class definition and that is the message handler must have afx_msg in front of the return value for the function. This is just how message handler functions are prototyped in defined in the message table..
+
+It is common practice for the message handlers to have the prefix ON_ added to the beginning of the WM_ macro. There is one exception to this and that is when using WM_COMMAND. This is simply ON_COMMAND. This is because WM_COMMAND is used by Windows for predefined functions. This will be explained later ON_NOTIFY is another special type of windows message and it too will be explained.
+
+All message handlers are already declared in the CWnd class. These handlers can be, and in most cases, will be overwritten by your program. There are exceptions, where you will not want to overwrite these message handlers. This is when the task, that must happen, is exactly the same as what is already written in the message handler by MFC. An example of this is the OK message handler in the MessageBox function. It just dismisses the message box as you will see later.
+
+To view all the defaulted message handlers, type ON_ into the index of the help file and you will see the defaulted message handlers. There is far too many to view here. It is your responsiblity to learn to search through the help files. Help files are sometimes your only friend when it comes to programming problems.
+

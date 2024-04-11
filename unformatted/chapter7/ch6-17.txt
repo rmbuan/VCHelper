@@ -1,0 +1,71 @@
+Adding Controls
+
+This page will demonstrate how to add controls to the dialog box. It will pick up from where the previous page stopped.
+
+1. Assuming that the project is still open. Click on the ResourceView tab. Open the IDD_FIRST dialog box. The toolbox should be visible. If it is not select Customize from the Tools menu option of the environment. Make sure the Controls has a check mark beside it.
+
+2. http://liad.gbrownc.on.ca/computer/animation/DialogApplication3.exe This is the project after finishing this page.
+
+3. Delete the two buttons Ok and Cancel.
+
+4. From the toolbox find the list box. If you pause for a second or two over an item a tooltip will appear. Click on the list box and move the cursor over to the dialog box. Press the left mouse button and draw the list box.
+
+5. Right click on the list box, select properites. Change the ID to IDC_LISTBOX. There are extended styles. This is up to you to try them out.
+
+6. Add a button to the screen . Find the button item on the toolbox. and then draw it on  the dialog box. The Caption for this button is Select. The ID is IDC_BUTTON_SELECT. 
+
+7. The list box should have a list of text items to select. This should be done when the dialog box is displayed. In the non-Gui version, the list box was initialized in the function OnDialog. To do this in the Gui version, use the WM_OnInitDialog message. To create a function use the ClassWizard. Make sure that CFirstDlg, is the class. The Object ID , should be the CFirstDlg. Scroll through the messages until you find WM_OnInitDialog. Add the function, accept the default function name. Click edit the code. Here is the code.
+    CListBox *lbptr = (CListBox *) GetDlgItem(IDC_LISTBOX);
+    lbptr->AddString("Computer");
+    lbptr->AddString("Monitor");
+    lbptr->AddString("Mouse");
+    lbptr->AddString("Keyboard");
+    lbptr->AddString("Modem");
+
+8. The OnInitDialog function will execute everytime the dialog box gets displayed. This is where the list box will be initialized. To initialize the list box, a pointer to the list box is required. The following code will obtain the pointer. CListBox *lbptr = (CListBox *) GetDlgItem(IDC_LISTBOX). This statement declares an pointer of type CListBox type. The GetDlgItem function will return a pointer of the item that has the ID of IDC_LISTBOX. This pointer has to cast over to CLISTBOX* type. Once a pointer has been obtained, there is a method to get to the functions of the CListBox class.
+
+9. The function that adds items to the List box is AddString. The statement lbptr->AddString("Computer"); will add the string Computer to the list box.
+
+10. The Select button will be used to retreive the highlighted string in the list box and display it in a message box. To add the code for the select button use the ClassWizard. In the class CFirstDlg find the IDC_BUTTON_SELECT in the Object IDs. Click on the Command message and add the funciton. Edit the code for this function and add the following.
+    CString str;
+    int Index;
+CListBox *lbptr = ( CListBox * ) GetDlgItem(IDC_LISTBOX);
+Index = lbptr ->GetCurSel();
+lbptr->GetText(Index,str);
+MessageBox(str,"Selected from list box");
+
+11. The code declares a CString variable and a integer variable. The function GetDlgItem is used to obtain a pointer to the list box. The function GetCurSel will return the index of which string has been selected. The GetText function will then convert the Index value to a  string and store it in a variable of CString type. A message box will display what was returned from GetText.  Build and execute the application and you will see that it works.
+
+12. To add an item to the list box during run time, there must be a method to allow the user to input the string. This will be done with a text box and a static label. To create the text box and the static label , go back to the dialog box design environment. Find the Static Text tool on the toolbox. Draw the Static Text on the Dialog box. Right click and select properites. Name the ID to IDC_STATIC_NEW. Then add the Text Box. Find it on the toolbox and draw it on the dialog box. Right click and the ID should be IDC_EDIT_NEWSTRING.
+
+13. Add another button , with the caption AD&D. The ID value should be IDC_BUTTON_ADD. This is the button that will be used when the user wishes to complete the add to the listbox.
+
+14. To add code to the button, right click on the button in design mode and select ClassWizard. The Object ID, IDC_BUTTON_ADD is already highlighted, so just click the message BN_CLICKED and add the function. The OnButtonAdd function is created, now place the following code in the function.
+CString str;
+CEdit *txptr = ( CEdit * )    GetDlgItem(IDC_EDIT_NEWSTRING);
+txptr->GetWindowText(str);
+
+CListBox *lbptr = (CListBox * ) GetDlgItem(IDC_LISTBOX);
+lbptr->AddString(str);
+
+15. First a variable of CString was declared. GetDlgItem was used to get a pointer to the text box. GetWindowText was used to the contents of the window and store it in str. The GetDlgItem function was used again, this time to get a pointer to the listbox. The funciton AddString was used to add the string to the listbox. Build and execute the program. Remember, at this stage what ever you add to the listbox is only active while the program is running. If you terminate the program and then execute it again the new string will no longer be there. To permanently add the string, it would require either a database or a text file to be used. At this point files are not required, for the goals of this chapter. 
+
+16. To delete a string, a static label , a text box and a button will be required. Go back to the design enivronment of the dialog box and add the static label. The Caption is Delete, and the ID value is IDC_STATIC_DELETE. The text box has the ID value of IDC_EDIT_DELETE. The button has the caption of IDC_BUTTON_DELETE and the Caption Delete.
+
+17. The code will be placed in the IDC_BUTTON_DELETE by using the ClassWizard. Right click on the Delete button and select ClassWizard. Select the message BN_CLICKED and add the OnButtonDelete function. Add the following code.
+CString str;
+    int Index;
+    CEdit *txptr = (CEdit *) GetDlgItem(IDC_EDIT_DELETE);
+    txptr->GetWindowText(str);
+    
+    CListBox *lbptr = (CListBox * ) GetDlgItem(IDC_LISTBOX);
+    Index = lbptr->SelectString(0,str);
+    lbptr->DeleteString(Index);
+
+18. The code declares the variables str and Index. Then obtains a pointer to the two controls, the edit box and the listbox. GetWindowText is used to retrieve the text from what the user entered and SelectString will find it in the listbox. SelectString returns an Index value of where the string is, in the listbox list and DeleteString will remove it. Once again this is only during this execution of the program. The next time the dialog box is started the OnInitDialog function will put the string back. Build and execute the program.
+
+This chapter has shown the basics of the Dialog boxes and how to use them. A few controls were placed upon the dialog box and were used. There is so many things that can be done with dialog boxes , it is impossible for one tutorial to show everything. The next chapter will explain more about controls and how to get them to work on dialog boxes. 
+
+First go to the project section (Project Step Two) and complete it.
+
+ 

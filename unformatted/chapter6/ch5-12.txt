@@ -1,0 +1,27 @@
+ToolBars Further 
+
+Download Code: http://liad.gbrownc.on.ca/computer/Code%20examples/toolbar1b.zip
+
+This portion of this Chapter will explain different functions of the CToolBarCtrl, as well as what else you can do with the toolbar. The first thing you will notice is that in the definition of the TBBUTTON array the farthest right hand buttun or TButton[8] has been given the command ID of IDM_HIDE. This is the button that we are going to hide the toolbar with. This button will appear like it is  pressed down. This is accomplished with the function PressButton( ) The prototype is below:
+
+BOOL CToolBarCtrl :: PressButton(int ID ,BOOL Pressed = TRUE);
+
+The ID here is the command ID of the button on the toolbar, in this case, in   this program  it is IDM_Hide. The only time that you have to included the second parameter is, if you do not want the button to appear pressed visually. It is important to understand, that it only appears to be pressed, it does not actually execute that code behind the button. This will happen when you actually press the button. But you could use the CheckButton( ) function to determine the state of the button,  then execute the code based on whether the button is pressed or not.
+
+Since we have been playing with the Hide button , we will continue and hide the toolbar. This is done by calling the ShowWindow( ) function with the parameter WS_HIDE; This is done in the OnHide( ) function or message handler.
+
+Now we would like to be able to see the toolbar again , so in the OnShow( ) function we will make another call to the ShowWindow( ) function and this time we will pass the parameter SW_RESTORE.
+
+There is a method to automatically adjust the size of the toolbar to match the window. You may not have noticed in the last application, that if you maximized the window there was a gray bar that went half way across the screen . This was the toolbar. It is actually bigger than what you were seeing but not the size of the maximized window. The function OnSize will handle the message WM_SIZE.  This message is generated automatically every time the window is resized. The function prototype is as follows :
+
+afx_mag OnSize(UINT WhatHappened, int Width, Height);
+
+In this case, we are only taking care of the tool bar, the parameters Width and Height are not used, but they are required. The WhatHappened parameter is what took place in the window. The options here are SIZE_RESTORED, SIZE_MINIMIZED, SIZE_MAXIMIZED,SIZE_HIDE, SIZE_SHOW. These are self explanatory. 
+
+To make this work, you will have to include the ON_WM_SIZE( ) macro to the message map of the window and then write the code in OnSize , which is a method of the main window. Again a little review. The message that is sent is WM_SIZE, the message handler is OnSize( ) and the message macro is ON_WM_SIZE( ) . 
+
+The OnSize( ) function in this program just calls the AutoSize( ) function to automatically adjust the toolbar to the size of the client window. This will not assist when the user changes the size of the window , so that the window is smaller than the toolbar itself, but is not minimized. In other words, if you were to grab the right hand border of the window, and moved it to the left. The toolbar would not automatically fit the new window size if the window is smaller than the toolbar. There is a method to allow for the toolbar to wrap inside the window. This is left for you to discover in the VS help.
+
+There are numerous function members of the CToolBarCtrl. An example is demonstrated in the OnGetItemPressed function. It is up to yourself, to make yourself familiar with all the different functions available to you and how to use them. 
+
+Create a new project. Download the files and add them to your project. This file explains enough about what is happening in the code . So this code will not be explained any further.

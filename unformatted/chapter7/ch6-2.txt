@@ -1,0 +1,17 @@
+Dialog Boxes Further Explained
+
+
+Dialog boxes are a type of window, and each control is really a special type of window that is placed on top of the dialog box window. Don’t let this confuse you. It is necessary for you to understand :  There is   a main window and will place a dialog box on that window. Then each control that is required on the dialog box, is an additional window. Even though the dialog box is not really a child window with the main window, the controls on the other hand are. The dialog box, the controls are placed upon, really is the parent window of all the control windows. This means when the parent window (the dialog box) is closed, all the control windows will also be closed. A list of standard controls, that are used in almost every Window’s application are push buttons, check box, radio button, list box, edit box, combo box, scroll bar and static controls. I am sure that you see these controls in most of the applications that you have used , that are Windows based. These controls both generate messages and receive messages. This is difficult to explain without seeing the code.
+
+The steps, required to create the program to demonstrate a basic dialog box are : 
+
+1. First a main window and an application object has to be created. This will hold the application. 
+2. Then a menu must be created. 
+3. The menu has to be associated to the window and if there is an Accelerator Table it also must be loaded. 
+4. Then create the dialog box and the OK button. 
+5. Code is then entered to display the dialog box when the menu selection is chosen. 
+6. Then closing the dialog box is done through a push button that displays OK. 
+
+The OK button must contain the code to destroy the window so that the dialog box no longer exists in memory. It is true that a programmer can choose just to hide the dialog box, which means the user no longer sees the dialog box. The memory that the dialog box is occupying is still used. It depends on what the programmer wished to do, but it is important for the programmer to keep in mind that memory has to be freed after the application is terminated, or when the object is no longer required. There is nothing more frustrating to a user then, to get the message from Windows that it is out of memory.
+
+  

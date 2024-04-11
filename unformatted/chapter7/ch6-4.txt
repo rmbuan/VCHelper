@@ -1,0 +1,14 @@
+Dialog Boxes Are Windows 
+
+
+As mentioned before, a dialog box is a type of window. This means events that occur are sent through a message map. A word of caution: This is not the main application message map. Your application requires a separate message map for every dialog box. Think of the main program message map as a President of a corporation. And the dialog’s message map as your supervisor. The President will deal with events to control the whole corporation and the supervisor will only deal with events that occur in his/her department. The dialog box can be assumed as a department of your application and hence will deal with messages passed to itself. The main application message map will deal with the other messages.
+
+This means each control on the dialog box will be given its own resource ID. Each time a control is activated a WM_COMMAND message is sent to the dialog box the control sits on. There will be a ON_COMMAND message sent and a message handler will have to deal with the event.
+
+This is great, now we understand, a window, application object and a menu have to be created and associated with a window. A dialog box has to be defined, controls places on it and a message map must be declared for every dialog box. You still have to activate the dialog box. 
+
+This is accomplished by using the function DoModal( ). DoModal then takes over the application and nothing else can be completed until the dialog box is closed. If the dialog box can not be created (usually because no memory is available) then it will return a –1.
+
+The one good thing about MFC’s is that it comes with built in code. In this case I am referring to the built in OK and Cancel buttons and their respective message handlers. OnOK and OnCancel. When the user chooses to select the OK button, a IDOK is sent and the message handler OnOK will close the dialog box. When the users chooses the Cancel button the IDCancel is passed and the OnCancel message handler will close the dialog box. This permits the application to continue doing what is required. The two message handlers, OnOK and OnCancel are virtual functions which means your application can over write these functions to get them to do what your application requires them to do. If you are using the default message handlers , you do not need to include them in the messge map. If you are over writing these handlers then you have to include the message macros in the message map and write the code for these functions. 
+
+  

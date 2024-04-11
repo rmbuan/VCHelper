@@ -1,0 +1,287 @@
+Do Data Exchange
+Graphical Interface
+
+This page will demonstrate how to assign data members to controls to be able to enter all the data into the screen and then use the stored data in the class to replace all the data.
+
+http://liad.gbrownc.on.ca/computer/animation/AddControls2.exe This will show, what is to be completed after this page is done.
+
+1. Assuming the project is open. Click on the ResourceView tab and open the dialog box. To add data member to the class, Right click on the IDC_ACER Radio button. Select the ClassWizard. The Member Variable will be selected for you. This is where you will add the variables for the controls of the dialog box. The check boxes will have a variable attached to them of the type BOOL. The List Boxes and Edit Boxes will have a variable of the type CString. To add the variable to each control in the ClassWizard, find the object ID, highlight it and click Add Variable. This will respond with displaying the Add Variable dialog box. The Category for the check boxes is either Value or Control. Select Value. The Variable Type is only BOOL. Find the following IDs and create the respective variables.
+ID Variable Name Variable type Category 
+IDC_CHECK_CD m_cdplayer BOOL Value 
+IDC_CHECK_CDWRITER m_cdwriter BOOL Value 
+IDC_CHECK_DVD m_dvdplayer BOOL Value 
+IDC_CHECK_GIG20 m_gig20 BOOL Value 
+IDC_CHECK_GIG8 m_gig8 BOOL Value 
+IDC_CHECK_VIDEO4 m_video4 BOOL Value 
+IDC_CHECK_VIDEO8 m_video8 BOOL Value 
+ValueIDC_CHECK_ZIPDRIVE m_zipdrive BOOL Value 
+IDC_CHECK_GIG13 m_gig13 BOOL Value 
+IDC_EDIT_CDPLAYER2 m_edcdplayer CString Value 
+IDC_EDIT_CDWRITER2 m_edcdwriter CString Value 
+IDC_EDIT_CPU m_edcpu CString Value 
+IDC_EDIT_DVDPLAYER m_eddvdplayer CString Value 
+IDC_EDIT_HD13 m_edhd13 CString Value 
+IDC_EDIT_HD20 m_edhd20 CString Value 
+IDC_EDIT_HD8 m_edhd8 CString Value 
+IDC_EDIT_MBOARD m_edmboard CString Value 
+IDC_EDIT_MODEL2 m_edmodel CString Value 
+IDC_EDIT_RAM2 m_edram CString Value 
+IDC_EDIT_VIDEO42 m_edvideo4 CString Value 
+IDC_EDIT_VIDEO8 m_edvideo8 CString Value 
+IDC_LIST_CPU m_lbcpu CString Value 
+IDC_LIST_MODEL m_lbmodel CString Value 
+IDC_LIST_RAM m_lbram CString Value 
+
+2. The above step assigned a variable to each control. The static text labels do not require variables. The variables are used to let the class know what is happening on the screen. If the screen needs to be updated it can be done by using the values in the data memebers. Build and execute the program. All the controls work. Terminate the application. 
+
+3. Select the FileView tab of the Workspace and look in the CComputerDlg.cpp file. You will find the following.
+void CComputerDlg::DoDataExchange(CDataExchange* pDX)
+{
+    CDialog::DoDataExchange(pDX);
+    //{{AFX_DATA_MAP(CComputerDlg)
+    DDX_Check(pDX, IDC_CHECK_CD, m_cdplayer);
+    DDX_Check(pDX, IDC_CHECK_CDWRITER, m_cdwriter);
+    DDX_Check(pDX, IDC_CHECK_DVD, m_dvdplayer);
+    DDX_Check(pDX, IDC_CHECK_GIG20, m_gig20);
+    DDX_Check(pDX, IDC_CHECK_GIG8, m_gig8);
+    DDX_Check(pDX, IDC_CHECK_VIDEO4, m_video4);
+    DDX_Check(pDX, IDC_CHECK_VIDEO8, m_video8);
+    DDX_Check(pDX, IDC_CHECK_ZIPDRIVE, m_zipdrive);
+    DDX_Check(pDX, IDC_CHECKGIG13, m_gig13);
+    DDX_Text(pDX, IDC_EDIT_CDPLAYER2, m_edcdplayer);
+    DDX_Text(pDX, IDC_EDIT_CDWRITER2, m_edcdwriter);
+    DDX_Text(pDX, IDC_EDIT_CPU2, m_edcpu);
+    DDX_Text(pDX, IDC_EDIT_DVDPLAYER, m_eddvdplayer);
+    DDX_Text(pDX, IDC_EDIT_HD13, m_edhd13);
+    DDX_Text(pDX, IDC_EDIT_HD20, m_edhd20);
+    DDX_Text(pDX, IDC_EDIT_HD8, m_edhd8);
+    DDX_Text(pDX, IDC_EDIT_MBOARD, m_edmboard);
+    DDX_Text(pDX, IDC_EDIT_MODEL2, m_edmodel);
+    DDX_Text(pDX, IDC_EDIT_RAM2, m_edram);
+    DDX_Text(pDX, IDC_EDIT_VIDEO42, m_edvideo4);
+    DDX_Text(pDX, IDC_EDIT_VIDEO82, m_edvideo8);
+    DDX_LBString(pDX, IDC_LIST_CPU, m_lbcpu);
+    DDX_LBString(pDX, IDC_LIST_MODEL, m_lbmodel);
+    DDX_LBIndex(pDX, IDC_LIST_RAM, m_lbram);
+    //}}AFX_DATA_MAP
+} 
+4. The above code in the DoDataExchange function is how the data member variables are attached to each control. The macros DDX_CHECK or DDX_Text are used to assign a ID value to a variable. In order for this to work , the programmer must call the function UpdateData(TRUE). The boolean expression TRUE will save the data from the dialog box controls to the data memebers. The boolean expression FALSE will do the opposite. It will update the screen using the variables. The edit boxes to the right of the screen will be used to demonstrate the data value of each of the corresponding controls. First create the functions to load the edit boxes on the right of the dialog box. This involves writing functions for each control. Each function will be presented here. 
+
+5. Start with the IDC_RADIO_ACER radio button. Right click on the radio button and select ClassWizard. Find the IDC_RADIO_ACER object. Highlight it and click the message BN_CLICKED. Create the function OnRadioAcer and edit the code. The code should be.
+    int retval;
+    // get pointers to the two controls required
+    CButton *rdptr = (CButton * ) GetDlgItem(IDC_RADIO_ACER);
+    CEdit *edptr = (CEdit *) GetDlgItem(IDC_EDIT_MBOARD);
+    retval = rdptr->GetCheck();
+    
+    if(retval == 1)
+        edptr->SetWindowText("ACER");
+    
+The above code first gets a pointer to mother board edit box and the mother board radio button. It uses the GetCheck function, which returns either a 1 or 0 to determine the status of the check box.. Then the if statement is used to display the value in the IDC_EDIT_MBOARD edit box. 
+
+6. The following code will be done for all the check boxes using the same process. The code is listed below for the other radio button.
+void CComputerDlg::OnRadioHarmony() 
+{
+    // TODO: Add your control notification handler code here
+    int retval;
+    CButton *rdptr = (CButton * ) GetDlgItem(IDC_RADIO_HARMONY);
+    CEdit *edptr = (CEdit *) GetDlgItem(IDC_EDIT_MBOARD);
+    retval = rdptr->GetCheck();
+    
+    if(retval == 1)
+        edptr->SetWindowText("Harmony");
+    
+} 
+
+7. The list boxes have more messages than the Radio buttons. The messages are listed below
+Message  Purpose (code written for) 
+LBN_SELCHANGE when the value is changed 
+LBN_DBLCLK when the user double clicks 
+LBN_ERRORSPACE when system can not allocate memory 
+LBN_KILLFOCUS when the list box loses focus 
+LBN_SELCANCEL when the user cancels a selection of the list box 
+LBN_SETFOCUS when the list box gets focus 
+
+This application will use the LBN_DBCLK message. Use the ClassWizard and create the function OnDblclkListCpu() . The code is listed below. After the code is entered, Build and execute the application.
+void CComputerDlg::OnDblclkListCpu() 
+{
+    // TODO: Add your control notification handler code here
+    
+    int Index;
+    CString str;
+    // get pointers to control
+    CListBox *lbptr = (CListBox *) GetDlgItem(IDC_LIST_CPU);
+    CEdit *edptr = (CEdit * ) GetDlgItem(IDC_EDIT_CPU2);
+    // check what is selected
+    Index = lbptr->GetCurSel();
+    lbptr->GetText(Index,str);
+
+    // set the edit box value
+    edptr->SetWindowText(str);
+    
+}
+
+
+The above code. First the two pointers are obtained. The function GetCurSel will return the index of where the text that was clicked is located. The index is used to retrieve the text and store it is str. This is accomplished by the function GetText. The function SetWindowText function will load the edit box with the ID value of IDC_EDIT_CPU2.
+
+8. The next value to obtain will be the value of the Ram and set it to the edit box IDC_EDIT_RAM2. The code is listed below. The code does not need to be explianed.
+void CComputerDlg::OnDblclkListRam() 
+{
+    // TODO: Add your control notification handler code here
+    int Index;
+    CString str;
+    // get pointers to control
+    CListBox *lbptr = (CListBox *) GetDlgItem(IDC_LIST_RAM);
+    CEdit *edptr = (CEdit * ) GetDlgItem(IDC_EDIT_RAM2);
+    // check what is selected
+    Index = lbptr->GetCurSel();
+    lbptr->GetText(Index,str);
+
+    // set the edit box value
+    edptr->SetWindowText(str);
+} 
+
+9. The next value to obtain will be the DVD Player check box. Here is the code. The code is listed below. Enter the code by using the ClassWizard and then Build and execute the application.
+void CComputerDlg::OnCheckDvd() 
+{
+    // TODO: Add your control notification handler code here
+    int retval;
+    // get the poionters
+    CButton *cbptr = (CButton *) GetDlgItem(IDC_CHECK_DVD);
+    CEdit *ebptr = (CEdit*) GetDlgItem(IDC_EDIT_DVDPLAYER);
+    // check the condition of the check box
+    retval = cbptr->GetCheck();
+
+    if(retval == 1)
+        ebptr->SetWindowText("YES");
+    else
+        ebptr->SetWindowText("NONE");
+
+}
+
+10. Complete all the check boxes and the Model list box and assign appropriate text to the edit boxes. Remember to Build after each function is coded. This is the standard method of programming. Compile often.  Check the animation to see how to speed writing code up. 
+
+11. When the program was executed, there was a problem. The functions worked great, but if you did not click on either the list boxes, check boxes or the radio button, the edit boxes had no value. The next step is to give the edit boxes the default value of NONE. This will be accomplished before the dialog box is displayed. Therefore it will be done in the OnInitDialog function. The code is listed below.
+// default value of none will be placed in the edit boxes
+CEdit *ebmbdptr = (CEdit *) GetDlgItem(IDC_EDIT_MBOARD);
+ebmbdptr->SetWindowText("NONE");
+
+CEdit *ebcpuptr = (CEdit *) GetDlgItem(IDC_EDIT_CPU2);
+ebcpuptr->SetWindowText("NONE");
+
+
+CEdit *ebramptr = (CEdit *) GetDlgItem(IDC_EDIT_RAM2);
+ebramptr->SetWindowText("NONE");
+
+CEdit *ebdvdptr = (CEdit *) GetDlgItem(IDC_EDIT_DVDPLAYER);
+ebdvdptr->SetWindowText("NONE");
+
+CEdit *ebcdptr = (CEdit *) GetDlgItem(IDC_EDIT_CDPLAYER2);
+ebcdptr->SetWindowText("NONE");
+
+CEdit *ebcdwptr = (CEdit *) GetDlgItem(IDC_EDIT_CDWRITER2);
+ebcdwptr->SetWindowText("NONE");
+
+CEdit *ebvi8ptr = (CEdit *) GetDlgItem(IDC_EDIT_VIDEO82);
+ebvi8ptr->SetWindowText("NONE");
+
+CEdit *ebvi4ptr = (CEdit *) GetDlgItem(IDC_EDIT_VIDEO42);
+ebvi4ptr->SetWindowText("NONE");
+
+CEdit *ebzipptr = (CEdit *) GetDlgItem(IDC_EDIT_ZIP);
+ebzipptr->SetWindowText("NONE");
+
+CEdit *ebhd8ptr = (CEdit *) GetDlgItem(IDC_EDIT_HD8);
+ebhd8ptr->SetWindowText("NONE");
+
+CEdit *ebhd1ptr = (CEdit *) GetDlgItem(IDC_EDIT_HD13);
+ebhd1ptr->SetWindowText("NONE");
+
+CEdit *ebhd2ptr = (CEdit *) GetDlgItem(IDC_EDIT_HD20);
+ebhd2ptr->SetWindowText("NONE");
+
+CEdit *ebmodptr = (CEdit *) GetDlgItem(IDC_EDIT_MODEL2);
+ebmodptr->SetWindowText("NONE"); 
+
+12. The next part of this lesson will be to take all the on screen data and store it in the data member of the CComputerDlg class. This will be done in the Clear button. To accomplish this, first we will up date the data members and then clear all the text boxes. Right click on the Clear button and select the ClassWizard. Add the function OnButtonClear and add the following code.
+void CComputerDlg::OnButtonClear() 
+{
+    // TODO: Add your control notification handler code here
+UpdateData(TRUE);
+// this was copied from OnInitDialog and changed to be blank.
+CEdit *ebmbdptr = (CEdit *) GetDlgItem(IDC_EDIT_MBOARD);
+ebmbdptr->SetWindowText(" ");
+
+CEdit *ebcpuptr = (CEdit *) GetDlgItem(IDC_EDIT_CPU2);
+ebcpuptr->SetWindowText(" ");
+
+
+CEdit *ebramptr = (CEdit *) GetDlgItem(IDC_EDIT_RAM2);
+ebramptr->SetWindowText(" ");
+
+CEdit *ebdvdptr = (CEdit *) GetDlgItem(IDC_EDIT_DVDPLAYER);
+ebdvdptr->SetWindowText(" ");
+
+CEdit *ebcdptr = (CEdit *) GetDlgItem(IDC_EDIT_CDPLAYER2);
+ebcdptr->SetWindowText(" ");
+
+CEdit *ebcdwptr = (CEdit *) GetDlgItem(IDC_EDIT_CDWRITER2);
+ebcdwptr->SetWindowText(" ");
+
+CEdit *ebvi8ptr = (CEdit *) GetDlgItem(IDC_EDIT_VIDEO82);
+ebvi8ptr->SetWindowText(" ");
+
+CEdit *ebvi4ptr = (CEdit *) GetDlgItem(IDC_EDIT_VIDEO42);
+ebvi4ptr->SetWindowText(" ");
+
+CEdit *ebzipptr = (CEdit *) GetDlgItem(IDC_EDIT_ZIP);
+ebzipptr->SetWindowText(" ");
+
+CEdit *ebhd8ptr = (CEdit *) GetDlgItem(IDC_EDIT_HD8);
+ebhd8ptr->SetWindowText(" ");
+
+CEdit *ebhd1ptr = (CEdit *) GetDlgItem(IDC_EDIT_HD13);
+ebhd1ptr->SetWindowText(" ");
+
+CEdit *ebhd2ptr = (CEdit *) GetDlgItem(IDC_EDIT_HD20);
+ebhd2ptr->SetWindowText(" ");
+
+CEdit *ebmodptr = (CEdit *) GetDlgItem(IDC_EDIT_MODEL2);
+ebmodptr->SetWindowText(" ");
+// clear all the check boxes and radio button
+CButton *bnptr = (CButton *) GetDlgItem(IDC_RADIO_ACER);
+bnptr->SetCheck(0);
+bnptr = (CButton *) GetDlgItem(IDC_RADIO_HARMONY);
+bnptr->SetCheck(0);
+    
+bnptr = (CButton *) GetDlgItem(IDC_CHECK_DVD);
+bnptr->SetCheck(0);
+
+bnptr = (CButton *) GetDlgItem(IDC_CHECK_CD);
+bnptr->SetCheck(0);
+
+bnptr = (CButton *) GetDlgItem(IDC_CHECK_CDWRITER);
+bnptr->SetCheck(0);
+
+bnptr = (CButton *) GetDlgItem(IDC_CHECK_VIDEO8);
+bnptr->SetCheck(0);
+
+bnptr = (CButton *) GetDlgItem(IDC_CHECK_VIDEO4);
+bnptr->SetCheck(0);
+
+bnptr = (CButton *) GetDlgItem(IDC_CHECK_ZIPDRIVE);
+bnptr->SetCheck(0);
+
+bnptr = (CButton *) GetDlgItem(IDC_CHECK_GIG8);
+bnptr->SetCheck(0);
+
+bnptr = (CButton *) GetDlgItem(IDC_CHECKGIG13);
+bnptr->SetCheck(0);
+
+bnptr = (CButton *) GetDlgItem(IDC_CHECK_GIG20);
+bnptr->SetCheck(0); 
+
+13. To display the data that was on the screen prior to the Clear button being pressed, the display button will be used. This will have a single line fo code, which is the UpdateData(FALSE); statement. This function will take data stored in the data memebers and display it back into the control from where is was. Use the ClassWizard and create the function OnButtonDisplay(); Build and execute the application. 
+This is a long lesson, but the repeated exercised here will help you to become more familar and comfortable with the design environment. In order to become an accomplished programmer, you must work in the environment as much as possible.
+
+ 

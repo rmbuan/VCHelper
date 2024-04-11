@@ -1,0 +1,34 @@
+MenuProg Code Explained
+
+
+MenuWin.h
+
+This is where the main window for the application is defined. There is nothing here that you have not seen many times before.
+
+MenuWin.cpp
+
+Here you will notice that we are using more parameters for the Create function. We have used the NULL to indicate this window belongs to this class and Title or Caption is "The First Menu Program". The window is a standard window and the rectDefault is the standard size of the window and the NULL says that this window is not a child and has no parent window. The differnce comes when the "MainMenu" is used. This is what is called associating the menu to the window. This means this window will use the menu that is referred to as MainMenu. It is also possible to use an integer value that would mean the same as MainMenu , but I think it makes the program much easier to read if programmers use the text version to identify the menu. It just is more natural. What this all means it that when you open the window you now have a menu attached to it. To see how the menu is created see MenuItems.rc.
+
+MenuApp.h
+
+This is where the application object is defined. There is nothing here that you have not seen before many times.
+
+MenuApp.cpp
+
+This is where the application object creates the main window. Again you have seen this all before.
+
+MainFile.cpp
+
+The message map is declared and since in this program there is no code written for each menu selection there is no message macros required. This will change in the next version of this program. The application object is also created here CApp.
+
+MenuItems.h
+
+This is where all the menu choices are given a numeric value, so that they can be easier to deal with in switch statements and other decision making structures.
+
+MenuItems.rc
+
+This file was created by an external text editor. It includes the MenuItems.h file. To create a menu all that is really required is give the menu a name ( MainMenu) and use the key word MENU. Then describe what the menu is going to contain. The only two keywords that are permitted here are POPUP and MENUITEM. POPUP is used to describe that there will be other options below this menu choice. As in the first POPUP the word displayed will be "File". You will notice the & is placed in front of the F in file. This is a window standard. The F will be underlined which will allow for the ALT and F key to be used to activate the menu. The opening and closing braces will describe what is going to be displayed under the menu option File. Notice that MENUITEM has the word or words that are going to be displayed, enclosed in quotations. In this case Exit. And you will see that there is IDM_Exit this is the value that will be sent to your application when this menu option has been selected by the user. This IDM_Exit is given an integer value be the MenuItem.h file. In there you will see that each IDM_XXXX is given a unique integer value, By the # define IDM_Exit 100 statement.
+
+This file emulates a standard window menu. The File, Edit,View,Window and Help are usually in all windows applications. It is not always possible to use all these and sometimes is not practical to use. If at all possible this format should be followed. Under the File menu item there should be any access to disk, which includes opening and closing and exiting a program. The Edit menu should have the cut, paste, and copy. View should have any display options that your application will have, such as Whole Screen, or Normal. Window should allow your application to tile either horizontal or vertical , or in case of more than one window being opened in your application , it should allow the user to easily switch between windows. The Help should provide a method to get to any help that is included in your application as well as the about box, informing the user who created the program or version of the application. You will notice that when you run this program it will not do anything when the user clicks on a menu item. The next program will add code to the menu items.
+
+  

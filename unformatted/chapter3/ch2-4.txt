@@ -1,0 +1,124 @@
+Adding Files
+
+
+Once you have created the project, you will have to add files to the project. Most, if not all, projects will have more than one file. In this case since it is the first program we will be starting from the point of creating new files from scratch and not adding files that are already written. 
+
+To work with projects you think of the project (.dsw file) as container that will hold all the files included in your project. Projects will be broken up into multiply files. C++ code usually have header files and definition files and one driver file. The header files have the extension .H and the definition files and driver file have the extension .cpp.
+
+The header file is where the class or function prototypes are declared. In other words the header file will tell the name of the class , the data members and the functions. The code listed below will show a demonstration of this topic. 
+
+ Creating a Header File   
+
+Steps to actually add the first header file.
+
+1) Make sure the project is open.
+2) From the file menu choose New
+3) Notice that the tab that is selected is Files .
+4) Choose C C++ Header file.
+5) Type in the file name FirstWindow, without the .H . This will be added for you.
+6) Make sure the check box  "Add to Project" is checked and indicates Bwindow.
+7) Press OK.
+
+Then the window will open up so that you can enter the code below.
+
+FirstWindow.h
+
+#ifndef FirstWindow_h 
+#define FirstWindow_h
+
+#include <afxwin.h> 
+
+class CFirstWindow : public CFrameWnd 
+{
+public:
+CFirstWindow( );
+DECLARE_MESSAGE_MAP( );
+} ;
+
+#endif
+
+Remember projects have more than one file. This means that you must now include another file. So far you have declared the class and have given it a name CFirstWindow .Follow the instructions below to add the definition file. 
+
+Creating a Source File
+
+Make sure the Bwindow project is still open. 
+From the file menu choose New. 
+Notice the tab selected is still the Files tab. 
+Choose C C++ Source File. 
+Make sure that it is added the Bwindow project 
+Give the file the name of FirstWindow, without the .cpp extension, this is done for you. 
+Click OK. 
+The file is added to the project and the window will open up for you to enter the code below.
+
+FirstWindow.cpp
+
+#include "FirstWindow.h"
+
+CFirstWindow :: CFirstWindow( )
+{
+Create(NULL, "A Basic MFC Window and Application");
+}
+
+Now we need to add another header file called FirstApplication.H . I know it sounds like a lot of work, just to get a simple project open. Soon you will understand why everything is done the way that it is done and you will feel more comfortable. Right now just follow the steps. So if you do not remember the step to creating a header file go to the section on this page to creating a header file. 
+
+Enter the following code in the FirstApplication header file.
+
+FirstApplication.H
+
+#ifndef FirstApplication_H
+
+#define FirstApplication_H
+
+#include <afxwin.h>
+
+class CFirstApplication : public CWinApp
+
+{
+public:
+BOOL InitInstance( );
+};
+
+#endif
+
+The above will declare the class. The code below will define what the code will do. You must create a new source file for the project. If you do not remember how to accomplish this , you can review the material above under creating a C/C++ Source file.
+
+FirstApplication.cpp
+
+#include "FirstApplication.h"
+#include "FirstWindow.h"
+
+ 
+
+BOOL CFirstApplication :: InitInstance( )
+{
+m_pMainWnd = new CFirstWindow;
+
+m_pMainWnd->ShowWindow(m_nCmdShow);
+
+m_pMainWnd->UpdateWindow( );
+
+return TRUE;
+
+}
+
+Remember you were informed that you require header files and definition files and a driver file. Now you must create the driver file. The driver file really is just another C++ Source file. So create another C++ Source file for this project and enter the code below. Call it Mainfile.cpp.
+
+MainFile.cpp
+
+#include <afxwin.h>
+
+#include "FirstWindow.h"
+
+#include "FirstApplication.h"
+
+BEGIN_MESSAGE_MAP(CFirstWindow, CFrameWnd)
+
+END_MESSAGE_MAP( )
+
+CFirstApplication App;
+
+ 
+
+Now you have all the files that are required to actually run your program to create a window. Proceed now to Compile Your First MFC Program.
+
+ 

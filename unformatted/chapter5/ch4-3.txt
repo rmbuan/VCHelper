@@ -1,0 +1,20 @@
+Planning for Code
+
+
+To write a program to demonstrate the application message box function you must do the following:
+
+1. Declare a new class of CFrameWnd to create the first window. 
+2. Declare a new class of CWinApp to create the application object. 
+3. Decide where you wish to put the code to generate the message box. 
+
+What does this mean "decide where you wish to put the code". Is there more than one place to put the code?   This is where it goes back to windows programming versus DOS programming. In DOS programming the programmer had complete control over what the program was going to do and when it was going to do it. In Windows programming this not the case. The programmer must think of a logical place to place the code, as well as, follow Windows standards. Since message boxes really just inform the user what is occurring or what has occurred or what will occur, the proper place must be decided upon. 
+
+An example of this would be when a user is closing a window that has data that has been changed. It would not make sense to prompt the user to save changes before he closes the window. It would not make sense to prompt the user to save the changes after the window is closed. The proper place would be after he has chosen to close the window, but it has not been closed yet. You could prompt the user to save changes and give him/her the opportunity to either save the changes of discard the changes .
+
+We will use the OnChar message and the OnLButtonUp message handlers.
+
+An attempt
+
+Try to write, the creating of a window object and the application object, without assistance from this tutorial. This is the basics of Windows programming . Then try to use the Message Handlers of OnChar and OnLButtonUp. Then try to use the message box function without seeing the code on the next portion of this module. It is extremely important for you, as a programmer, to start to be able to use the help features inside of Visual Studio or the MSDN library. Go ahead and try it. See if you can get it to work.
+
+  Try the program before continuing. 

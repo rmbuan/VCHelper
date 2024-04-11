@@ -1,0 +1,26 @@
+Windows Programming Environment
+ 
+
+Don’t be surprised if you are a C++ programmer and don’t recognize the code in Visual C++. If you have programmed in the traditional windows programming, again you may not recognize the code. Don’t be too concerned with this. It may take some time to get used to the classes. Once you understand them, you will wonder why it took so long for you to start learning this type of programming.
+
+The easiest way to explain Windows programming is to understand that windows has a group of functions that are built into the operating system. These functions know how to do the basic tasks of dynamically creating memory, output to the screen and creating windows. These are all incorporated into the operating system's API. All your program has to do is call the right API. This is referred to as a call based interface.
+
+Microsoft Foundation Classes are really just a group of pre-defined classes that wrap themselves around API calls. This just makes it easier for the programmer to call the API. It is important to know that the Windows operating system has thousands of API’s and it would be near impossible for programmers to become familiar with them all.
+
+Through the member functions of the MFC classes, the programmer just has to know which method he needs to call and which class has that method to get to that particular API.
+
+API’s are made up of individual Dynamic Link Libaries(DLL). Each DLL contains certain functions that are required for the API to do it’s job. These DLLs are files separate from the API. 
+
+When your program is compiled, the compiler knows which functions in which DLLs are being called. To ensure that your program does not become too large after being compiled, the DLL’s are not included during the compiling process into the executable code. ( The DLLs could be compiled , if the programmer chose to create a static application. This is not normally done.)  What is compiled however is the instruction of how to load that DLL into memory when required by your program.
+
+It is important to know that one DLL can be called from many different programs. So if each new program compiled the DLL into each program, then the same code would be stored several different times, causing a large amount of disk space to have the same code. This would be a waste of valuable hard drive space.
+
+Another benefit to having DLL’s not included in the executable code is, the fact that the DLL’s can be upgraded and changed without effecting the programs use it.
+
+There are two versions of the API included in Version 6. The 16 bit (Win16) and the 32 bit (Win32) , but again as already stated, this course will only deal with the Win32.
+
+The biggest advantage of using the 32 bit version of the API is the fact that you no longer have to worry whether to declare a pointer as near of far. The 32 bit addressing allows the pointers to treat memory as if it was just a flat memory model.
+
+Graphical Device Interface (GDI) is an API that allows for graphics to be displayed without knowing what video card is actually installed. It allows for Windows to support device independent graphics support. Something traditional Windows programming could not do.
+
+  

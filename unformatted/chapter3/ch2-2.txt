@@ -1,0 +1,37 @@
+Class Hierarchy
+
+
+CObject is the main base class in which almost all MFC classes are derived from. This class takes care of run- time support features. 
+
+But the most important class to us right now is the CWinApp. This class is inherited four levels deep. It is inherited from CWinThread, which is inherited from CCmdTarget, which is inherited from CObject. 
+
+CWinApp is really your application. It controls the initialization, execution, and shutdown of your program. Each program must have one and only one object of this type. Think of this as main( ) in C++ programming.
+
+In order for your application to run you must declare an object of the CWinApp class to instantiate your program.
+
+Another important class is the CWnd class. This class is the base class for all windows. From CWnd class CFrameWnd is derived . This creates a frame window in which all other windows in your program will fit into in this introduction course. Think of it as the background of a painting. On top you can put as much as you wish. Same goes for how many number of windows you wish to put on top of the main frame, as much as your program requires.
+
+CFrameWnd provides support for either Single Document Interface (SDI). From this you can inherit a child window for Multiply Document Interface (MDI). This is done using the classes derived from CFrameWnd.
+
+Class Functions
+
+It is important at this time to remind you that since MFCs are based on classes, each class has it’s own built in member functions and it’s own built in data variables. 
+
+Although it may be handy to call APIs directly, not using the member functions of these classes, it is not recommended. MFCs have been designed to take care of protecting the Windows environment, calling an API directly without having the proper setup can cause undesirable results. It is recommended that you try at all times to call API’s through MFC or at least as much as possible.
+
+Global Function
+
+Global functions are functions that are not defined in a single class. This is either because the function is used in many different classes, so it is defined outside any particular class or because it could be a function that is required to be used outside your main application and can run independently of your program. These functions all start with the the Afx prefix. The most popular of these functions would be the AfxMessageBox( ) function.
+
+ 
+
+The AFXWIN.H must be included in all Windows applications using MFC classes. This includes most of the other header files that are required, including WINDOW.H . To get a better understanding of the class hierarchy go to the help in Visual Studio and search for Hierarchy Chart. This will show you the complete hierarchy of the MFC Library. It will be a little intimidating, due to its size but remember most things are intimidating the first time.  To find the Hierarchy Chart following the steps below:
+
+Open Help inside the environment. 
+Select Contents. 
+Open Visual C++ Documentation 
+Select Reference 
+Open Microsoft Foundation Class Library and Templates 
+Open Microsoft Foundation Class Library 
+Open the Document Microsoft Foundation Class Library 
+In the right pain select the Hierarchy Chart. 

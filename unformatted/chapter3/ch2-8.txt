@@ -1,0 +1,66 @@
+Exercise One
+
+
+Steps to follow 
+
+1. Use the program just created, First Application. 
+
+2. Using the Visual C++ help menu option, choose contents and then the search tab. 
+
+3. In the "Active Subset" list box, click on the little arrow to the right and drop down a list of subsets. Choose Visual C++ Documentation . 
+
+4. Enter in the "words to search for" box CFrameWnd::Create. Then display topics. This will generate a list of topics on the above subject. 
+
+5. Choose the one that matches the CframeWnd::Create topic. You may have to scroll down a little. 
+
+6. Double click this option. It will display to the right, the topic. 
+
+7. Read exactly what this function does and then go to dwStyle section and click on the highlighted "style" word . This will show you all the possible options that this parameter can have. 
+
+8. Then in the FirstWindow.cpp you can add another Create function ( remember you can only have one Create function per window, so you will have to comment out the original create function.) to show what ever of the windows will look like when you do this. 
+
+9. The exercise is to create four additional Create ( ) function. Make sure that you have commented out the original Create ( ) function
+
+10. Then use a new Create ( ) function that will show some of the style options available. This time use the WS_BORDER style . This will be done after the title window as viewed in the help file.
+
+11. Then use a new Create( ) function using the style WS_SYSMENU 
+
+12. Then use a new Create( ) function using the style WS_POPUPWINDOW
+
+13. After you have done all these create functions. Comment out all but one of the create functions and execute the program.
+
+14. Then comment out the above Create function and uncomment the next , execute again.
+
+15. Repeat the above procedure until you have tried all the different Create funcitons.
+
+Important to know that you can combine more then one of these options by using the following method 
+
+Create(NULL,"MY FIRST MFC APPLICATION", WS_OVERLAPPED || WS_CAPTION || WS_SYSMENU || WS_THICKFRAME || WS_MINIMIZEBOX|| WS_MAXIMIZEBOX )
+ 
+ 
+
+If  you have read the documentation in the Visual C++ help, you will know that this is the default style WS_OVERLAPPEDWINDOW. Try it and see what happens. You never know when you want to change the look of your window.
+
+It is important to remember that if your window does not have a close button when your application is running you will have to close the application by using the CTR & ALT & DEL combination to terminate the application. In Windows95/98 you would choose End Task, in Windows NT you would have to choose the Task Manager and then find the application and End Task. Remember every time you make a change in the source code you must re-compile.
+
+Here is the code from the changed FirstWindow.cpp
+
+#include "FirstWindow.h"
+
+CFirstWindow :: CFirstWindow()
+
+{
+
+// Create(NULL, "My First MFC Application");
+
+// Create(NULL, "Border",WS_BORDER);
+
+// Create(NULL, "Pop Up Window",WS_POPUPWINDOW);
+
+//Create(NULL, "System Menu",WS_SYSMENU );
+
+Create(NULL, "Over lapped Window",WS_OVERLAPPEDWINDOW);
+
+}
+
+It is important to note here that all the different styles are used for creating windows in the GUI format. Don’t get too hung up on the fact that not all the options work to show that much difference. The differences are slight and are used more for non-business applications, which is not part of this course.

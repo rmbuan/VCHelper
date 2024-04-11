@@ -1,0 +1,42 @@
+Tooltips
+
+
+Download Code: http://liad.gbrownc.on.ca/computer/Code%20examples/tooltips1a.zip
+
+
+Tooltips are little text windows that appear when ever a user pauses the mouse cursor, over a toolbar button. A user expects to see them in most modern applications , so your application better included them. Tooltips sound more confusing then they are to actually use. Most of the ground work is done for you by using MFCs.
+
+We will be using the program from the previous portion of the chapter that first demonstrated toolbars. First it is important to understand that when a user moves the mouse over a toolbar button, a WM_NOTIFY message is generated. The macro that normally is attached to this message is ON_NOTIFY. Rumor has it that professional programmers prefer to use the ON_NOTIFY_EX message macro, so it will be explained here.
+
+ON_NOTIFY_EX( TTN_NEEDTEXT, 0, memberFxn )
+
+TTN_NEEDTEXT is a notification message, the value of 0 is used when requiring it for a tooltip and memberFxn is member function that will handle the request to generate the tooltip message. The prototype of the memberFxn function is as follows.
+
+afx_msg BOOL ToolTipHnd(UINT ID, NMHDR *pTTTStruct, LRESULT lpResult); 
+
+The strange thing about this is the the first and last parameters are never used , when using this function with tooltips. The most important parameter is the middle one pTTTStruct. This is a structure the contains another structure inside. Pay close attention to how this works.
+
+The structure definition for NMHDR is as follows
+
+typedef struct tagNMTTDISPINFO
+{
+NMHDR hdr;
+LPSTR lpszText;
+char szText[80];
+HINSTANCE hinst;
+UINT uFlags;
+lParam lparam;
+} NMTTDISPINFO;
+
+The first member of the NMTTDISPINFO structure is another structure. It is defined below
+
+typedef struct tagNMHDR
+{
+HWND hwndFrom;
+UINT idFrom;
+UINT code;
+} NMHDR;
+
+To make sense of all this, it is easier to think of it this way. idFrom will identify which button is asking for the tooltip, it generates the notification message to find the code. To make the tooltips work, all you, as a programmer, have to do is use the LPSTR lpszText member of the structure and give it a value. Remember these structures are part of the ToolTipHnd( ) function that you must write yourself.
+
+ 

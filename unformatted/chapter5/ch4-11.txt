@@ -1,0 +1,40 @@
+Exercise 1
+
+This exercise will allow you to try all the different buttons on the message box and how to respond to them. You will learn the constants that are returned from the message boxes.
+
+First you will create a new project.  There will be two sets of message box structures. One will begin with the user pressing a key on the keyboard and the other will be on the left mouse button being clicked.
+
+There will be a series of message boxes that will appear on the screen and you will have to build a switch statement to respond to what ever the user chooses.   Here are the steps involved.
+
+1) Create a Window class derived from CFrameWnd
+2) Create an Application class derived from CWnd
+3) Setup the message map for both the WM_CHAR message and the WM_LBUTTONDOWN message.
+4) You will also have to set up the message handlers for the above messages.
+
+
+The above must be completed first and should become second nature to you in all your programs.
+The switch statement will only work an integer value and since the message box returns an integer value you can use the integer constants that are built in the MFC library.   The format for the switch statement is 
+
+switch( value returned )
+{
+case : IDNO
+          // do what is expected ,  or another message box
+         break;
+case :  IDYES
+        // this is an example if the message box had a yes no button configuration
+        break;
+}
+
+5) The WM_CHAR message route will consist of the following message boxes and the order in which they will appear on the screeen.
+
+a. First message box will be the default message box buttons the return value is IDOK.
+b. The user clicks on OK another message box appears with the Yes/No buttons. The return value will be IDYES and IDNO.
+c.  If the user chooses NO, terminate the application ( for now use DestroyWindow( ) )
+d. If the user chooses Yes another message box will appear with the retry/ignore/cancel buttons
+e. If the user chooses Cancel or Ignore terminate the program.
+f. If the user chooses  Retry put another default message box with the message prompting the user if he/she is sure with the question icon.
+g. When the user clicks the OK button terminate the application.
+
+You may have to look up the returned constants in the help. 
+
+ 

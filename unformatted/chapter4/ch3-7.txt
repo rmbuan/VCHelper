@@ -1,0 +1,35 @@
+Message Map Program Explained 
+
+
+MessageWindow.h
+
+This file looks very similar to the file that was used in the first program. The only difference now is the fact that the message handler On_Char( ) is added. This will handle the messages sent from the keyboard.
+
+MessageWindow.cpp
+
+First you will notice that the program uses more than just the basics when comes to creating the window. It defines how window will look and where the window will be placed on the screen. This is done with the combination of the RECT NewPlace and the Create( ) function. Review the FirstApplication if you have forgotten what these two do.
+
+An array of characters was declared so that the application could accept input from the keyboard. The array is of the character type and has 80 elements. 80 is the normal number to declare the size of the array because most windows will hold 80 characters across the screen. Since this program accepts one character and then displays it to the screen this length is far too large but for standards purposes, it was declared this way.
+
+Then you will notice that the message handler is being defined as to what is does. This is done by the adding of the new function definition for afx_msg void CFirstWindow :: OnChar(UINT ch ,UINT count, UINT flags) . Where UINT is a 32 bit unsigned interger and ch is the variable of that data type. It actually holds the character that is going to be displayed. The second parameter count is to keep track of how many times that key was pressed. Remember this could also be just holding the key done for an extended period of time. This program is not using this variable as well as the third parameter, flags. 
+
+In this function the program first gets a device context. Normally the name for the device context is dc. The device context is taking the parameter of this, which means that it belongs to the window that it is declared in. Then it uses the TextOut function to display three spaces to the screen. The reason for this is to make sure that there is no other character displayed in the same area as 1,1. Then the wsprintf ( ) function is used to format the ch value that is sent to the function and then TextOut is used again to display to the screen. The device context is not deleted here or anywhere in code, once again because MFC does this automatically.
+
+ 
+
+MessageApplication.h
+
+This is where the new class MessageApplication is declared. Notice that it is derived from CWinApp. This class is your application. There can only be one object derived from this class. There are several member functions defined in the CWinApp class but the most interesting one is InitInstance( ). This is a virtual function that your application must always overwrite. You will notice that nothing has changed in this program from the first program. This will not always be the case.
+
+MessageApplication.cpp
+
+There is no change here from the First program. This just declares the application object FirstApplication. There is now a constructor added but whether it is declared or not all C++ programmers knows that it is there.
+
+MessageApplication.cpp
+
+Again there is no change here except that the constructor has been added to the project with just a semi colon. This has been added to let you know that you could name the application inside the constructor if you wished. This would be used later in projects when it comes to dealing with the registry and ini files.
+
+Mainfile.cpp
+
+This has only changed by including the message macro OnChar( ). Notice that it does not require the argument list. This is the basics of message handling. As you go through this course you will see lots of examples of messages, message macros and message handlers. Get used to how to use them. Windows programming will use them extensively.
+

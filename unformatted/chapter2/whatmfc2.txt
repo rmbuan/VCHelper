@@ -1,0 +1,24 @@
+What are MFCs
+
+As you might have guessed, they are a collection of already defined classes that were written in C++ code. They are designed to make windows programming easier and quicker.
+
+These classes use the object-oriented design principles and use multiple layers of inheritance.
+
+MFCs provide many of the common tasks related to windows programming, which also includes memory recovery from the dynamic creation of objects.
+
+These classes were designed on the re-useable code principle. The programmer does not have to re-create an object every time one is required.
+
+MFCs use extensive use of the Application Programming Interface (API) . This is the technique to allow your programs to interact with the windows environment. 
+
+MFCs were first introduced in 1992, with version 1. Visual C++ Version 6 comes with version 6 of the MFC. The difference between all the different versions of MFC, are that they add more functionality. The latest version deals more with the 32 bit programming world. There really is no reason to go into what the older versions did not do compared to version 6. Just understand that version 7 of MFC is likely to be arriving on the market within the next 12 months.
+
+The Microsoft Foundation Classes were created to assist programmers in dealing with the vast details required when doing windows programming. The MFC’s are classes already developed by Microsoft that deal with the Windows environment for the programmer, so all the programmer has to be concerned with is, the program itself, not the Windows environment. Using MFC helps the programmer meet deadlines, assists in locating program bugs, and makes application design changes easier.
+
+MFCs provide an easier and faster way to produce solid code. This course will teach you the basics of programming using MFC’s and some tricks and techniques for programming better. One of the best features of using MFC is the fact that the code is portable. Portable code means, a program can be written for Windows 3.11 , Windows 95, Windows 98, or Windows NT 4.0 or Windows NT 5.0 ( known as Windows 2000) and the programmer can be assured that the code will run in all environments.
+
+Since the 16 bit world is all but dead, this course will only deal with the 32 bit world , which is Windows 95 or newer operating system. But it is interesting, whether or not the 32 bit programming world will work with the new 64 bit programming world, which is due out in the new few years. Microsoft has said it would, but I choose to wait and see.
+
+You may have found that Visual C++ has a GUI (Graphical User Interface) interface for creating programs. The beginning of this course will do things in the more traditional method, of writing each class and resource using time consuming code writing. Since Visual C++ does not look much like traditional programming, I believe that it is better to write the code from scratch.  Therefore when you start to create programs using the Visual interface, the code that the environment generates for you will not be quite so intimidating. If you do not believe in this, then you should generate a blank project using the ClassWizard. See if you understand the code.
+
+Later in this course we will make extensive use of the Visual environment to speed up creating of applications.
+

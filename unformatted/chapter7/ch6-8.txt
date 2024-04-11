@@ -1,0 +1,14 @@
+ListBox Initialization 
+
+Download Code: http://liad.gbrownc.on.ca/computer/Code%20examples/listbox1b.zip
+
+
+The LBProg will demonstrate how to use a list box. So create the project, download the files and add them to the project. Execute the code and see what happens. Then it will be explained.
+
+The Dialog Box and its controls are not an easy topic to understand so it will be explained in the easiest concepts possible. The first program that was created from the code page above, just basically created the Main window , the Dialog Box and then the list box.
+
+At this time you should be thinking: At what time does the ListBox get its items and in which function does this occur. When you created the application before, we used the InitInstance function to initialize the window. To initialize a dialog box, you use the funciton OnInitDialog( ). This function is automatically called by Windows whenever a dialog box is being displayed. OnInitDialog( ) is a default function that is located in CDialog. This is accomplished because Windows sends a WM_INITDIALOG message. If nothing special needs to be accomplished then you do not need to override this function. But in the case of initializing a ListBox on a Dialog Box, it is required. 
+
+Create the project and add the files from listbox1b. It will add the list into the dialog box. Try it.
+
+ 

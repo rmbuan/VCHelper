@@ -1,0 +1,14 @@
+Standard Naming
+
+
+There is a big push in the industry to start using naming conventions . This started in Visual Basic many years ago. It is just now being brought into the Visual C++ language. It has been tried before but now seems to be accepted by a greater amount of programmers . So throughout this course the naming conventions will be strictly enforced.
+
+When reading code, it makes sense that when you see a variable, that you would know what data it was supposed to hold as well as the date type. This is accomplished by using proper naming conventions.
+
+The variable name should also provide the information of what data the variable should hold.  This is done by giving the variable a useful name. For instance : If you are trying to store a mortgage rate in a double then the variable should be declared in the following manner.     double dMortgageRate 
+
+This gives the programmer, that is reading your code, the exact idea of what should be stored in that variable. The lower case d stands for double the data type and MortgageRate is self explanatory as to what is will hold. The mortgage Rate. 
+
+The capitialization of the first letter of the first word and the first letter of the second word makes reading the variable easier.
+
+This finishes Chapter One and you should test your self using the [ Review Questions ]

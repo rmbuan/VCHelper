@@ -1,0 +1,11 @@
+Global Message Box Explained 
+
+
+The GlobalMessageBox program is demonstrating an example of the AfxMessageBox function. 
+
+This function operates independently of your application and is being used here to demonstrate that you can place a message box prior to your application window being displayed. 
+
+The code that is different from the MessBox program is located in GlobalMessApp.cpp. In the InitInstance function you will notice the AfxMessageBox function is being called. It is being called to display the message "Do you really want to run this program" and caption or title is the application name. The button that will be displayed is the Yes or No option. You will also notice that I have switched to the stop icon. Where in the other programs the ICONSTOP was place before the button selection. This was done to show that it does not matter in which order you put the button or icon constant. 
+
+Here nothing is being done with the retval. But you could have put in a decision statement there to have any action that your application sees fit to do at this time. Maybe if the user says no to the message box you can just terminate the application prior to the window being opened. This would be based on your logic. A good example of this would be if your application requires a specific hardware to be installed in the workstation and it is not there. A sound card is an example. If there is no sound card then you can prompt the user to run your application without sound if they wish or say no and install a sound card .
+

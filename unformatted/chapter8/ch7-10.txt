@@ -1,0 +1,101 @@
+Additional Controls 
+Graphical Interface
+
+This chapter will show how to add addtional controls. Many controls are used in Windows Programming and there are new controls being added to every new release of any graphical language. Graphical controls do make programming easier and usually more interesting.
+
+This project will produce the perfect computer. It will provide the user with a chance to pick components for a computer.
+
+Lets get to it.
+
+http://liad.gbrownc.on.ca/computer/animation/AddControls2.exe This is what is being developed on this page.
+
+It has been a while since a new project has been created so we will do so now. Create a new project of MFC AppWizard (exe ) called AddControls. Save it in the MFC Course\ Chap7 folder. You will have to create the Chap7 folder. The project should be a Single document without Document view support. Accept all the defaults.
+
+1. Create a new dialog box called IDD_CONTROLS. Open the ClassWizard and create the class CComputerDlg for this dialog box.
+
+2. Create all the controls listed below
+
+
+Control ID Caption 
+Group Box IDC_STATIC_MOTHERBOARD Mother Board 
+Radio Button IDC_RADIO_ACER Acer BX Board 
+Radio Button IDC_RADIO_HARMONY Harmony Board 
+Group Box IDC_STATIC_CPU CPU 
+List Box IDC_LIST_CPU NONE (turn off sort) 
+Static Text IDC_STATIC_RAM Ram 
+List Box IDC_LIST_RAM NONE (turn off sort) 
+Group Box IDC_PERIPHERALs Peripherals 
+Check Box IDC_CHECK_DVD DVD Player 
+Check Box IDC_CHECK_CD 40X CD Player 
+Check Box IDC_CHECK_CDWRITER CD Writer 
+Check Box IDC_CHECK_VIDEO8 8 Meg Video 
+Check Box IDC_CHECK_VIDEO4 4 Meg Video 
+Check Box IDC_CHECK_ZIPDRIVE Zip Drive 
+Group Box IDC_STATIC_HARDDRIVE Hard Drive 
+Check Box IDC_CHECK_GIG8 8 Gig 
+Check Box IDC_CHECK_GIG13 13 Gig 
+Check Box IDC_CHECK_GIG20 20 Gig 
+Static Text IDC_STATIC_MODEL Model 
+List Box IDC_LIST_MODEL NONE 
+Button IDC_BUTTON_DISPLAY &Display 
+Button IDC_BUTTON_OK &OK 
+Button IDC_BUTTON_CLEAR C&lear 
+Button IDC_CANCEL &Cancel 
+Static Text IDC_STATIC_MOTHERBOARD2 MotherBoard 
+Static Text IDC_STATIC_CPU2 CPU 
+Static Text IDC_STATIC_RAM2 RAM 
+Static Text IDC_STATIC_DVD2 DVD Player 
+Static Text IDC_STATIC_CDPlayer2 CD Player 
+Static Text IDC_STATIC_CDWRITER2 CD Writer 
+Static Text IDC_STATIC_Video82 8 Meg Video 
+Static Text IDC_STATIC_VIDEO42 4 Meg Video 
+Static Text IDC_STATIC_HD8 HD 8 Gig 
+Static Text IDC_STATIC_HD13 HD 13 Gig 
+Static Text IDC_STATIC_HD20 HD 20 Gig 
+Static Text IDC_STATIC_MODEL2 Model 
+Edit Box IDC_EDIT_MBOARD None 
+Edit Box IDC_EDIT_CPU2 None 
+Edit Box IDC_EDIT_RAM2 None 
+Edit Box IDC_EDIT_DVDPLAYER None 
+Edit Box IDC_EDIT_CDPLAYER2 None 
+Edit Box IDC_EDIT_CDWRITER2 None 
+Edit Box IDC_EDIT_VIDEO82 None 
+Edit Box IDC_EDIT_VIDEO42 None 
+Edit Box IDC_EDIT_HD8 None 
+Edit Box IDC_EDIT_HD13 None 
+Edit Box IDC_EDIT_HD20 None 
+Edit Box IDC_EDIT_MODEL2 None 
+
+3. Create the menu. Use the IDR_MAINFRAME menu and delete the Edit POPUP menu. Create the Open menu item with the ID of IDM_OPEN and the Caption Open.
+
+4. Use the ClassWizard to add the OnOpen function and enter the code to open the Dialog Box.
+
+5. Add the code in the IDC_BUTTON_OK to close the dialog box.
+
+6. Initialize the list boxes. There are three listboxes that must be initialized, the Model list box, the CPU ListBox and the Ram list box. This will be done in the OnInitDialog. The code is listed below.
+    CListBox *cpulbptr = (CListBox * ) GetDlgItem(IDC_LIST_CPU);
+    cpulbptr->AddString("486 DX 100");
+    cpulbptr->AddString("Pentium 166 Mhz");
+    cpulbptr->AddString("Pentium II 300");
+    cpulbptr->AddString("Celeron 333 Mhz");
+    cpulbptr->AddString("Pentium III 450 Mhz");
+    cpulbptr->AddString("Pentium III 600 Mhz");
+    // initialize the Ram list box
+    CListBox *ramlbptr = (CListBox *) GetDlgItem(IDC_LIST_RAM);
+    ramlbptr->AddString("32meg");
+    ramlbptr->AddString("32meg X2");
+    ramlbptr->AddString("64meg");
+    ramlbptr->AddString("64meg X2");
+    ramlbptr->AddString("128meg");
+    ramlbptr->AddString("128meg X2");
+    //initialize the model list box
+    CListBox *modlbptr = (CListBox *) GetDlgItem(IDC_LIST_MODEL);
+    modlbptr->AddString("LapTop");
+    modlbptr->AddString("Tower");
+    modlbptr->AddString("Desktop");
+    modlbptr->AddString("NoteBook");
+
+7. The code that was entered, has been explained before. Build the project and execute the application. Open the dialog box and see that the dialog box is initialized.
+
+To be able to capture the data that is entered into the dialog controls, there must be data members in the CComputerDlg class. The next page demonstrate how to do that.
+

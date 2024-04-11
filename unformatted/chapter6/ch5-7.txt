@@ -1,0 +1,7 @@
+Adding Accelerator Keys
+
+Download Code: http://liad.gbrownc.on.ca/computer/Code%20examples/menuprog3.zip
+
+As you are aware windows programs usually use some sort of short cut key. This program will show you how to create them and how to use them. Download the code and create a project with the name of your choice. Once you download the files and copy them into the new project's folder, you can then run the program. You will notice that the menu items now have accelerator keys so that the user does not have to use the mouse to execute a command. Again remember to keep close to windows standards as much as possible. Try and then move to the next page and see how it is being done.
+
+  

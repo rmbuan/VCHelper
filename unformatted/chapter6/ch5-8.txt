@@ -1,0 +1,38 @@
+Accelerator Menu Explained 
+
+
+MenuWin.h
+
+This where the main window is defined, along with the message handlers. There is no change from the previous file.
+
+MenuWin.cpp
+
+Here is where the functions are defined and you will notice in the On_Exit   function that DestroyWindow is used. When you choose the Exit from the File menu you will not terminate the application immediately . So there are now two ways to close this application. The OnDestroyWindow(  )  can be used to see whether or not to confirm the application is to be closed or to check to make sure that certain application specific conditions are met prior to closing the application. Such as, do you wish to save the information prior to closing.
+
+Accelerator keys are discussed in the MenuItem.rc file explaination, but here it needs to load the Accelerator table. This is done with the code if(!LoadAccelTable("MainMenu"))
+
+MessageBox("Accelerator Table Can Not Be Loaded","Error",MB_ICONEXCLAMATION);
+
+MenuApp.h
+
+The application object is defined here. There is no difference from the previous program.
+
+MenuApp.cpp
+
+The application is defined here. There is no change here from the previous program.
+
+MainFile.cpp
+
+The message map is declared along with the message macros. The application is also declared here.
+
+MenuItem.h
+
+This just defines the ID_XXXX an integer value.
+
+MenuItem.rc
+
+This is where the changes take place. Notice the statement MENUITEM "Sa&ve\tF2" , IDM_Save . This will now show, when the menu is dropped down, the F2 displayed beside the menu option. This will inform the user that the F2 key could be used to save what ever the application is doing. To make this work you use the MenuItem.rc file . Use the heading the menu name and the keyword ACCELERATORS. This is called an Accelerator table. In order for the Accelerator Table to work you must include the <afxres.h> header file. Notice the line VK_F2 IDM_Save, VIRTKEY. When using the function keys you have the VK_XX to tell which key to be used, the IDM_XXX is the method of  mapping that key to a message processing function. In this case On_Save( ).
+
+There are more methods in which to assign different keys to do common tasks. Notice that Copy and Paste are using the "^C"and "^V" respectively . This uses the windows standard Ctrl C for copy and Ctrl V for paste. It also uses the F1 for help. Keep in mind to stick to windows standards when designing menus and shortcuts.
+
+ 

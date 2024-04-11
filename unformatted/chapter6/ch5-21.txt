@@ -1,0 +1,57 @@
+How to Code the Menu
+
+In this section you will learn how to use the ClassWizard to add code to the FirstGui program. Follow the steps below:
+
+1. Go to the Resource Tab and select the IDR_MAINFRAME. This is where the menu was constructed.
+
+2. Click on "File", so that the menu drops down.
+
+3. Right Click on the "New" menu option.
+
+4. Select ClassWizard.
+
+5. Make sure that the Project is FirstGui and Class Name is CMainFrame.
+
+6. In the Object IDs pane you will see that IDM_New is highlighted.
+
+7. The Messages Pane has Command and UpdateCommandUI. Select Command.
+
+8. The Add Function, to the right, becomes active. Select Add Function.
+
+9. It will prompt you to add the new function "OnNew" to the class CMainFrame. Click OK. It is possible to change the name of the function, but is not recommended.
+
+10. Look in the Members functions pane at the bottom of the screen. The new function is highlighted.
+
+11. To edit the code of this function ( to tell the function what to do when the user selects this menu option) click on the edit code button.
+
+12. It will take you right to the place where to edit the code. Enter the following line of code: MessageBox("This is where the code for the New menu option would be placed.","New");
+
+13. Build the project and execute it.
+
+14. Select the File menu option and you will notice that the New is no longer grayed out. Click the New menu option. It will respond by displaying the message box, with the above message. The code was placed in the file MainFrame.cpp.
+
+15. When the program terminates, it will take you back to the MainFrame.cpp file. Right click on any blank space. Select ClassWizard. The  Class Wizard is a very useful tool. Therefore there are many different ways to get to it.
+
+16. In the Objects IDs pane scroll until you find the IDM_OPEN. Click on it.
+
+17. In the Messages pane click on the COMMAND message and then Add Function.
+
+18. The function name will be OnOpen. Click the OK. There has been no code added to this function yet. To add code to this function, go to the Menu of the environment, select View and then ClassWizard. Another way to get to the Class Wizard.
+
+19. In the Members functions pane, scroll until you find the OnOpen function. Click Edit Code. It will take to the MainFrame.cpp file, where you need to edit code.
+
+20. Add the following code:MessageBox("This is where the code for the Open menu option would be placed.","Open");
+
+21. Complete all the code for the menu options, in a similar fashion. Make sure to change the message and title of the message box for each menu option. Except Exit, it already works. The ID values are listed below
+
+                ID_EDIT_CUT
+                ID_EDIT_COPY
+                ID_EDIT_PASTE
+                ID_EDIT_UNDO
+                IDM_PREVIOUS
+                IDM_NEXT
+                IDM_CLOSE
+                IDM_SAVE
+
+Build the application and then test it to make sure that it works. Then proceed to the next portion to create a Toolbar.
+

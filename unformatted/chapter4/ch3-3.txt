@@ -1,0 +1,6 @@
+How to use Message Maps and Handlers
+
+
+To demonstrate how message maps and handlers work we will use the three most common events that occur in any program. The user pressing the keyboard and the user pressing the left and right mouse button. The user pressing a key on the keyboard is handled by the WM_CHAR message and the ON_WM_CHAR message macro. The WM_LBUTTONDOWN message is sent when the left mouse button is press. So the message macro will be ON_WM_LBUTTONDOWN. Windows programs deal heavily these days based on the right mouse click, so we will deal with that as well. This message would be WM_RBUTTONDOWN and the message macro would be, you guessed it ON_WM_RBUTTONDOWN.
+
+Before proceeding some things need to be explained. So at this time the device context is going to be explained as well a member function TextOut( ) and a string formatting function wsprintf( ).

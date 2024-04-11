@@ -1,0 +1,159 @@
+Code Explained
+
+To start to explain the code we will look at StdAfx.h . Double click the file name.
+
+#include <afxwin.h> // MFC core and standard components
+#include <afxext.h> // MFC extensions
+#include <afxdisp.h> // MFC Automation classes
+#include <afxdtctl.h> // MFC support for Internet Explorer 4 Common Controls
+
+All this file really does is create a central location, to include all the built in header files, that are required for this project. This file will then be included in all the other files. It saves having to type all these different header files into each of the other files. The environment automatically created the StdAfx.cpp file for you. There is no code hear , other than to include the StdAfx.h .
+
+Then look at the resource.h . This file is being used to generate the next ID values automatically for the programmer , when a new resource is defined.
+
+MainFrm.h contains the following code.
+
+class CMainFrame : public CFrameWnd
+{
+public:
+CMainFrame( );
+protected: 
+DECLARE_DYNAMIC(CMainFrame)
+// Attributes
+public:
+// Operations
+public:
+// Overrides
+// ClassWizard generated virtual function overrides
+//{{AFX_VIRTUAL(CMainFrame)
+virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
+virtual BOOL OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo);
+//}}AFX_VIRTUAL
+// Implementation
+public:
+virtual ~CMainFrame( );
+#ifdef _DEBUG
+
+virtual void AssertValid() const;
+virtual void Dump(CDumpContext& dc) const;
+
+#endif
+
+CChildView m_wndView;
+
+// Generated message map functions
+protected:
+//{{AFX_MSG(CMainFrame)
+afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+afx_msg void OnSetFocus(CWnd *pOldWnd);
+// NOTE - the ClassWizard will add and remove member functions here.
+
+// DO NOT EDIT what you see in these blocks of generated code!
+
+//}}AFX_MSG
+DECLARE_MESSAGE_MAP( )
+};
+
+
+The code that you have seen before is highlighted. This code really creates the window class for us. The rest of the code, will be briefly explained here. Just remember , at this time this code does not need to be fully understood.
+
+DECLARE_DYNAMIC(CMainFrame) This statement is used to allow the new class CMainFrame to have access to the run-time information of the CObject. Remember that CObject is the class that most MFC classes are inherited from. 
+
+If DECLARE_DYNAMIC is included in the class declaration, then IMPLEMENT_DYNAMIC must be included in the class implementation ( the .cpp file ).
+
+This statement virtual BOOL PreCreateWindow(CREATESTRUCT& cs); is used, in the event that you wish to have something happen prior to the window actually being created, but after the application has started.
+
+This statement is used for the message map. virtual BOOL OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO* pHandlerInfo); This is what starts your application looking for message maps.
+
+The following two lines of code are used to determine available memory and to clear memory respectively.
+
+virtual void AssertValid() const;
+
+virtual void Dump(CDumpContext& dc) const; 
+
+This block of code should never be altered. When using the Wizard to create the application it will automatically put all the message handlers in this block of code.
+
+//{{AFX_MSG(CMainFrame)
+afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+afx_msg void OnSetFocus(CWnd *pOldWnd);
+// NOTE - the ClassWizard will add and remove member functions here.
+// DO NOT EDIT what you see in these blocks of generated code!
+//}}AFX_MSG
+
+The MainFrm.cpp
+
+This file will define what all the functions in the MainFrm.h, will be doing, in this application. You will notice the line IMPLEMENT_DYNAMIC(CMainFrame, CFrameWnd) is included. As mentioned before if the statement DECLARE_DYNAMIC(CMainFrame) is included in the MainFrm.h file, this statement must be in the .cpp file. Again, all it does is allow for access to run-time information.
+
+The following code is where the window is actually created.
+
+int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
+{
+if (CFrameWnd::OnCreate(lpCreateStruct) == -1)
+return -1;
+// create a view to occupy the client area of the frame
+if (!m_wndView.Create(NULL, NULL, AFX_WS_DEFAULT_VIEW,
+CRect(0, 0, 0, 0), this, AFX_IDW_PANE_FIRST, NULL))
+{
+TRACE0("Failed to create view window\n");
+return -1;
+}
+return 0;
+}
+
+Notice that the Create function is slightly different, using the Wizard instead of the method of creating a window up till now. This window is being created as a view not as a simple window. A view is how things will appear on the screen as well as having a copy of what is being displayed in memory.
+
+There are different methods of creating a window. The following function AfxRegisterWndClass(0) is used to register your new window with Windows the operating system. This will be expanded upon in the Icons and Bitmap section of this course.
+
+The rest of the code in this section is there for routine memory maintenance. Just understand that it has to be there. It is very unlikely you will ever change this code. So let us move to the next file.
+
+CFirstGui.h
+
+The code in this file looks similar to the following code
+
+class CFirstGuiApp : public CWinApp
+{
+public:
+CFirstGuiApp( );
+// Overrides
+// ClassWizard generated virtual function overrides
+//{{AFX_VIRTUAL(CFristGuiApp)
+public:
+virtual BOOL InitInstance();
+//}}AFX_VIRTUAL
+// Implementation
+public:
+//{{AFX_MSG(CFristGuiApp)
+afx_msg void OnAppAbout( );
+// NOTE - the ClassWizard will add and remove member functions here.
+// DO NOT EDIT what you see in these blocks of generated code !
+//}}AFX_MSG
+
+DECLARE_MESSAGE_MAP( )
+};
+
+This is the simple application class. The only difference is that this class actually declares a message map for the application itself . There is very little reason for doing so in most applications. This was created by the wizard , which tries to cover every different possible condition. So it declared a message map. You will notice that the wizard has warned you not to edit the code in the AFX_MSG block. It is always wise to listen to the wizard.
+
+CChildView.h
+
+This is where the view class is actually declared. Remember that to create the window in CMainFrame we used the m_wndView object of the type CChildView. The interesting portion of this code is located in the .cpp file .
+
+CChildView.cpp
+
+The follow code from the CChildView.cpp file is where the new window is created. The AfxRegisterWndClass function is being used to declare and register a new window . This must be done to include a new cursor or a new icon. Don't worry about this until the Icons and Bitmap chapter.
+
+BOOL CChildView::PreCreateWindow(CREATESTRUCT& cs) 
+{
+if (!CWnd::PreCreateWindow(cs))
+return FALSE;
+cs.dwExStyle |= WS_EX_CLIENTEDGE;
+cs.style &= ~WS_BORDER;
+cs.lpszClass = AfxRegisterWndClass(CS_HREDRAW|CS_VREDRAW|CS_DBLCLKS, 
+::LoadCursor(NULL, IDC_ARROW), HBRUSH(COLOR_WINDOW+1), NULL); return TRUE;
+}
+
+Remember that most of the code that we have used before is all that is required. The rest of the code in this example deals with greater details of windows programming , then we require. As we go along I will point out what is important to the programmer and what is important to the computer.
+
+Again Don't be to concerned if you do not understand the code. It is required by Windows. You, as a programmer, will rarely ever, be required to change any part of this code, at this level of programming.
+
+Let us get to the interesting portion of this lesson, Working in the GUI environment.
+

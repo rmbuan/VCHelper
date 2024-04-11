@@ -1,0 +1,28 @@
+Selecting an Item 
+
+Download Code: http://liad.gbrownc.on.ca/computer/Code%20examples/listbox1c.zip
+
+The code in the above code button will demonstrate how to select the item inside a list box. This may seem like a long procedure but it really works better than most other Window development environments, as far performance during run-time.
+
+List boxes receive and generate messages. This is what makes them, not quite, like anything else that we have seen before in this course. This is part of the reason, time has been taken to show the difference between controls like this, and normal controls.
+
+The messages, that it generates, are what the user does to the list box. The user can single click or double click an item within the list box. This will generate a message. The one most commonly used is the double click so we will concentrate on that one. In this exercise. The LBN_DBLCLK is the Notification message that is generated when this occurs. The standard message macro for this would be ON_LBN_DBLCLK.
+
+ON_LBN_DBLCLK(ID,MessageHandler)
+
+A notification message is defined within the ON_COMMAND message. It is not quite the same , the difference is, a notification message will describe the event in more detail. Once the user has double clicked on an item in the list box, the list box will then, be checked to see what item was clicked, within the list box.
+
+Additional Examples of notification messages :
+
+ON_LBN_SEL_CHANGE, used when the user has change the contents selection
+
+ON_LBN_SET_FOCUS ,used when the list box first gains focus.
+
+Sending Messages to a List Box
+
+There are several different messages that can be sent to a list box. Usually they are sent to the list box to determine what has happened to the list box. What did the user chose. In the previous example you used  the function, AddString( ). This added a string into the List Box. There is a message GetCurSel( ) , which queries the list box to see which item has been highlighted. Then there is a function that will do the most for programmers and that is the GetText(int index, LPCSTR stringvalue). All the above functions return an integer value.
+
+GetText will determine the index of the highlighted item and then copy the string into the memory location that is pointer to by stringvalue.
+
+Create a new project and download the code . Add the files to the project and then execute the code. You will notice , that now you can make a selection and a message box will pop up telling you what you have selected. I agree that it is not that useful by itself but the exercises at the end of this chapter will be more helpful. This program will just demonstrate how to do the basics.
+

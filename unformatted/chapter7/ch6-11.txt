@@ -1,0 +1,18 @@
+Selecting Items Explained
+
+
+First you will notice that the size of the list box has been changed to display all the items without having to scroll . This is a preferred method when the list is not too long. It can not always be the case , but in our simple exercise it is. Plus we will be adding more to the list box later , so now is as good a time as any to make it larger.
+
+The ON_LBN_DBLCLK(IDD_LBFIRST,OnChosen) statement is added to the message map in the Dialog Box's message map. It sends the ID of the message List Box and then the message handler that will handle the message. In other words it calls the function OnChosen.
+
+afx_msg void OnChosen( ); was added to the class CDialogBox . Then in the .cpp file the function OnChosen was defined. It creates a character string called "displayedstring. This string is used in the GetText( ) function. The GetText function requires two parameters. One is the index at where the user double clicked. This index was returned from the funciton GetCurSel( ). This returns the index value of the double clicked item. 
+
+First before you can get to the list box , a pointer to the list box is required. This is done by the following statement:
+
+CListBox *lbpointer = (CListBox *) GetDlgItem(IDD_LBFIRST); 
+
+This declares a pointer of type CListBox and then it uses the function GetDlgItem(IDD_LBFIRST) to determine which list box to get the item from. The (CListBox *) is used to cast the return type to a pointer of type CListBox.
+
+Notice that every time a call to GetDlgItem is used a new pointer must be declared. There is no way to capture this once and store it globally for use later. It must be obtained every time you need it.
+
+ 

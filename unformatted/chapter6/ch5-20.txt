@@ -1,0 +1,70 @@
+Introduction
+Graphical Interface 
+
+Follow these steps to be able to change the menu's appearance. Code will be added later.
+
+1. Make sure the ResourceView tab is presently showing. If not click on the ResourceView tab.
+
+2. Double Click on the Menu folder.
+
+3. Double Click on the IDR_MAINFRAME. This will open up showing the menu on the right.
+
+4. Right Click on " File ". 
+
+5. Select " Properites ". You should see that the POPUP menu items do not have ID. The & beside the F means, with the combination of Atl and F you can dropdown this menu item.
+
+6. Close the Propeties dialog box , by clicking on the X in the top right corner.
+
+7. Left click the " File ". This should dropdown the menu options, under File.
+
+8. Right click on Exit. Select " Exit ".
+
+9. The ID value of Exit is ID_APP_EXIT. Every MENUITEM must have an ID assigned to it..
+
+10. Close the Exit properties dialog box.
+
+11. Right Click on the Exit menu option again and select " Cut ". This will delete the Exit menu option.
+
+12. Right Click on the blank menu option under File. 
+
+13. Select " Properties ".
+
+14. Enter the ID value for this menu option. IDM_NEW.
+
+15. In the Caption, enter "&New". Do not change anything else.  Notice that since you have created the new  menu option "New", that there is a blank menu option under New. This is for the next menu option.
+
+16. Repeat the above process ( steps 12 through 15 ) to create the following menu options:
+                    Open,Close, Save, Exit.
+
+17. Build the application and try the menu. Notice that all the new menu options are grayed out, including the Exit menu option. Since there is no code added yet, the menus will appear grayedout. This is to remind you, to add code.
+
+18. To make the Exit button work, we can use the code provided by the  MFC library.  To accomplish this, go back to the properties of the Exit menu option. In the ID box select the dropdown list on the right. Find the ID_APP_EXIT. You will have to scroll through the list.
+
+19. Run the program again and you will see that Exit is now black. Click on it and the program will terminate.
+
+20. Notice that there is no View in the menu. There is a blank menu option beside Help. Drag this menu option between the Edit and the Help on the menu. To drag this blank menu option to the new location, you will have to left click and hold and drag. If you do not move the menu will not indicate that you can move it.
+
+21. In this blank menu option Right click and select Properties.
+
+22. Give it the Caption of &View.
+
+23. Again a blank menu option appears below the View menu option. Right click this new menu option and select properites.
+
+24. This time click on the POPUP check box. Notice that little arrow appears in the menu option and a blank box appears beside the new menu.
+
+25. Enter the Caption " &Records ", and the ID of  IDM_RECORDS
+
+26. Right click the blank box to the right of Records. Select Properites.
+
+27. Enter the ID value of IDM_NEXT and the Caption &Next.
+
+28. A blank menu option will appear below Right Click and set this menu to IDM_PREVIOUS, caption &Previous.
+
+29. Build the program again and go through all the menus and get familar with what you have accomplished.
+
+The above steps has created a complete menu, without using any code. The compiler may tell you,  the resource file has been changed outside of the program. Click Yes.
+
+After the application has been run, terminate it. Let us see what was done. Open the Firstgui.rc file, using Notepad.  Scroll through this file and will notice that the menu was created similar to the method used in the non - gui section of this course. There is plenty of code here that you do not have to be concerned with. It is how the visual environment sets some of the compiler options.
+
+In the next section, code will be added.
+

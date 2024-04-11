@@ -1,0 +1,182 @@
+Question Chapter Two
+
+1.  The main class that almost all derived classes for MFC are derived from is ?
+
+CcmdTarget 
+CObject 
+CWinApp 
+CWnd 
+2. The main window class is :
+
+CcmdTarget 
+CObject 
+CWinApp 
+CWnd 
+3.  The main Application Class is :
+
+CcmdTarget 
+CObject 
+CWinApp 
+CWnd 
+4.   Which class must have an object, of this type, declared to instantiate your program ?
+
+a. Application object
+b. Windows object
+c.  MFC object
+d. CObject object
+
+5.  When you are creating an application that will have multiple windows open at the same time and in some cases the same window open more than once , it is referred to as a : 
+
+SDI 
+MDI 
+6.  Since each class in the MFC library has to have an object of that type, declared in your application , you must be a familiar with all the functions of that class and what they do. It is possible to over ride these functions but this is rarely done. 
+
+a. True
+b. False
+
+7.  When you use the first main window of your application you can treat this window as a container that will hold all the other windows of your application ? 
+
+a. True
+b. False
+
+8.  When developing an application using MFC it is not possible to call the API function that you wish directly ?
+
+a. True
+b. False
+
+9.  What is the header file that must be included in all windows applications ? 
+
+AFXWIN.h 
+IOSTREAM.H 
+STDIO.h 
+WINDOWS.H 
+10.  Traditionally when creating a windows application , good programming technique says to allows use an user-defined inherited class instead of directly using the MFC class  ? 
+
+a. True
+b. False
+
+11.  What is the minimum number of classes that are required to create a standard MFC application ?  
+
+a. 2 classes
+b. 3 classes
+c. 4 classes
+d. none
+
+12.   When you wish to call (start) your application , you instantiate an object of the derived windows class ? 
+
+a. True
+b. False
+
+13.   To actually write the code that is required to create an application, you must use the Microsoft Visual Studio to create what kind of project ? 
+
+a. Utility Project
+b. Win 32 application
+c. Win 32 Console Application
+d. MFC AppWizard (.exe)
+
+14.   When writing a windows based application you can write code in many files which are added to the project. In fact this is standard practice instead of writing all the code into one file. The reasons for this are:
+
+ease of finding where to make changes 
+prevents scrolling through 1000's of lines of code 
+makes moving files around easier. 
+Only A and B are correct 
+All above are correct 
+15. You can compile DOS and Windows programs in the Microsoft Visual C++ environment using different settings for each one and to change the settings you use the Project menu item to change the settings ? 
+
+a. True
+b. False
+
+16  Most good programmers can write code that compiles the first time, every time ? 
+
+a. True
+b. False
+
+17.  Which of the following are true about DECLARE_MESSAGE_MAP :
+
+macro 
+needs to be included in 
+it is not a function in the MFC library 
+A and B are correct 
+All the above are correct 
+18.  To create a window you use the function Create( ). In which MFC class is this function declared ? 
+
+CcmdTarget 
+CObject 
+CWinApp 
+CFrameWnd 
+ 
+
+19.  To create a window you use the function Create( ) . In which user defined class would it be called ?
+
+the class derived from CWinApp 
+the class derived from CFrameWnd 
+the class derived from CTargetCmd 
+the class derived from CWindow 
+20.   The third argument of the Create ( ) function is the style window. To create a window to display the minimum and maximum buttons on the window which of the following would need to used ?
+
+WS_SYSMENU 
+WS_MAXIMUMBOX 
+WS_MINIMUMBOX 
+A and B are correct 
+All are required. 
+21.  The default style for the window is the WS_OVERLAPPEDWINDOW style. This is made up of a collection of other styles. Which of the following are not included in this style ?
+
+WS_OVERLAPPED 
+WS_CAPTION 
+WS_SYSMENU 
+WS_VSCROLL 
+22. Device Units are ____________ in computer programming terms ?
+
+inches on the screen 
+peripherals 
+pixels on the screen 
+are the starting point 
+23.  The data structure of RECT contains four variables declared inside it. What data type are all the members ?
+
+CHAR 
+LONG 
+INT 
+STRUCT 
+24.  Which are not members of a RECT structure  ?
+
+Top 
+bottom 
+Height 
+Width 
+25.  You can use the data member declared in the CWinApp to change the name of the executable. What is that variable ?
+
+m_CmdShow 
+m_pszAppName 
+m_pszRegistryKey 
+AppName 
+26.  The purpose of the function InitInstance is to start your application. When your application is to terminate what is the function that is called to release memory so other programs can use the memory ?
+
+InitInstance( ) 
+ExitInstance( ) 
+Destroy( ) 
+Release( ) 
+27.  The m_hInstance is a data member of CWinApp, it main purpose is to  ?
+
+start the application 
+to track how much memory your application is using 
+to track which copy of your application has the focus 
+to terminate your application 
+28.  Windows applications are written and they only contain windows ?
+
+a. True
+b. False
+
+29.  m_nCmdShow variable is used to in the ShowWindow ( ) function, the first time the window is created. It is called inside the InitInstance fuction. Which of the follow can be used in the second or third call to ShowWindow( ) ?
+
+SW_HIDE 
+SW_MINIMIZE 
+SW_RESTORE 
+SW_SHOWNA 
+All of the above 
+A, B, C only are correct. 
+30.  If your application has a class derived from CWinApp, which is your application class for your application called CMyApp. You also have a window class derived from CFrameWnd called CMyWindow. Which of the following is the method used to create an occurrence of your application ?
+
+CWinApp ObjectApp 
+CMyApp ObjectApp 
+CFrameWnd ObjectApp 
+CMyWindow ObjectApp 

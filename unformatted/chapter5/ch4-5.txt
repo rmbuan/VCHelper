@@ -1,0 +1,29 @@
+Code Explained 
+Simple Message Box
+
+
+MessBoxWin.h
+
+Here is where the main window class is defined. Here the afx_msg functions ( message handlers ) are prototyped along with the constructor, and the message map is declared. This program will deal with OnChar and the OnLButtonUp messages handlers. 
+
+MessBoxWin.cpp
+
+There is an integer declared retval. This is used to capture the returned value from the message box. I am using the returned constants, which are IDOK, IDIGNORE, IDYES, IDNO and so forth. You can check out the other return value constants by using the help and searching for AfxMessageBox. Using return constant makes it easier to read the code. It is highly recommended that return constants be used whenever possible. Then the Create( ) function is used to create the main window for the application. Nothing new yet.
+
+Check out the OnChar function. You will see that it is using the MessageBox function. The message box function is displaying the message "The user has pressed a key". The title or caption is displaying the text "Default OK Button Only". There is no third parameter being supplied here. The next example of the message box will use the third parameter. Since this program is using the default third parameter, there will only be a OK button display. This is the default value. Remember the prototype for the MessageBox function.
+
+The OnLButtonUp function was used to demonstrate that this event can also be triggered. So, from this thinking you can see that it is possible to have the left mouse button do more than one thing, by the user doing one action. This is time saving for the user and should be kept in mind. The MessageBox function will display the message "The user has lifted the left mouse Button" and the caption or title ( this is unclear what it should be called. Microsoft uses the word caption and programmers use the word title. It means the same thing) "Explicitly specifying the OK button only ". The third parameter is used with explicitly using the MB_OK button. This will look similar to the OnChar function’s message box , they both only have the OK button on the message box. You will notice that no device context or WM_PAINT message was created in your application. MFC is taking care of this for us.
+
+MessBoxApp.h
+
+This is where the application object is declared. There is nothing here that you have not seen before.
+
+MessBoxApp.cpp
+
+Again this code just defines the application object and all it really does it create the main window. There is nothing here you have not seen before.
+
+MainFile.cpp
+
+This is where the message map is declared and the message macros are entered. It also creates an application object, so the program can be instantiated. I think, it is important to keep continuity in the way the code is explained. In the future you will see this file change. So don’t get too comfortable skipping this section of code explanation.
+
+ 

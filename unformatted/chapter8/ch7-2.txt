@@ -1,0 +1,44 @@
+More Controls Explained
+
+
+The program that you just downloaded and ran was the graphic portion of this program only.
+
+Contol.h
+
+This is the class (CControlWin) the defines the main window of the program. The only message handler that is described here is OnShow and OnExit. OnShow will be used to display the dialog box and OnExit will be used to close the application , nothing that you have not seen before.
+
+ControlWin.cpp
+
+This is the file that defines what the class CControlWin will do. The constructor will create the window and load the menu and the accelerator table. Again there is nothing special here. OnExit used the SendMessage function and it just generates a WS_CLOSE message that closes the application. The OnShow function just creates and displays the Dialog box.
+
+ControlApp.h
+
+This file defines the application class of the project. It has the standard InitInstance function that is used when you wish something special to occur to initialize your application.
+
+ControlApp.cpp
+
+This defines the class CControlApp object and all it does it create new memory for the window and displays the window.
+
+ControlDialog.h
+
+This is the class that defines the Dialog Box. It takes two parameters the Dialog box that was described in the resource file and the window that this dialog box belongs to. You will notice that the constructor also is defined here as well. It also declares it's own message map. Remember that a dialog box has it's own message handling system.
+
+ControDialog.cpp
+
+Nothing is occurring in here. Since the constructor was defined in the header file , at the present time there is nothing to add in here. That will change when we start to handle the messages for this Dialog box.
+
+MainFile.cpp
+
+This is the main file of the application. Here the message map for the Window and the message map for the Dialog box is setup and ready to be used. The application is also instantiated here.
+
+IDS.H
+
+This is the file that keeps track of all the ids for all the controls in the application. It is possible to have ids in here that are not declared anywhere else. It is important to know that if an id is declared somewhere else than it must appear in this file. This really is just a common place to keep track of ids.
+
+ 
+
+ControlRec.rc
+
+This file is the most important file in this application. It sets up all the graphical portions of this project. As was mentioned before , so far all this application does is display the check boxes , radio buttons, text boxes and static labels. Notice that automatic checkboxes and radio buttons have been used.
+
+A word of importance here : Normally the graphical portion of the project is done in a graphic editor. Microsoft Visual Studio has a great editor for this purpose. It is important however, that you understand how to create the tools from a command line version , before getting to the graphical tools. These tools have been known to confuse new comers to this environment. Once you become familiar with the Visual C++ language and MFCs it would be wiser to create the graphical portion in the graphic editor.

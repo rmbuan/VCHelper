@@ -1,0 +1,22 @@
+Adding, Deleting Items 
+
+Download Code: http://liad.gbrownc.on.ca/computer/Code%20examples/listbox1d.zip
+
+
+This Chapter has shown you how to create and initialize a list box. Now it will demonstrate adding and deleting items to the list box dynamically ( at run-time). This will be useful in many cases plus , it would not be doing justice to the list box if it was not included.
+
+Keep in mind that most list boxes should be loaded from either a file or a database and when you add or delete an item from the list box it should also be deleted from the file or database. This would retain the changes. Unfortunately files and database manipulation has not been taught, so when you add or delete an item in the list box it is only good for the duration of the program's execution. Once the program is terminated the changes are no longer valid. At this time the only permanent method of adding or deleting from the list box is in the OnInitDialog( ) .
+
+Before a demonstration of adding an item to the list box , we will need to have an edit box so that the user can enter what item to enter into the list box.
+
+As you would imagine to add an edit box to the Dialog Box , it would be done in the resource file. The format: 
+
+EDITTEXT EDID, X, Y, Width, Height[,Style]
+ 
+ 
+
+At the same time we will use two push buttons. One to add the string and one to delete a string. Depending on which the user decides to do. Keep in mind these are only temporary changes. Once the program terminates the changes are no longer in effect.
+
+Create a new project and download the code and add the files to the project. 
+
+  

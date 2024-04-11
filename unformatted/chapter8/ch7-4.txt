@@ -1,0 +1,30 @@
+Code Explained More Controls
+
+
+The program is a simple program that does not take care of every possible condition but it will demonstrate how to use checkboxes and radio buttons. You will notice that all the check boxes are checked and the 10% radio button has been checked as well. This was accomplished by using the new header file "varialbes.h"
+
+This header file is used to declare global variables. These variables are given a value and this value is then passed in the SetCheck( ) function in the OnInitDialog( ) function. Remember that OnInitDialog is called as soon as the user chooses to show the dialog box. 
+
+ControlDialog.h
+
+This is the class that defines the Dialog Box. It takes two parameters the Dialog box that was described in the resource file and the window that this dialog box belongs to. You will notice that the constructor also is defined here as well. It also declares it's own message map. Remember that a dialog box has it's own message handling system.
+
+Notice that the two new functions have been added to the project now to deal with the Calculate button and the clicking on the Computer check box. If you click on the computer check box you are prompted with a message box. The message box will ask if you are sure that you do not need a computer. If you answer NO, it will reset the check box to checked. Once you click on the Computer checkbox the box is cleared. You can verify this by moving the message box. Once you choose No the box is checked again.
+
+OnCalculate will check the state of all the boxes and then display the price, that is the value of the chosen checkboxes and radio buttons. 
+
+ControlDialog.cpp
+
+This file will define how the class is going to complete its work. Notice that the OnInitDialog( ) function will obtain a pointer to all the radio buttons and the checkboxes. It uses the GetDlgItem( ) function and passes the ID of each control and then with the pointer it now calls the defaulted function SetCheck( ) and passes the global variable. If the value is above 0 it will be checked. If it equals 0 it will be cleared. It is true, it is possible to use one pointer and just keep changing the value of that pointer but it is always better to get a pointer once in a function and then use a different pointer for the next control. This way you can always refer back to the pointer.
+
+Now is a good time to stress the standard naming conventions. As you may have noticed, the name of the variables may be long. This was done on purpose. Sure the names are long but you know exactly what each variable stands for and since we have many checkboxes and many radio buttons it will be easy to remember what the variable you are looking for. In the sample program , you would not have to stop to long to think what the variable that was holding the pointer to the Computer checkbox. (CBcomputer). Every pointer was called using the same naming convention.
+
+The functions OnCalculate and OnComputer were explained above. Even though this project is not complete there are many topics that are not dealt with in this program. The exercise will give you the chance to finish the program. 
+
+Also another thing to notice : Change the checkbox status and press calculate. It will update the value of the global variables. Then close the dialog box. Open the dialog box up again and you will notice that the condition of the check boxes and the radio buttons are just the way that you left them. The value of the global variables was stored in their respective variables and then read in when the dialog box OnInitDialog( ) function was called.
+
+MainFile.cpp
+
+When you add the message handler to the CControlDialog class and then define the code in the .cpp file. This does not mean that the message is going to be handled. If the ON_COMMAND message is not define in the message map for the Dialog box, it will not be handled. The computer does not know what to do , so it ignores the message. When you use the message map macros make sure to tell it which control generated the message as well ass which message handler will handle it.
+
+  

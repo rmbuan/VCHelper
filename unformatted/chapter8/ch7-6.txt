@@ -1,0 +1,13 @@
+Data Exchange Program 
+
+Download Code: http://liad.gbrownc.on.ca/computer/Code%20examples/Dexchange1a.zip
+
+
+Microsoft Visual studio is a GUI development environment. This tutorial has concentrated more on the command line mode of the development environment. This portion of the module is here to simulate what happens in the GUI environment. 
+
+Data will automatically ( not really since you have to code it) take the data from the screen and place it into local variables so that when the dialog box is no longer available the data that was on the screen is still active .This will involve using private data members of the Dialog class as well as global variables.
+
+In the previous program the function OnInitDialog( ) . This was used to initialize the check boxes. In this program we will not be using OnInitDialog( ) . We will be using the DoDataExchange( ) which is located in the CDialog class. This program will initialize the edit boxes as well.
+
+Create a new project , download the files and add them to the project. Execute the program. When you first see the dialog box it will have default values. Then change those values and close the dialog box by using the OK button. The cancel button will do nothing as it should. The user has chosen to cancel the changes. You will notice that the changes have now are displayed.
+

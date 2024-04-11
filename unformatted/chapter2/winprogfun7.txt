@@ -1,0 +1,20 @@
+Windows Programming Fundamentals
+
+
+WinMain( ) :
+
+All programs begin execution of a DOS program using main( ).
+
+Well all windows programs start their execution with WinMain( ).
+
+If you do not use MFC the programmer has to provide this function.
+
+If you use MFCs, the programmer automatically has this function provided for him/her by MFC.
+
+Windows Procedure:
+
+There must be a method for Windows to communicate with your program. Windows will pass your program messages and there must be an established way for this to occur. This is a special function called a windows procedure. The window procedure will take in its argument list the message . This is called a callback function. 
+
+Your program will receive many messages that it does not have any response for. Your program can then let windows deal with the message instead. Your program will receive hundreds of messages that are not related to your program an example is when the user clicks on the window outside your program window. Windows will end up processing this message. Windows already knows what to do with this message. Depending on the situation. It may be, there is a window open behind your program window and the user wants to make that the active window.
+
+I know I just went through a lengthy explanation of windows procedure just to tell you that MFC will create this procedure for you. You do not have to create it but you do have to know that it exists.

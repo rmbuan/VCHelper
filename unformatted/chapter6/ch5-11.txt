@@ -1,0 +1,21 @@
+Code Explained
+
+
+MenuWin.h
+
+You will notice that this is a common window class definition, with all the menu options having their corresponding message handlers declared. It also has a data member of the type CToolBarCtrl (m_myToolBar). This is the toolbar control object
+
+MenuWin.cpp
+
+This has all the code for the message handlers for the menu,  but what is important here is the code for the creation of the toolbar. The creation of the toolbar normally would be done in a separate function, but to save time it has been included in this file.
+
+The menu MainMenu is included in the Create( ) window function and the ACCELERATORS have been loaded. A new RECT structure was declared and defined. Remember this will be ignore unless the toolbar is created with CCS_NORESIZE. In this case it will be ignored. Placed here strictly for demonstration. 
+
+The following INITCOMMONCONTROLSEX structure is created to determine if the proper COMCTRL32.LIB is loaded. The toolbar is then created. Then the array of buttons are declared and initialized with each individual button being given a menu command associated with it. 
+
+Then the AddButton( ) function and AddBitmap( ) function are called and the toolbar becomes available.
+
+Whenever a button on the toolbar is clicked it sends a ON_COMMAND message. The ON_COMMAND message is then passed to the message map in the MainFile.cpp and it looks up which handler is going to deal with this message. This topic is not that difficult to grasp,  you see it done once you can duplicate it many times over to create your own toolbar.
+
+The rest of the application is straight forward and there is nothing special that you have not seen many times before. You should look at the code to make sure that you understand everything that is being done there.
+

@@ -1,0 +1,137 @@
+Questions Chapter Six
+
+1. Modern thinking says that _____ percent of an application's development time is dedicated to the user interface.
+
+a) 30 
+b) 50
+c) 80
+d) 90
+
+2. An application goes through many different activities during the time that it is being developed. What is usually the most time consuming.
+
+a) Logic of the application
+b) The User Interface of the application
+c) The design portion of the application
+d) The analysis of what the application is to do.
+
+3. Dialog Boxes are an example of __________ ?
+
+a) a user interface object
+b) a resource
+c) things similar to menues
+d) all of the above are correct.
+
+4. Dialog Boxes are not windows ?
+
+a) True
+b) False
+
+5. When a Dialog Box is closed , do you have write code to close all the controls on the Dialog Box ?
+
+a) Yes
+b) No
+
+6. Controls are windows that are child windows to the Dialog Box ?
+
+a) True
+b) False
+
+7.List three Controls that are common to almost all Dialog Boxes
+
+8. The format for creating a Dialog Box is ?
+
+a) DIALOG DialogBoxName width, height
+b) DialogBoxName DIALOG Width , Height
+c) DialogBoxName DIALOG X ,Y ,Width Height
+d) DialogBoxName DIALOG IDDNumber, X , Y , Width , Height
+
+9. The Base class for a Dialog Box is ?
+
+a) CDialog
+b) CDialogBox
+c) CFrameWnd
+d) CWnd
+
+10. Dialog Boxes have their own message maps, which the programmer must setup.
+
+a. True
+b. False
+
+11. Each control placed on the Dialog Box needs its own ?
+
+a) Message Map
+b) Unique ID
+c) Dialog Box
+d) Window
+
+12. Controls places on the Dialog Box receive messages or send messages, they can not do both?
+
+a) True
+b) False
+
+13. What type of windows message, is generated from the controls, that send messages ?
+
+a) WM_CHAR
+b) WM_COMMAND
+c) WM_NOTIFY
+d) WM_COMMANDER
+
+14. Once the Dialog Box is constructed, it is activated by the function _______ .
+
+a) Open
+b) DoModaless
+c) DoModal
+d) Either b or c is correct.
+
+15. If you decide to use the MFC built in message macros OnOK and OnCancel, do you still need to add these to the message map. The logic here is, since there is no message handler for these message macros the compiler will know to use the default message handlers.
+
+a) Yes
+b) No
+
+16. What type of message is generated when a Dialog Box is opened ?
+
+a) WM_COMMAND
+b) WM_INITDIALOG
+c) WM_PAINT
+d) WM_COMMANDER
+
+17. If you wanted to get a pointer to a control placed on a Dialog Box what function would you use ?
+
+a) OnInitDialog( )
+b) DoModal( )
+c) OnDialog ( )
+d) GetDlgItem( )
+
+18. Using the answer from question 17. The first parameter would be the ID value of what ?
+
+a) The Dialog Box
+b) The control that you wanted
+c) The Window that the Dialog sits upon.
+d) b and c are correct.
+
+19. In order to use the function from question 17, and assuming that you wanted to get to a listbox control placed on the FirstDialogBox, Dialog Box. What is the correct cast operator.
+
+a) (CDialogBox)
+b) (FirstDialogBox *)
+c) (CListBox)
+d) (CListBox * )
+
+20. What is the function that would populate a list box during startup of a Dialog Box ?
+
+a) AddItem( )
+b) AddString( )
+c) StringAdd( )
+d) AddListBoxItem( )
+
+21. A Notification message is the same as a ON_COMMAND message.
+
+a) True
+b) False
+
+22. The function to get the highlighted selection in a ListBox is ?
+
+a) GetWindow
+b) GetSelChanged
+c) GetText
+d) GetWndText
+

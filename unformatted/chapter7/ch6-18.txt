@@ -1,0 +1,55 @@
+Project 
+Step Two
+
+http://liad.gbrownc.on.ca/computer/animation/AddressBook2.exe This is what the project should look like after completing Step Two.
+
+Let us review the menu options. To decide how many dialog boxes are required.
+
+The following menu options will required dialog boxes.
+
+File -    New
+File -   Open
+Edit -  Change
+View - Records - Next
+View - Records - Previous
+View - Records - All
+
+The trick here is to try to cut down the number of dialog boxes, when creating an application. Six is too many dialog boxes and would take too much time to build. 
+
+Look at the dialog boxes that are required and see if any are similar. It makes sense the New , Change, Next, Previous can all display the same data. Therefore they can all be the same dialog box. Open is used to prompt the user to enter a contact number or name to view. So this would be a small dialog box with a static label, a text box and two command buttons, OK and Cancel.
+
+The dialog box for "All" would display all the contacts therefore it will be built slightly different. Your job in Step Two of the project will be to create a new menu and assign it, to the proper dialog boxes and then open all the dialog boxes from the proper main menu items.
+
+First create the dialog boxes as follows
+
+Dialog box one (IDD_VIEW, class name CViewDlg , Title View) will be used for the majority of the operations. Therefore it should have a menu. The menu will contain two POPUP menus, File and Help. Under help will be the About menu item. Use the method shown in this chapter. The File will have the Close menu item. Name this menu IDR_ViewMenu There will be no controls place on this dialog box at this time. It will be opened from the following
+File -    New
+Edit -  Change
+View - Records - Next
+View - Records - Previous
+
+See the demonstration for approximate size.
+
+
+Dialog Box two (IDD_OPEN, class name COpenDlg Title of Open) will be used for the Open menu item, therefore is just requires the following to be placed on the dialog box. This dialog box will be opened from the Open menu item. 
+
+Control Type ID Caption 
+Static Text IDC_STATIC_SEARCH &Search Contact 
+Text Box IDC_EDIT_SEARCH NONE 
+Button IDC_BUTTON_CANCEL C&ancel 
+Button IDC_BUTTON_OK O&K  code OnOK( ); 
+
+See the demonstration for approximate size. This dialog box will be open from
+File -   Open
+
+
+The  third dialog box ( IDD_ALL, class name CAllDlg Title, All Contacts) will be used for the View - Records - All . There will be a new menu created for this dialog box. The new menu will be called IDR_ALL. There will be two POPUP menu items File and Help. Help will be the same as above. The File menu will have the Select and Close. Name the IDs appropriately. This dialog box will have the following controls place on it. This dialog box will be opened from the All menu item.
+
+Control Type ID Caption 
+List Box IDC_LISTBOX NONE 
+Static Text IDC_STATIC_CONTACTS Contacts 
+Button IDC_BUTTON_ALL_OK O&K      code OnOK( ); 
+Button IDC_BUTTON_ALL_CANCEL C&ancel 
+Button IDC_BUTTON_ALL_GOTO &Go To 
+
+Hints: Click on each Dialog box prior to going to the ClassWizard and it will prompt you to create the new class for each dialog box. The Close menu items should have the OnOK() function added in the ClassWizard. 

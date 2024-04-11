@@ -1,0 +1,14 @@
+List Box Initialization Explained
+
+
+You will notice in the CDialogBox class definition, the BOOL OnInitDialog( ) function has been added. This will be used to add the initialized values to the list box.
+
+The code in OnInitDialog( ) in the CDialogBox has added the definition for this function. First you will notice that it calls the default OnInitDialog function from the base class CDialog. This uses the MFC portion of maintenance to your program. It is there why not use it ?
+
+Then it declares a pointer of CListBox ( an MFC class ) . The function GetDlgItem is called. The parameter that is being used here is the IDD_LBFIRST. This is the id value of the list box. So in effect what is being done here is, to get a pointer to the list box that is identified by the value of IDD_LBFIRST. We know that it is a list box so we have to cast it over to a CListBox pointer. That is the purpose of (CListBox *).
+
+Once you have a pointer to the list box you can use the arrow operator to call the function AddString ( ) . This function will add a string into the list box so that it may be displayed.
+
+All this is great, we can create the list box, display contents in the list box. Now how is it possible to select an item from within the list box. That is the topic of the next section.
+
+  

@@ -1,0 +1,82 @@
+Project 
+Step Three
+
+This chapter has gone through adding controls to a dialog box and assigning variables to these controls. This part of the project will design the dialog boxes ( place the controls ). It will set up the variables. Follow the instructions below to design the screens.
+
+Dialog Box New, set the caption of the dialog box to New Contact. The dialog box should look like the picture below.
+
+http://liad.gbrownc.on.ca/computer/images/dialogNew.jpg
+
+Control ID Caption 
+Static Text IDC_STATIC Contact Number 
+Edit Box IDC_EDIT_NewContNum NONE 
+Static Text IDC_STATIC Created 
+Edit Box IDC_EDIT_NewCreated NONE 
+Group Box IDC_STATIC_Personal Personal 
+Static Text IDC_STATIC First Name 
+Edit Box IDC_EDIT_New_FName NONE 
+Static Text IDC_STATIC Last Name 
+Edit Box IDC_EDIT_NewLName NONE 
+Static Text IDC_STATIC Street Address 
+Edit Box IDC_EDIT_NewSAddress NONE 
+Static Text IDC_STATIC City 
+Edit Box IDC_EDIT_NewCity NONE 
+Static Text IDC_STATIC Province/State 
+Edit Box IDC_EDIT_NewProvState NONE 
+Static Text IDC_STATIC Postal Code 
+Edit Box IDC_EDIT_NewPCode NONE 
+Static Text IDC_STATIC Type 
+Edit Box IDC_EDIT_NewType NONE 
+List Box IDC_LIST_NewType NONE 
+Check Box IDC_CHECK_NewCCard Christmas Card 
+Check Box IDC_CHECK_NewBCard Birthday Card 
+Static Text IDC_STATIC Birthdate 
+Edit Box IDC_New_BDate NONE 
+Radio Button IDC_RADIO_NewMarried Married 
+Radio Button IDC_RADIO_NewDivorced Divorced 
+Radio Button IDC_RADIO_NewSingle Single 
+Button IDC_BUTTON_NewClear C&lear 
+Button IDC_BUTTON_NewCancel &Cancel 
+Button IDC_BUTTON_NewAdd &Add 
+Button IDC_BUTTON_NewOK &Ok 
+
+Dilaog Box View will have the caption of View Contact Information. It should be similar to the box above. Here is a picture of what the View dialog box should look like.
+
+
+http://liad.gbrownc.on.ca/computer/images/Dialogview.jpg
+ 
+
+Control ID Caption 
+Static Text IDC_STATIC Contact Number 
+Edit Box IDC_EDIT_ViewContNum NONE 
+Static Text IDC_STATIC Created 
+Edit Box IDC_EDIT_ViewCreated NONE 
+Group Box IDC_STATIC_Personal Personal 
+Static Text IDC_STATIC First Name 
+Edit Box IDC_EDIT_Veiw_FName NONE 
+Static Text IDC_STATIC Last Name 
+Edit Box IDC_EDIT_ViewLName NONE 
+Static Text IDC_STATIC Street Address 
+Edit Box IDC_EDIT_ViewSAddress NONE 
+Static Text IDC_STATIC City 
+Edit Box IDC_EDIT_ViewCity NONE 
+Static Text IDC_STATIC Province/State 
+Edit Box IDC_EDIT_ViewProvState NONE 
+Static Text IDC_STATIC Postal Code 
+Edit Box IDC_EDIT_ViewPCode NONE 
+Static Text IDC_STATIC Type 
+Edit Box IDC_EDIT_ViewType NONE 
+List Box IDC_LIST_ViewType NONE 
+Check Box IDC_CHECK_ViewCCard Christmas Card 
+Check Box IDC_CHECK_ViewBCard Birthday Card 
+Static Text IDC_STATIC Birthdate 
+Edit Box IDC_View_BDate NONE 
+Radio Button IDC_RADIO_ViewMarried Married 
+Radio Button IDC_RADIO_ViewDivorced Divorced 
+Radio Button IDC_RADIO_ViewSingle Single 
+Button IDC_BUTTON_ViewClear &Next 
+Button IDC_BUTTON_ViewCancel &Close 
+Button IDC_BUTTON_ViewAdd &Previous 
+Button IDC_BUTTON_ViewOK &Ok 
+
+Dialog Box Open 

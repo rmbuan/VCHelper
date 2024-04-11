@@ -1,0 +1,10 @@
+Introduction to Basic Program
+
+
+ It is now time to look closer at the way MFC’s are actually inherited and how to use them. Once you gain an understanding of how to use the basics MFC it will all start to make sense to you. 
+
+It is important that you finish each exercise and explore as many different facets of the classes as they are explained.
+
+In this chapter you will be introduced to your first window. 
+
+You will write your first MFC program and it should give you the satisfaction that application writing, is not that difficult in Visual C++. 

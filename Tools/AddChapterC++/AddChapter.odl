@@ -1,0 +1,42 @@
+// AddChapter.odl : type library source for AddChapter.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (AddChapter.tlb).
+
+[ uuid(07BFFFC4-1888-474F-B17F-9952D4E929F2), version(1.0) ]
+library AddChapter
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CAddChapterDoc
+	
+	[ uuid(DCCD8DD0-CF4E-495C-98F9-328EE34655E2) ]
+	dispinterface IAddChapter
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CAddChapterDoc)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CAddChapterDoc)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CAddChapterDoc
+	
+	[ uuid(97996BC1-FCA5-414C-9D81-4B7B6E0E1E28) ]
+	coclass Document
+	{
+		[default] dispinterface IAddChapter;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

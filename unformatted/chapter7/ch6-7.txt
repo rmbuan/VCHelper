@@ -1,0 +1,18 @@
+List Box 
+
+Download Code: http://liad.gbrownc.on.ca/computer/Code%20examples/listbox1a.zip
+
+
+There are times when a dialog box will have to contain a list box. A list box is a window that displays a set of values. These values can be added at runtime or they can be added at design time. In the code that is included in the code button above it will be done using only the design time issue. After the edit box is introduced then it will be explained how to at them are runtime. There are different ways in which to add items at design time. One way would to read a file or database that would contain the items that are to appear in the list box. Then again we would have to know how to read files or databases. So at this time we will use the AddItem function to load the list box with values.
+
+To add a list box to a DialogBox it must be done in the resource file similar to the a pushbotton. The format is: 
+
+LISTBOX LBID, x, y Width, Height [,STYLE]
+ 
+ 
+
+LBID is the value defined in IDS.H that identifies this listbox. X,Y,Width and Height are self explainatory. STYLE is how you would like it to appear. The standard is a child (WS_CHILD) , visible (WS_VISIBLE) and it can have a tabstop (WS_TABSTOP) as well as a vertical scroll bar (WS_SCROLL) . These are all or-ed together.
+
+This program will demonstrate how to create the listbox. Then we will procede to initialize the list box.
+
+ 

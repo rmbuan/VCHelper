@@ -1,0 +1,10 @@
+Introduction to Message Maps
+
+
+Messages are what Windows uses to communicate with your application, so since they are so important we should cover them now. Your program does not need to deal with every message that Windows generates, only the ones that deal directly with your application. MFCs have built in default functions to deal with messages that your program does not. So you don’t have to worry about them.
+
+In the FirstApplication a basic application was created and the message map was set up (DECLARE_MESSAGE_MAP ). It was not used and this chapter will deal with how to handle messages.
+
+There is a set of common messages that are used in almost all applications and they are already declared for you. All you have to do is decide what is supposed to happen when these messages occur. That depends on what your application is going to do.
+
+  

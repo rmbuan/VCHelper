@@ -1,0 +1,59 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033{\fonttbl{\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f28\fswiss\fcharset0\fprq2{\*\panose 020b0604030504040204}Verdana;}
+{\f31\froman\fcharset238\fprq2 Times New Roman CE;}{\f32\froman\fcharset204\fprq2 Times New Roman Cyr;}{\f34\froman\fcharset161\fprq2 Times New Roman Greek;}{\f35\froman\fcharset162\fprq2 Times New Roman Tur;}
+{\f36\froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\f37\froman\fcharset178\fprq2 Times New Roman (Arabic);}{\f38\froman\fcharset186\fprq2 Times New Roman Baltic;}{\f255\fswiss\fcharset238\fprq2 Verdana CE;}
+{\f256\fswiss\fcharset204\fprq2 Verdana Cyr;}{\f258\fswiss\fcharset161\fprq2 Verdana Greek;}{\f259\fswiss\fcharset162\fprq2 Verdana Tur;}{\f262\fswiss\fcharset186\fprq2 Verdana Baltic;}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;
+\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;
+\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;\red0\green51\blue102;}{\stylesheet{\ql \li0\ri0\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 \snext0 Normal;}
+{\s1\ql \li0\ri0\keepn\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \b\fs32\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 \sbasedon0 \snext0 heading 1;}{
+\s2\ql \li0\ri0\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel1\adjustright\rin0\lin0\itap0 \b\fs24\cf9\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 \sbasedon0 \snext0 heading 2;}{\*\cs10 \additive Default Paragraph Font;}{
+\s15\ql \fi720\li0\ri0\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \fs24\cf9\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 \sbasedon0 \snext15 Body Text 2;}}{\info{\title Introduction to Basic Program}{\author Information Technology}
+{\operator buan}{\creatim\yr2000\mo8\dy10\hr13\min46}{\revtim\yr2000\mo8\dy10\hr13\min46}{\version2}{\edmins3}{\nofpages2}{\nofwords548}{\nofchars3127}{\*\company George Brown College}{\nofcharsws3840}{\vern8247}}
+\widowctrl\ftnbj\aenddoc\noxlattoyen\expshrtn\noultrlspc\dntblnsbdb\nospaceforul\hyphcaps0\formshade\horzdoc\dgmargin\dghspace180\dgvspace180\dghorigin1800\dgvorigin1440\dghshow1\dgvshow1
+\jexpand\viewkind1\viewscale100\pgbrdrhead\pgbrdrfoot\splytwnine\ftnlytwnine\htmautsp\nolnhtadjtbl\useltbaln\alntblind\lytcalctblwd\lyttblrtgr\lnbrkrule \fet0\sectd \linex0\endnhere\sectlinegrid360\sectdefaultcl {\*\pnseclvl1
+\pnucrm\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}{\*\pnseclvl5
+\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang
+{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}\pard\plain \s1\ql \li0\ri0\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel0\adjustright\rin0\lin0\itap0 
+\b\fs32\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\f28\cf17 Device Context
+\par }\pard\plain \ql \li0\ri0\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\cf9 
+\par A device context must be obtained before your program can write to the screen and when your application is completed the device context must be released. Another good thing about MFC is that it will create the device context for you and wh
+en your application is completed, it will release the device context automatically. This is done by declaring an object of CClientDC. This will be explained shortly. But it is still necessary to understand what a device context is. 
+\par 
+\par A device context is a structure that describes the display environment of a window. What is contained in this structure is the device driver }{\cf9 (hardware}{\cf9 
+ specific) for your screen and what font type that is to be used and where the window is, in relation to the screen. All a devi
+ce context really is:  is a method to get to the screen. Think of it as a stream of data that flows directly to the screen. If your application must print, then you would have to set up a device context for the printer and then you will set up a data stre
+am straight to the printer object.
+\par 
+\par CClientDC is a class derived from CDC. This is the fastest and simplest way to declare a device context. All that has to be done is to declare an object of this type. The constructor, }{\cf9 CCLIENTDC (}{\cf9 CWND *Window}{\cf9 ),}{\cf9  really just
+ takes a pointer to the }{\cf9 window that}{\cf9  it is being declared for. Most often the window is just a pointer to the open window "this}{\cf9 \'94. }{\cf9 
+Therefore when the "this" pointer is used it is referring to the parent window. In the example's case, it means, the only window.
+\par 
+\par If a device context }{\cf9 cannot}{\cf9  be achieved, it will throw a CResourceException. We will deal with exceptions later.
+\par 
+\par Since CClientDC is derived from the CDC class the programmer now has access to the member functions in the CDC class. One of the functions that we will be using in the next example is TextOut. This function is used to write out to the screen. The prototyp
+e for this function is virtual BOOL }{\cf9 TextOut (}{\cf9 int X, int }{\cf9 Y,}{\cf9 
+ LPCSTR lpszStr, int Length). Where the X and Y are co-ordinates of the window (it is important to remember this is different from the screen.). LPCSTR lpszStr is a constant pointer to what is to be 
+displayed to the screen in this case and Length is how long is the string that is going to be displayed. Remember the data type LPCSTR. It is a constant pointer to string.
+\par 
+\par An important note here is that there are two functions called TextOut( ). The secon
+d function deals with CString and since most windows actions are done through dialog boxes it will not be explained here. CString is another type of string. It encompasses more than a simple string but we will get to that during the Dialog Box chapter.
+
+\par 
+\par wsprintf( ) is a function that basically just formats the output to the screen. The prototype is 
+\par int wsprintf(LPSTR lpOut, LPCSTR lpFmt \'85)  It is important to realize here, what the  ....  means. It is a method to write a function when you do not know how m
+any variables are going to be sent to the function. In this case many variables could be sent.  Below are }{\cf9 some examples}{\cf9 :
+\par 
+\par }{\cf9 Assuming}{\cf9  the following have been declared.   char str[80]  ,  int ivalue  ,  char  cvalue 
+\par 
+\par Example 1
+\par 
+\par wsprintf }{\cf9 (str}{\cf9 , " %d ", ivalue);  //  This will take the integer value stored in ivalue and convert it to a string and that string will be str.
+\par 
+\par Example 2
+\par 
+\par wsprintf( str "%d %c",ivalue,cvalue) //   This will take the value stored in ivalue and cvalue and store the }{\cf9 concatenated}{\cf9  string in str.
+\par 
+\par There are many overloaded wsprintf }{\cf9 ()}{\cf9 
+ functions.  Check the help file and do a search on wsprintf to discover all the different formats for this function.  The %d and %c may seem a little strange to you, if you have not taken C programming before. They are known as conversion specifiers
+. There is a list of them as well. Check the help file.
+\par }{
+\par }}

@@ -1,0 +1,20 @@
+Exercise One
+
+This exercise will teach a few things about laying out Dialog Boxes and a little about business applications. 
+
+This application will start with a main window. 
+The main window will have a simple menu that will have File and Help as the top level menus.
+The File menu will have two options Open and Exit.
+The Help will have About.
+
+The purpose of the Exercise will be, to  have a Dialog Box open when the user selects Open. The program will exit when the user clicks Exit.
+
+The About box will pop up with your name, when the user selects About. Below you will find a sample of the format  for a label. 
+                    CTEXT "Displayed Label", IDD_Label,X,Y,Width,Height
+
+The Dialog Box will Show the information that will identify a person. Think of it as a personal address book. The following items would normally appear in a personal address book.
+
+First Name, Last Name , Address and phone number. 
+
+Use the CText as a static text label and the EDITTEXT for the input box. Try several different layouts to make sure that the Dialog Box looks presentable.
+

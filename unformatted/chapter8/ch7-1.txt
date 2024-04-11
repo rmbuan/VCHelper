@@ -1,0 +1,43 @@
+Additional Controls
+
+Download Code: http://liad.gbrownc.on.ca/computer/Code%20examples/morecontrols1a.zip
+When you refer to controls that can be placed on a Dialog Box , think of other window applications. You have seen check boxes, radio button and static text controls otherwise known as labels.
+
+Static controls are basically labels. They can not be tabbed to, or edited at run-time. They can how ever be changed to display different strings. The format of the static controls are listed below : 
+
+CTEXT "Words",CTID, Width, Height [,Style]
+ 
+ 
+
+This can be used as a heading of a Dialog Box other than the Caption of dialog boxes. A thing to keep in mind when using the static text control, by default the text will display in the center of the area marked by the static text control.
+
+Next to add to the project will be a Group Box. A Group box will visually make things appear to belong together. This technique is used to group logical things together as well as separate things that do not belong together. An example would be on a sales report dialog box. Where customer information should be separated from the sales information. It just makes it easier for the user. A group box will also be used with radio buttons. The format for the group box is :
+
+GROUPBOX "Common terms",IDD_GROUPBOX, X , Y, Width, Height [,Style]
+
+Check Boxes
+
+Check boxes are visual controls that can be used to determine if the an option is turned on or off. It can be used to determine if a condition is met or is not met. Visually a check box is displayed with a square box placed beside a string of text. If the condition is met then a check mark will appear inside the square box. When the condition is no longer true or required the check mark is cleared by the user clicking the check box or calling the SetCheck ( ) function.
+
+Over the years the check box has changed. At one time it was the programmer's job to manually check and uncheck the check box. This has been changed in the newer versions of the check box. Since it is automatically assumed that once a user clicks on a check box that the opposite of what is displayed ( either checked or unchecked) will be displayed later. So naturally , it makes sense to automate this activity. 
+
+The manual check box will have the form of :CHECKBOX "Label" , IDCHECK, X, Y , Width, Height [,Style] . The 32 bit programming world supports the AUTOCHECKBOX "Label" , IDCHECK, X, Y , Width, Height [,Style] . There is also a 3-state check box , but it will be left for you to investigate on your own.
+
+A user generates a ON_COMMAND message , with the notification code of BN_CLICKED, So the message will be processed using ON_BN_CLICKED.
+
+Radio Buttons
+
+Radio buttons are a visual representation of a group of options, where only one option can be true at any one time. An example of this would be if a customer were given a 10% discount, it would not make much sense to also give the customer a 15% discount on a purchase. Usually there is only one discount . So if the 10 % radio button is checked the 15 % must be unchecked. Of course throughout the years MFCs have developed an automatic radio function as well. 
+
+AUTORADIOBUTTON "Label", IDRADIO, X,Y,Width, Height[,Style]
+ 
+
+There may be times where more than one group of radio buttons are required . The two separate groups of radio buttons will then be manual Radio Buttons. At this point it will be the programmer's function to manually set which group belongs together and to enforce the check and uncheck methods. This will be done in the exercise portion of this module.
+
+The format for a manual Radio Button is as follows 
+
+           RADIOBUTTON "Label", IDRADIO, X,Y,Width,Height[,Style].
+
+ 
+
+Create a new project, download the files and add them to the project. We are going to use this project to show more of the controls. This project does not perform any actions as of yet but we will be using it to calculate a total price of a sale.
